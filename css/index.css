@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.carousel_main {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  height: 370px;
+  align-items: center;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding: 0 30px;
+  line-height: 1.2;
+  width: 1200px;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.carousel_main_text {
+  box-sizing: border-box;
+  width: 440px;
+  flex-shrink: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.low_text_position {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.text_size_carousel {
+  color: #172e4d;
+  margin: 0 0 0 20px;
+  font-size: 2.5rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: bold;
+}
+
+.low_text_size {
+  color: #172e4d;
+  margin: 0 0 0 20px;
+  font-size: 1rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.cards_container {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  transform: translateX(0);
+  transition: transform 1.5s ease-out;
+}
+
+.cards_container.scroll-left {
+  transform: translateX(0);
+}
+
+.cards_container.scroll-right {
+  transform: translateX(-420px);
+}
+
+.card {
+  display: flex;
+  width: 170px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: 0.4s ease;
+  flex-shrink: 0;
+  height: 340px;
+  flex-direction: row;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.viewport_cards {
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.cards_container:hover .card {
+  filter: brightness(0.5);
+}
+
+.cards_container:hover .card:hover {
+  width: 390px;
+  filter: brightness(1);
+}
+
+.card_image {
+  width: 170px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 340px;
+  background-size: cover;
+  color: white;
+  background-position: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.card_info {
+  width: 220px;
+  flex-shrink: 0;
+  height: 340px;
+  background: white;
+  padding: 25px;
+  flex-direction: column;
+  color: #172e4d;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.card_info p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+.card_info button {
+  border: none;
+  background: #fc811c;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+}
+
+.card_info button:hover {
+  background: #e86d0d;
+}
+
+.airplane {
+  background-image: url("../img/airplane_sunset.jpeg");
+}
+
+.beach {
+  background-image: url("../img/beach.jpg");
+}
+
+.resorts {
+  background-image: url("../img/beach_sunset.jpg");
+}
+
+.experiences {
+  background-image: url("../img/experiencias.jpg");
+}
+.hotels {
+  background-image: url("../img/hotels.jpg");
+}
+.text_in_card {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}

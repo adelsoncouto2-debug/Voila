@@ -1,0 +1,107 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-left">
+                <img class="header-logo" src="../img/header-logo.webp" alt="logo">
+                <div class="header-text">
+                    <h3><a class="text" href="../index.html">Home</a></h3>
+                    <h3><a class="text" href="../pages/passagens.html">Passagens</a></h3>
+                    <h3><a class="text" href="../pages/promocoes.html">Promoções</a></h3>
+                    <h3><a class="text" href="../pages/combos.html">Combos</a></h3>
+                    <h3><a class="text" href="../pages/hoteis.html">Hotéis</a></h3>
+                    <h3><a class="text" href="../pages/contato.html">Contato</a></h3>
+                    <a class="vai-container" href="../pages/vai.html">
+                        <img class="vai-logo" src="../img/vai.webp" alt="VAI">
+                        <img class="vai-selected" src="../img/vai-selected.webp" alt="VAI">
+                    </a>
+                </div>
+            </div>
+            <div class="login-container">
+                <button class="login">
+                    <img class="profile-icon" src="../img/profile.png" alt="Profile Icon">
+                    <span class="login-text">Login / Cadastro</span>
+                    <img class="arrow-down" src="../img/arrow-down.svg" alt="Arrow Down">
+                </button>
+                <div class="user-dropdown">
+                    <h2 class="dropdown-title">Bem-vindo!</h2>
+                    <p class="dropdown-subtitle">
+                        Faça login para acessar sua conta.
+                    </p>
+                    <button class="dropdown-google">
+                        <img src="../img/google-icon.svg" class="google-icon" alt="">
+                        <span>Continuar com Google</span>
+                    </button>
+                    <button class="dropdown-email">
+                        Entrar com e-mail
+                    </button>
+                    <p class="dropdown-register">
+                        Não possui uma conta?
+                        <a href="../pages/cadastro.html">Criar conta</a>
+                    </p>
+                </div>
+                <div class="login-modal">
+                    <div class="login-modal-box">
+                        <button class="login-close">
+                            ✕
+                        </button>
+                        <h2 class="login-modal-title">
+                            Entrar
+                        </h2>
+                        <p class="login-modal-subtitle">
+                            Continue para acessar sua conta.
+                        </p>
+                        <input
+                            type="email"
+                            class="login-input"
+                            placeholder="E-mail">
+                        <div class="password-container">
+                            <input
+                                id="password"
+                                type="password"
+                                class="login-input"
+                                placeholder="Senha">
+                            <img
+                                src="../img/eye.svg"
+                                class="eye-icon"
+                                alt="Mostrar senha">
+                        </div>
+                        <a href="#" class="forgot-password">
+                            Esqueceu sua senha?
+                        </a>
+
+                        <button class="login-button">
+                            Entrar
+                        </button>
+                    </div>
+                </div>
+                <div class="forgot-modal">
+                    <div class="login-modal-box">
+                        <button class="forgot-close login-close">
+                            ✕
+                        </button>
+                        <h2 class="login-modal-title">
+                            Recuperar senha
+                        </h2>
+                        <p class="login-modal-subtitle">
+                            Digite seu e-mail para receber as instruções de redefinição.
+                        </p>
+                        <input
+                            type="email"
+                            class="login-input"
+                            placeholder="E-mail">
+                        <button class="login-button">
+                            Enviar link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Passagens - Voilà</title>
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/passagens.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="filtros" id="filtros">
+            <div class="title-section">
+                <h2 class="filtros-title">Filtros</h2>
+            </div>
+            <hr class="division-line">
+            <div class="tipo-viagem">
+                <h5 class="section-title">Tipo de Viagem</h5>
+                <label class="radio-container">
+                    <input type="radio" name="tipo-viagem" value="ida-e-volta" checked>
+                    Ida e Volta
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="tipo-viagem" value="somente-ida">
+                    Somente Ida
+                </label>
+            </div>
+            <hr class="division-line">
+            <div class="origem-destino">
+                <div class="filtro-row">
+                    <div class="filtro-input-group">
+                        <label class="filtro-label"><b>Origem</b></label>
+                        <input type="text" class="filtro-text-input" placeholder="De onde?">
+                    </div>
+                    <div class="filtro-input-group">
+                        <label class="filtro-label"><b>Destino</b></label>
+                        <input type="text" class="filtro-text-input" placeholder="Para onde?">
+                    </div>
+                </div>
+            </div>
+            <hr class="division-line">
+            <div class="faixa-valor">
+                <h5 class="section-title">Faixa de Preço</h5>
+                <div class="filtro-row">
+                    <div class="filtro-input-group">
+                        <label class="filtro-label">Mínimo (R$)</label>
+                        <input type="number" class="filtro-text-input" placeholder="Ex: 200" min="0">
+                    </div>
+                    <div class="filtro-input-group">
+                        <label class="filtro-label">Máximo (R$)</label>
+                        <input type="number" class="filtro-text-input" placeholder="Ex: 1500" min="0">
+                    </div>
+                </div>
+            </div>
+            <hr class="division-line">
+            
+        </div>
+        <script src="../js/header.js"></script>
+        <script src="../js/passagens.js"></script>
+    </body>
+</html>
