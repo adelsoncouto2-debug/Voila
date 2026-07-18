@@ -20,3 +20,24 @@ if (viewportCards && cardsContainer) {
     cardsContainer.classList.remove("scroll-left", "scroll-right");
   });
 }
+
+const viewportTrips = document.querySelector(".viewport_trips");
+const tripsContainer = document.querySelector(".trips_container");
+const buttonLeft = document.querySelector(".circle_button_left");
+const buttonRight = document.querySelector(".circle_button_right");
+let posicao = 0;
+const totalCards = tripsContainer.querySelectorAll(".cards_trips").length;
+const cardsVisiveis = 3;
+const ultimaPosicao = totalCards - cardsVisiveis;
+buttonRight.addEventListener("click", function () {
+  if (posicao < ultimaPosicao) {
+    posicao++;
+  }
+  tripsContainer.style.transform = `translateX(-${posicao * 360}px)`;
+});
+buttonLeft.addEventListener("click", function () {
+  if (posicao > 0) {
+    posicao--;
+  }
+  tripsContainer.style.transform = `translateX(-${posicao * 360}px)`;
+});

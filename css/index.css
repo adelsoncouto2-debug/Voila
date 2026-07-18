@@ -185,6 +185,10 @@ body {
 }
 
 /* Here starts the part that isn't integrated with carousel*/
+.viewport_trips {
+  overflow: hidden;
+  flex-grow: 1;
+}
 
 .text_on_top_cards {
   font-size: 1.6rem;
@@ -197,17 +201,20 @@ body {
   display: flex;
   flex-wrap: nowrap;
   gap: 60px;
-  width: max-content;
-  margin: 0 0 0 160px;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.5s ease;
 }
 .cards_trips {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: white;
   color: black;
   margin: 0;
-  gap: 10px;
+  gap: 4px;
   height: 240px;
   width: 300px;
   border: 3px solid #d8dbddcc;
@@ -223,9 +230,9 @@ body {
   gap: 15px;
   height: 100%;
   padding-top: 25px;
-  padding-left: 20px;
   padding-bottom: 25px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   flex-grow: 1;
 }
@@ -275,6 +282,36 @@ body {
   background: #172e4d;
   color: white;
 }
+.circle_button_left {
+  border-color: #172e4d;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circle_button_right {
+  border-color: #172e4d;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .maldivas {
   background-image: url("../img/trips/maldivas.jpeg");
 }
@@ -287,4 +324,7 @@ body {
 .disney {
   background-image: url("../img/trips/disney.jpg");
   background-position: 40% 50%;
+}
+.espanha {
+  background-image: url("../img/trips/espanha.jpg");
 }
