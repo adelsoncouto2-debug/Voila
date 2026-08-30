@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/*.page{
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.carousel_main {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  height: 370px;
+  align-items: center;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding: 0 30px;
+  line-height: 1.2;
+  width: 1200px;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  justify-content: flex-start;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.carousel_main_text {
+  box-sizing: border-box;
+  width: 440px;
+  flex-shrink: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.low_text_position {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.text_size_carousel {
+  color: #13396a;
+  margin: 0 0 0 20px;
+  font-size: 2.5rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: bold;
+}
+
+.low_text_size {
+  color: #172e4d;
+  margin: 0 0 0 20px;
+  font-size: 1rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.cards_container {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  transform: translateX(0);
+  transition: transform 1.5s ease-out;
+}
+
+.cards_container.scroll-left {
+  transform: translateX(0);
+}
+
+.cards_container.scroll-right {
+  transform: translateX(-420px);
+}
+
+.card {
+  display: flex;
+  width: 170px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: 0.4s ease;
+  flex-shrink: 0;
+  height: 340px;
+  flex-direction: row;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.viewport_cards {
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+.cards_container:hover .card {
+  filter: brightness(0.5);
+}
+
+.cards_container:hover .card:hover {
+  width: 390px;
+  filter: brightness(1);
+}
+
+.card_image {
+  width: 170px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 340px;
+  background-size: cover;
+  color: white;
+  background-position: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.card_info {
+  width: 220px;
+  flex-shrink: 0;
+  height: 340px;
+  background: white;
+  padding: 25px;
+  flex-direction: column;
+  color: #172e4d;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.card_info p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.card_info button {
+  border: none;
+  background: #fc811c;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+}
+
+.card_info button:hover {
+  background: #e86d0d;
+}
+
+.airplane {
+  background-image: url("../img/airplane_sunset.jpeg");
+}
+
+.beach {
+  background-image: url("../img/beach.jpg");
+}
+
+.resorts {
+  background-image: url("../img/beach_sunset.jpg");
+}
+
+.experiences {
+  background-image: url("../img/experiencias.jpg");
+}
+.hotels {
+  background-image: url("../img/hotels.jpg");
+}
+.text_in_card {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}
+
+/* Here starts the part that isn't integrated with carousel*/
+.viewport_trips {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.text_on_top_cards {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  margin-left: 80px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.trips_container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 60px;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+.cards_trips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  color: black;
+  margin: 0;
+  gap: 4px;
+  height: 240px;
+  width: 300px;
+  border: 3px solid #d8dbddcc;
+  border-radius: 16px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.card_trips_info {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  gap: 15px;
+  height: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  flex-grow: 1;
+}
+.cards_trips p {
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+.cards_trips h3 {
+  font-size: 0.8rem;
+  margin: 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  white-space: normal;
+}
+.cards_trips_images {
+  width: 130px;
+  border-radius: 16px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.buttom_in_trip_card {
+  margin-left: 0;
+  width: 130px;
+  height: 35px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.cards_trips .buttom_in_trip_card:hover {
+  background: #172e4d;
+  color: white;
+}
+.circle_button_left {
+  border-color: #172e4d;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.circle_button_right {
+  border-color: #172e4d;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.maldivas {
+  background-image: url("../img/trips/maldivas.jpeg");
+}
+.paris {
+  background-image: url("../img/trips/paris.jpeg");
+}
+.toquio {
+  background-image: url("../img/trips/toquio.webp");
+}
+.disney {
+  background-image: url("../img/trips/disney.jpg");
+  background-position: 40% 50%;
+}
+.espanha {
+  background-image: url("../img/trips/espanha.jpg");
+}
+.aparecida {
+  background-image: url("../img/trips/aparecida_do_norte.jpg");
+}
+.olimpia {
+  background-image: url("../img/trips/olimpia.jpg");
+}
+.copacabana {
+  background-image: url("../img/trips/copacabana_palace.jpg");
+}
+.burj_khalifa {
+  background-image: url("../img/trips/burj_khalifa.jpeg");
+}
+.empire_state {
+  background-image: url("../img/trips/empire_state.jpeg");
+}

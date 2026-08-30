@@ -1,0 +1,55 @@
+.body {
+  height: 100%;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  height: 30vh;
+  margin-top: 50px;
+}
+
+.logo {
+  margin-left: 70px;
+  height: 70%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.letter {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin-right: 60px;
+  text-decoration: none;
+}
+.img-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+.icons img {
+  width: 30px;
+  height: 30px;
+  mix-blend-mode: multiply;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.icons > :nth-child(1) {
+  width: 40px;
+  margin-left: 0;
+}
+.links {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin-right: 60px;
+  text-decoration: none;
+  color: black;
+  margin-top: 0;
+  cursor: pointer;
+}

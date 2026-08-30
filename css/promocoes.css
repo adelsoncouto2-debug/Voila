@@ -1,0 +1,62 @@
+html {
+  scroll-behavior: smooth;
+}
+.card_main {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  height: 270px;
+
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+
+  padding-left: 30px;
+
+  width: 1200px;
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  overflow: hidden;
+
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card_img {
+  height: 100%;
+  width: 60%;
+
+  margin-left: auto;
+  flex-shrink: 0;
+
+  background-image:
+    linear-gradient(to right, hsl(34, 100%, 80%) 0%, transparent 80%),
+    url("../img/trips/rio_de_janeiro.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card_text {
+  text-align: left;
+}
+.text_in_card {
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  margin-left: 10px;
+}
+.text_in_card.except {
+  color: #fc811c;
+}
+
+.low_text_in_card {
+  font-size: 1rem;
+  text-align: left;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin-left: 15px;
+  color: rgb(48, 48, 48);
+}
