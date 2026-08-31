@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/filters.css" />
     <link rel="stylesheet" href="../css/promocoes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +28,43 @@
         </div>
         <div class="card_img"></div>
       </div>
+
+      <div class="products-area">
+        <div id="filter"></div>
+
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-image"></div>
+            <h2>Rio de Janeiro</h2>
+            <p>Pacote completo com desconto</p>
+            <span>R$ 899,90</span>
+          </div>
+
+          <div class="card">
+            <div class="card-image maldivas"></div>
+            <div class="text_in_low_card">
+              <h2>Porto Seguro</h2>
+              <p>Viaje para a Bahia</p>
+              <span>R$ 749,90</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image"></div>
+            <h2>Gramado</h2>
+            <p>Conheça a Serra Gaúcha</p>
+            <span>R$ 999,90</span>
+          </div>
+        </div>
+      </div>
     </main>
     <div id="footer"></div>
+
+    <!--Atenção o filtro não esta funcionando como 
+    programado, a versão dele definitiva pode
+    ser vista em um localhost no filters.html-->
+
+    <script src="../js/filters.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/header.js"></script>
   </body>

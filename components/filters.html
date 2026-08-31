@@ -1,36 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtros - Promoções</title>
     <link rel="stylesheet" href="../css/filters.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="filter">
-      <p class="filter_text">Filtros</p>
-      <div class="line"></div>
-
-      <form>
-        <b class="low_text" style="margin-bottom: 5px">Tipo de Viagem</b>
-
-        <div class="radio-group">
-          <input type="radio" id="windows" name="sistema" value="windows" />
-          <label for="windows" class="low_text">Ida e volta</label>
+    <div class="page">
+      <!-- Sidebar de Filtros -->
+      <aside class="filtros">
+        <div class="filtros-header">
+          <h2>Filtros</h2>
+          <button type="button" class="btn-limpar" id="limparFiltros">
+            Limpar Filtros
+          </button>
         </div>
 
-        <div class="radio-group">
-          <input type="radio" id="linux" name="sistema" value="linux" />
-          <label for="linux" class="low_text">Apenas ida</label>
-        </div>
+        <!-- Tipo de viagem -->
+        <section class="filtro-grupo">
+          <h3>Tipo de viagem</h3>
+          <div class="opcoes-radio">
+            <label class="radio-item">
+              <input type="radio" name="tipo" value="ida-volta" />
+              <span class="radio-custom"></span>
+              <span>Ida e volta</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="tipo" value="apenas-ida" />
+              <span class="radio-custom"></span>
+              <span>Apenas ida</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="tipo" value="multiplos" />
+              <span class="radio-custom"></span>
+              <span>Múltiplos Destinos</span>
+            </label>
+          </div>
+        </section>
 
-        <div class="radio-group">
-          <input type="radio" id="mac" name="sistema" value="mac" />
-          <label for="mac" class="low_text">Muitos destinos</label>
-        </div>
+        <!-- Origem -->
+        <section class="filtro-grupo">
+          <h3>Origem</h3>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Cidade ou Aeroporto" id="origem" />
+          </div>
+        </section>
 
-        <div class="line"></div>
-      </form>
+        <!-- Faixa de Preço -->
+        <section class="filtro-grupo">
+          <h3>Faixa de Preço <span class="sub">(por pessoa)</span></h3>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="500"
+              max="15000"
+              value="500"
+              class="slider"
+              id="precoMin"
+            />
+            <input
+              type="range"
+              min="500"
+              max="15000"
+              value="15000"
+              class="slider"
+              id="precoMax"
+            />
+            <div class="slider-track">
+              <div class="slider-range" id="sliderRange"></div>
+            </div>
+          </div>
+          <div class="preco-valores">
+            <span id="precoMinLabel">R$ 500</span>
+            <span id="precoMaxLabel">R$ 15.000</span>
+          </div>
+        </section>
+
+        <!-- Datas -->
+        <section class="filtro-grupo">
+          <h3>Datas</h3>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Ida-Volta" id="datas" readonly />
+          </div>
+        </section>
+
+        <!-- Duração da Viagem -->
+        <section class="filtro-grupo">
+          <h3>Duração da Viagem</h3>
+          <div class="botoes-duracao">
+            <button
+              type="button"
+              class="btn-duracao active"
+              data-duracao="qualquer"
+            >
+              Qualquer
+            </button>
+            <button type="button" class="btn-duracao" data-duracao="7">
+              Até 7 dias
+            </button>
+            <button type="button" class="btn-duracao" data-duracao="15">
+              Até 15 dias
+            </button>
+            <button type="button" class="btn-duracao" data-duracao="mais15">
+              Mais de 15 dias
+            </button>
+          </div>
+        </section>
+      </aside>
     </div>
+
+    <script src="../js/filters.js"></script>
   </body>
 </html>

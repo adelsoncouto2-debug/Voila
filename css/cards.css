@@ -1,0 +1,153 @@
+.card {
+  box-sizing: border-box;
+  background-color: white;
+
+  height: 250px;
+  width: 275px;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-container {
+  position: relative;
+
+  height: 125px;
+  width: 100%;
+
+  flex-shrink: 0;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.maldivas {
+  background-image: url("../img/trips/maldivas.jpeg");
+}
+
+.discount {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  background-color: #fc811c;
+  color: white;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+
+  padding: 3px 12px;
+
+  border-radius: 0 0 10px 0;
+}
+
+.package {
+  position: absolute;
+
+  top: 30px;
+  left: 8px;
+
+  background-color: white;
+  color: #172e4d;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.65rem;
+
+  padding: 3px 10px;
+
+  border-radius: 8px;
+}
+
+.text_in_low_card {
+  display: flex;
+  flex-direction: column;
+
+  margin: 5px 15px 0 15px;
+}
+
+.text_in_low_card h2 {
+  font-size: 1rem;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+
+  margin: 0;
+  color: #172e4d;
+}
+
+.text_in_low_card p {
+  font-size: 0.65rem;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+
+  margin: 3px 0 0 0;
+  color: #333;
+}
+
+.card-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin: auto 10px 10px 15px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.old-price {
+  font-size: 0.55rem;
+
+  color: #555;
+
+  text-decoration: line-through;
+
+  margin: 0;
+}
+
+.new-price {
+  font-size: 0.8rem;
+
+  color: #172e4d;
+
+  margin: 0;
+}
+
+.details-button {
+  background-color: white;
+
+  border: 1px solid #172e4d;
+  border-radius: 20px;
+
+  padding: 6px 18px;
+
+  color: #172e4d;
+
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.details-button:hover {
+  background-color: #172e4d;
+  color: white;
+}

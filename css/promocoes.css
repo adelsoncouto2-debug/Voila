@@ -60,3 +60,49 @@ html {
   margin-left: 15px;
   color: rgb(48, 48, 48);
 }
+.products-area {
+  width: 1200px;
+  margin-left: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+.cards-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.card {
+  background-color: white;
+  height: 250px;
+  width: 275px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.card-image {
+  height: 125px;
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.maldivas {
+  background-image: url("../img/trips/maldivas.jpeg");
+}
+.text_in_low_card {
+  display: flex;
+  flex-direction: column;
+}
+.text_in_low_card h2 {
+  font-size: 1rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
