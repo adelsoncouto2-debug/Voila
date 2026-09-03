@@ -34,7 +34,6 @@ body {
   position: sticky;
   top: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  margin-left: 15px;
 }
 
 .filtros-header {
@@ -138,8 +137,6 @@ body {
 .radio-item:hover .radio-custom {
   border-color: #4a90e2;
 }
-
-/* ===== Inputs ===== */
 .input-wrapper {
   position: relative;
 }
@@ -321,8 +318,6 @@ body {
   background: #4a90e2;
   color: #fff;
 }
-
-/* ===== Responsivo ===== */
 @media (max-width: 900px) {
   .page {
     flex-direction: column;

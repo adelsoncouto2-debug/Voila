@@ -1,108 +1,293 @@
 html {
   scroll-behavior: smooth;
 }
+
 .card_main {
   box-sizing: border-box;
   background-color: hsl(34, 100%, 80%);
   height: 270px;
-
   margin: 40px auto 0 auto;
   border-radius: 21px;
-
   padding-left: 30px;
-
-  width: 1200px;
+  max-width: 1150px;
+  width: 100%;
   display: flex;
-
   align-items: center;
   justify-content: flex-start;
-
   overflow: hidden;
-
   box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
 }
 
 .card_img {
   height: 100%;
-  width: 60%;
-
+  width: 55%;
   margin-left: auto;
   flex-shrink: 0;
-
   background-image:
     linear-gradient(to right, hsl(34, 100%, 80%) 0%, transparent 80%),
     url("../img/trips/rio_de_janeiro.webp");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .card_text {
   text-align: left;
+  flex: 1;
+  padding-right: 20px;
 }
+
 .text_in_card {
   color: #172e4d;
   font-family: "Poppins", "Outfit", sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
   font-weight: bold;
   margin: 0;
   text-align: left;
   margin-left: 10px;
 }
+
 .text_in_card.except {
   color: #fc811c;
 }
 
 .low_text_in_card {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   text-align: left;
   font-family: "Poppins", "Outfit", sans-serif;
   margin-left: 15px;
   color: rgb(48, 48, 48);
 }
 .products-area {
-  width: 1200px;
-  margin-left: 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: flex-start;
-  gap: 5px;
 }
+
 .cards-container {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 30px;
   margin-top: 40px;
-  margin-right: 20px;
+  align-items: start;
 }
+
 .card {
+  box-sizing: border-box;
   background-color: white;
-  height: 250px;
-  width: 275px;
+  width: 100%;
+  min-height: 250px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding-bottom: 20px;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
 }
-.card-image {
+
+.card-image-container {
+  position: relative;
   height: 125px;
   width: 100%;
-  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.maldivas {
-  background-image: url("../img/trips/maldivas.jpeg");
+
+.discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fc811c;
+  color: white;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 0 0 10px 0;
 }
+
+.package {
+  position: absolute;
+  top: 30px;
+  left: 8px;
+  background-color: white;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
 .text_in_low_card {
   display: flex;
   flex-direction: column;
+  margin: 5px 15px 0 15px;
 }
+
 .text_in_low_card h2 {
   font-size: 1rem;
   font-family: "Poppins", "Outfit", sans-serif;
+  margin: 0;
+  color: #172e4d;
+}
+
+.text_in_low_card p {
+  font-size: 0.65rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin: 3px 0 0 0;
+  color: #333;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 10px 10px 15px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.old-price {
+  font-size: 0.55rem;
+  color: #555;
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.new-price {
+  font-size: 0.8rem;
+  color: #172e4d;
+  margin: 0;
+}
+
+.details-button {
+  background-color: white;
+  border: 1px solid #172e4d;
+  border-radius: 20px;
+  padding: 6px 18px;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  background-color: #172e4d;
+  color: white;
+}
+
+/* ===== MEDIA QUERIES (agora corretamente fechadas) ===== */
+@media (max-width: 1100px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card_main {
+    height: auto;
+    min-height: 220px;
+    flex-direction: column;
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .card_img {
+    width: 100%;
+    height: 160px;
+    margin-left: 0;
+    margin-top: 15px;
+    border-radius: 12px;
+  }
+
+  .card_text {
+    padding-right: 0;
+  }
+
+  .text_in_card,
+  .low_text_in_card {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .products-area {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card_main {
+    margin: 20px 10px 0;
+    border-radius: 16px;
+  }
+
+  .products-area {
+    padding: 0 12px;
+  }
+}
+.maldivas {
+  background-image: url("../img/trips/maldivas.jpeg");
+}
+
+.toquio {
+  background-image: url("../img/trips/toquio.webp");
+}
+.alemanha {
+  background-image: url("../img/trips/alemanha.jpeg");
+}
+.argentina {
+  background-image: url("../img/trips/argentina.jpeg");
+}
+.chile {
+  background-image: url("../img/trips/chile.jpeg");
+}
+.cuba {
+  background-image: url("../img/trips/cuba.jpeg");
+}
+.grecia {
+  background-image: url("../img/trips/grecia.webp");
+}
+.new_york {
+  background-image: url("../img/trips/new_york.jpeg");
+}
+.portugal {
+  background-image: url("../img/trips/portugal.jpeg");
+}
+.roma {
+  background-image: url("../img/trips/roma.jpeg");
+}
+.paris {
+  background-image: url("../img/trips/paris.jpeg");
+}
+.roma {
+  background-image: url("../img/trips/roma.jpeg");
+}
+.espanha {
+  background-image: url("../img/trips/espanha.jpg");
+}
+.irlanda {
+  background-image: url("../img/trips/irlanda.jpeg");
 }

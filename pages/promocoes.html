@@ -1,10 +1,15 @@
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/filters.css" />
     <link rel="stylesheet" href="../css/promocoes.css" />
+    <link rel="stylesheet" href="../css/cards.css" />
+    <link rel="stylesheet" href="../css/pagination.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,9 +17,12 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div id="header"></div>
+
     <main>
+      <!-- Banner -->
       <div class="card_main">
         <div class="card_text">
           <p class="text_in_card">
@@ -31,41 +39,16 @@
 
       <div class="products-area">
         <div id="filter"></div>
-
-        <div class="cards-container">
-          <div class="card">
-            <div class="card-image"></div>
-            <h2>Rio de Janeiro</h2>
-            <p>Pacote completo com desconto</p>
-            <span>R$ 899,90</span>
-          </div>
-
-          <div class="card">
-            <div class="card-image maldivas"></div>
-            <div class="text_in_low_card">
-              <h2>Porto Seguro</h2>
-              <p>Viaje para a Bahia</p>
-              <span>R$ 749,90</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-image"></div>
-            <h2>Gramado</h2>
-            <p>Conheça a Serra Gaúcha</p>
-            <span>R$ 999,90</span>
-          </div>
-        </div>
+        <div class="cards-container" id="cards"></div>
       </div>
+      <div class="pagination-dots" id="pagination"></div>
     </main>
+
     <div id="footer"></div>
-
-    <!--Atenção o filtro não esta funcionando como 
-    programado, a versão dele definitiva pode
-    ser vista em um localhost no filters.html-->
-
+    <script src="../js/pagination.js"></script>
     <script src="../js/filters.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/promocoes.js"></script>
   </body>
 </html>
