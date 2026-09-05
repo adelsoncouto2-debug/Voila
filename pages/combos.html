@@ -3,6 +3,10 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/cards.css" />
+    <link rel="stylesheet" href="../css/filters.css" />
+
+    <link rel="stylesheet" href="../css/pagination.css" />
     <link rel="stylesheet" href="../css/combos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,15 +30,25 @@
             e pacotes
           </div>
 
-          <button class="button_in_card">Explorar Promoções</button>
+          <button class="button_in_card">Explorar Promoções →</button>
         </div>
         <div class="box_in_card">%</div>
+        <img
+          src="../img/airplane_widget.png"
+          class="airplane_icon"
+          alt="Aviao"
+        />
         <div class="card_img"></div>
+      </div>
+      <div class="products-area">
+        <div id="filter"></div>
+        <div class="cards-container" id="cards"></div>
       </div>
     </main>
     <div id="footer"></div>
-
+    <script src="../js/filters.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/combos.js"></script>
   </body>
 </html>
