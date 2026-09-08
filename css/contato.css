@@ -1,0 +1,239 @@
+/* ==========================================
+   1. CARD PRINCIPAL (TOPO)
+   ========================================== */
+.coisa_grande_contatos {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  min-height: 350px;
+  align-items: center;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding: 40px 50px;
+  line-height: 1.2;
+  width: 1200px;
+  max-width: 95%;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  justify-content: flex-start;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.texto_principal {
+  box-sizing: border-box;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 450px;
+  display: flex;
+  align-items: relative;
+}
+
+.texto_pequeno_posicao {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.texto_coisa_grande {
+  color: #13396a;
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: bold;
+  position: relative;
+  top: -30px; 
+}
+
+.texto_pequeno {
+  color: #172e4d;
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  line-height: 1.5;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1eb855;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+.container_imagem_card {
+  height: 270px;
+  width: 320px;
+  flex-shrink: 0;
+  flex: 1;
+}
+
+.container_imagem_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   2. ESTRUTURA DA SEÇÃO INFERIOR
+   ========================================== */
+.secao-contato-inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1200px;
+  max-width: 95%;
+  margin: 40px auto;
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.coluna-formulario, 
+.canais-atendimento {
+  flex: 1;
+  max-width: 550px;
+}
+
+.secao-contato-inferior h2 {
+  color: #0d1b2a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   3. FORMULÁRIO (COLUNA ESQUERDA)
+   ========================================== */
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.linha-dupla {
+  display: flex;
+  gap: 15px;
+}
+
+.form-contato input, 
+.form-contato textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-contato input:focus, 
+.form-contato textarea:focus {
+  border-color: #fc811c;
+}
+
+.form-contato textarea {
+  resize: vertical;
+}
+
+.btn-enviar {
+  background-color: #fc811c;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 5px;
+}
+
+.btn-enviar:hover {
+  background-color: #e06d0e;
+}
+
+/* ==========================================
+   4. CARDS DE CANAIS (COLUNA DIREITA)
+   ========================================== */
+.grid-canais {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.card-canal {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.icone-canal {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icone-canal svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.icone-canal.azul { background-color: #4a7bd0; }
+.icone-canal.verde { background-color: #55c775; }
+.icone-canal.laranja { background-color: #f7a048; }
+.icone-canal.roxo { background-color: #5c41b4; }
+
+.info-canal h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+
+.info-canal .destaque {
+  margin: 3px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.info-canal .subtexto {
+  margin: 0;
+  font-size: 0.7rem;
+  color: #64748b;
+  line-height: 1.3;
+}
