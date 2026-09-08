@@ -7,8 +7,95 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
-    <body>
         <div id="header"></div>
         <script src="../js/header.js"></script>
+    <div class="coisa_grande_contatos">
+        <div class="texto_principal">
+            <div class="texto_pequeno_posicao">
+        <p class="texto_coisa_grande">
+            Nossa Equipe <span style="color:#fc811c">Voilà</span>
+        </p>
+        <p class="texto_pequeno">
+            Conheça nossa equipe de atendimento <br />
+            E nossos funcionários para melhorarmos
+        </p>
+            </div>
+        </div>
+        <div class="container_imagem_card">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Nossa Equipe">
+        </div>
+    </div>
+    <div class="secao-contato-inferior">
+
+    <!-- LADO ESQUERDO: Formulário Estilizado -->
+    <div class="coluna-formulario">
+        <h2>Envie sua mensagem</h2>
+        <form class="form-contato">
+            <div class="linha-dupla">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="E-mail" required>
+            </div>
+            <input type="text" placeholder="Assunto" required>
+            <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- LADO DIREITO: Canais de Atendimento Completo -->
+    <section class="canais-atendimento">
+        <h2>Outros Canais de Atendimento</h2>
+        
+        <div class="grid-canais">
+            <!-- Telefone -->
+            <div class="card-canal">
+                <div class="icone-canal azul">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </div>
+                <div class="info-canal">
+                    <h3>Telefone</h3>
+                    <p class="destaque">(34) 99765-2830</p>
+                    <p class="subtexto">De segunda a sexta das 8h às 18h  Sábado das 8h às 12h</p>
+                </div>
+            </div>
+
+            <!-- Whatsapp -->
+            <div class="card-canal">
+                <div class="icone-canal verde">
+                    <svg viewBox="0 0 24 24"><path d="M16.75 13.96c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.65.81-.8 1-.15.19-.29.21-.54.08-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.11-.23-.18-.48-.31zM12 2a10 10 0 0 0-10 10c0 1.77.46 3.45 1.32 4.92L2 22l5.25-1.38A9.94 9.94 0 0 0 12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+                </div>
+                <div class="info-canal">
+                    <h3>Whatsapp</h3>
+                    <p class="destaque">(34) 9765-2830</p>
+                    <p class="subtexto">Atendimento rápido e personalizado</p>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="card-canal">
+                <div class="icone-canal laranja">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div class="info-canal">
+                    <h3>E-mail</h3>
+                    <p class="destaque">contato@voila.com</p>
+                    <p class="subtexto">Respondemos o mais rápido possível</p>
+                </div>
+            </div>
+
+            <!-- Endereço -->
+            <div class="card-canal">
+                <div class="icone-canal roxo">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="info-canal">
+                    <h3>Endereço</h3>
+                    <p class="destaque">R. do Policial, 171</p>
+                    <p class="subtexto">Uberlândia, MG<br>38401-144</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
     </body>
 </html>
