@@ -17,8 +17,9 @@
 }
 
 .logo_vai_img {
-  height: 60px; 
-  margin-bottom: 15px;
+  height: 180px; 
+  margin-bottom: 60px;
+  width: auto;
 }
 
 .cabecalho_vai h2 {
