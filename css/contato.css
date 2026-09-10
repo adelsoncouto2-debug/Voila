@@ -1,0 +1,268 @@
+body {
+  background-color: #f5f7fa;
+}
+.card_main {
+  box-sizing: border-box;
+  background-color: #ffe2bb;
+  height: 270px;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding-left: 30px;
+  max-width: 1150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card_img {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.card_img img:nth-child(1) {
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+.card_img img:nth-child(2) {
+  width: 47%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.card_text {
+  text-align: left;
+  flex: 1;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text_in_card {
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.text_in_card.except {
+  color: #fc811c;
+}
+.text_under_card {
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: black;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+.low_text_in_card {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  text-align: left;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+}
+.main-area {
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  padding: 0 30px;
+  padding-top: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.forms {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.forms form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.style_forms {
+  box-sizing: border-box;
+  max-width: 250px;
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #172e4d;
+  border-radius: 6px;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.95rem;
+  color: #172e4d;
+  background: #fff;
+}
+
+.form-row .style_forms {
+  flex: 1 1 200px;
+  max-width: none;
+}
+
+.style_forms.full {
+  max-width: none;
+  width: 100%;
+}
+
+.message {
+  box-sizing: border-box;
+  width: 100%;
+  height: 120px;
+  padding: 12px 14px;
+  border: 1px solid #172e4d;
+  border-radius: 6px;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.95rem;
+  color: #172e4d;
+  resize: none;
+}
+
+.submit_button {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 6px;
+  background: #fc811c;
+  color: #fff;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .form-row .style_forms {
+    max-width: 100%;
+  }
+}
+.channels_area {
+  margin-left: 35px;
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+.channels_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.channels_cards {
+  max-width: 275px;
+  width: 100%;
+  height: 140px;
+  border: 2px solid rgb(226, 226, 226);
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+}
+
+.card_icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_icon img,
+.card_icon svg {
+  width: 45px;
+  height: 45px;
+}
+
+.card_icon.phone {
+  background-color: #91b5fa;
+}
+.card_icon.whatsapp {
+  background-color: #88d49e;
+}
+.card_icon.email {
+  background-color: #f7ca88;
+}
+.card_icon.address {
+  background-color: #5d50c6;
+}
+
+.card_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.card_info h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.card_info .main_detail {
+  margin: 2px 0 4px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.card_info .sub_detail {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #777777;
+  line-height: 1.2;
+}
+@media (max-width: 600px) {
+  .channels_area {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .channels_row {
+    flex-direction: column;
+  }
+
+  .channels_cards {
+    max-width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+}

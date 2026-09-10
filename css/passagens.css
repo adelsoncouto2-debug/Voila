@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f5f7fa;
+}
+
+main {
+	width: 100%;
+}
+
+.products-area {
+    width: 1200px;
+    max-width: calc(100% - 40px);
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 300px minmax(0,1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+#filter {
+    width: 350px;
+    min-width: 0;
+}
+
+.passagens-container {
+	width: 90%;
+	min-width: 0;
+    margin-top: 4.5%;
+    margin-left: 10%;
+}
+
+.display-format {
+	width: 100%;
+	height: 55px;
+	display: flex;
+	background-color: white;
+	border: 1px solid #d8dbdd;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.format-button {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	border: none;
+	background-color: white;
+	font-family: "Open Sans",sans-serif;
+	font-size: 18px;
+	color: #111;
+	cursor: pointer;
+}
+
+.format-button:first-child {
+	border-right: 1px solid #999;
+}
+.format-button.active::after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #ff6200;
+}
