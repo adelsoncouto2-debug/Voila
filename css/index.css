@@ -1,24 +1,25 @@
+/* ========== CORREÇÕES DE ALINHAMENTO (Home) ========== */
+
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-}
-/*.page{
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}*/
-
-body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f5f7fa;
 }
+
 main {
   flex: 1;
+  /* Remove as margens enormes e centraliza */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; /* respiro nas laterais */
+  box-sizing: border-box;
 }
+
+/* ===== CAROUSEL PRINCIPAL ===== */
 .carousel_main {
   box-sizing: border-box;
   background-color: hsl(34, 100%, 80%);
@@ -28,7 +29,8 @@ main {
   border-radius: 21px;
   padding: 0 30px;
   line-height: 1.2;
-  width: 1200px;
+  width: 100%; /* agora ocupa o espaço do main */
+  max-width: 1200px;
   display: flex;
   gap: 30px;
   overflow: hidden;
@@ -98,6 +100,7 @@ main {
   scrollbar-width: none;
   scroll-behavior: smooth;
 }
+
 .viewport_cards {
   flex-grow: 1;
   height: 100%;
@@ -176,52 +179,40 @@ main {
   background: #e86d0d;
 }
 
-.airplane {
-  background-image: url("../img/airplane_sunset.jpeg");
-}
-
-.beach {
-  background-image: url("../img/beach.jpg");
-}
-
-.resorts {
-  background-image: url("../img/beach_sunset.jpg");
-}
-
-.experiences {
-  background-image: url("../img/experiencias.jpg");
-}
-.hotels {
-  background-image: url("../img/hotels.jpg");
-}
-.text_in_card {
-  margin-top: 30px;
-  font-size: 1.5rem;
-}
-
-/* Here starts the part that isn't integrated with carousel*/
+/* ===== OFERTAS E DESTINOS ===== */
 .viewport_trips {
   overflow: hidden;
   flex-grow: 1;
+  position: relative; /* importante para os botões */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .text_on_top_cards {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  margin-left: 80px;
+  margin-left: 0; /* remove o 80px que empurrava */
   margin-top: 40px;
+  margin-bottom: 25px;
   font-weight: bold;
+  text-align: left;
 }
+
 .trips_container {
   display: flex;
   flex-wrap: nowrap;
-  gap: 60px;
-  width: 1200px;
+  gap: 30px; /* reduzido de 60px */
+  width: 100%;
+  max-width: 1100px; /* um pouco menor para caber bem */
   margin: 0 auto;
   justify-content: center;
   position: relative;
   transition: transform 0.5s ease;
+  padding: 0 60px; /* espaço para as setas não colarem */
+  box-sizing: border-box;
 }
+
 .cards_trips {
   display: flex;
   align-items: center;
@@ -236,32 +227,32 @@ main {
   border-radius: 16px;
   overflow: hidden;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
+
 .card_trips_info {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
   gap: 15px;
   height: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-
+  padding: 25px 20px;
   flex-grow: 1;
 }
+
 .cards_trips p {
   font-size: 0.8rem;
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
+
 .cards_trips h3 {
   font-size: 0.8rem;
   margin: 0;
   font-family: "Poppins", "Outfit", sans-serif;
   white-space: normal;
 }
+
 .cards_trips_images {
   width: 130px;
   border-radius: 16px;
@@ -293,40 +284,64 @@ main {
   cursor: pointer;
   border-radius: 16px;
 }
+
 .cards_trips .buttom_in_trip_card:hover {
   background: #172e4d;
   color: white;
 }
-.circle_button_left {
-  border-color: #172e4d;
-  border-radius: 100%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+
+/* ===== BOTÕES DE NAVEGAÇÃO (corrigidos) ===== */
+.circle_button_left,
 .circle_button_right {
-  border-color: #172e4d;
+  border: 2px solid #172e4d;
+  background: white;
   border-radius: 100%;
-  height: 50px;
-  width: 50px;
-  font-size: 1.5rem;
+  height: 48px;
+  width: 48px;
+  font-size: 1.4rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 0;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
+  transition: 0.2s ease;
+  color: #172e4d;
 }
+
+.circle_button_left:hover,
+.circle_button_right:hover {
+  background: #172e4d;
+  color: white;
+}
+
+.circle_button_left {
+  left: 5px;
+}
+
+.circle_button_right {
+  right: 5px;
+}
+
+/* Imagens (mantidas) */
+.airplane {
+  background-image: url("../img/airplane_sunset.jpeg");
+}
+.beach {
+  background-image: url("../img/beach.jpg");
+}
+.resorts {
+  background-image: url("../img/beach_sunset.jpg");
+}
+.experiences {
+  background-image: url("../img/experiencias.jpg");
+}
+.hotels {
+  background-image: url("../img/hotels.jpg");
+}
+
 .maldivas {
   background-image: url("../img/trips/maldivas.jpeg");
 }
@@ -357,4 +372,9 @@ main {
 }
 .empire_state {
   background-image: url("../img/trips/empire_state.jpeg");
+}
+
+.text_in_card {
+  margin-top: 30px;
+  font-size: 1.5rem;
 }

@@ -1,11 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .header {
   height: 8vh;
-  background: white;
+  min-height: 70px;
+  background: #f5f7fa;
 
+  width: calc(100% - 232px);
+  max-width: 1300px;
+  min-width: 0;
+
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 2%;
 }
 .header-left {
@@ -16,11 +34,11 @@
   flex: 1;
 }
 .header-logo {
-  height: 170%;
+  height: 125%;
 }
 .header-text {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
 }
 .vai-logo {
@@ -92,6 +110,7 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-left: 25px;
 }
 .login-text {
   font-family: "Open Sans";
@@ -314,4 +333,60 @@ a {
 }
 .login-button:hover {
   background: #17254b;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 1400px) {
+  .header {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .header {
+    width: calc(100% - 40px);
+  }
+
+  .header-text {
+    gap: 18px;
+  }
+
+  .text,
+  .text-selected {
+    font-size: 17px;
+  }
+
+  .login {
+    width: 200px;
+  }
+
+  .login-text {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    width: calc(100% - 30px);
+  }
+
+  .header-text {
+    gap: 12px;
+  }
+
+  .text,
+  .text-selected {
+    font-size: 15px;
+  }
+
+  .login {
+    width: 170px;
+  }
+
+  .login-text {
+    font-size: 15px;
+  }
 }
