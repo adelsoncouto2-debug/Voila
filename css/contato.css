@@ -1,37 +1,31 @@
-/* ==========================================
-   1. CARD PRINCIPAL (TOPO)
-   ========================================== */
+
 .coisa_grande_contatos {
+  position: relative; 
   box-sizing: border-box;
   background-color: hsl(34, 100%, 80%);
-  min-height: 350px;
-  align-items: center;
+  min-height: 250px;
   margin: 40px auto 0 auto;
   border-radius: 21px;
   padding: 40px 50px;
-  line-height: 1.2;
   width: 1200px;
   max-width: 95%;
   display: flex;
-  gap: 30px;
-  overflow: hidden;
-  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden; 
   box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
 }
 
+
 .texto_principal {
-  box-sizing: border-box;
-  width: 100%;
-  flex-shrink: 0;
-  max-width: 450px;
-  display: flex;
-  align-items: relative;
+  position: relative;
+  z-index: 2; 
+  max-width: 480px;
 }
 
 .texto_pequeno_posicao {
   display: flex;
-  gap: 20px;
   flex-direction: column;
+  gap: 12px;
   align-items: flex-start;
 }
 
@@ -40,9 +34,8 @@
   margin: 0;
   font-size: 2.5rem;
   font-family: "Poppins", "Outfit", sans-serif;
-  font-weight: bold;
-  position: relative;
-  top: -30px; 
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .texto_pequeno {
@@ -53,52 +46,30 @@
   line-height: 1.5;
 }
 
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  width: fit-content;
-  margin-top: 10px;
-}
-
-.btn-whatsapp:hover {
-  background-color: #1eb855;
-  transform: translateY(-2px);
-}
-
-.btn-whatsapp:active {
-  transform: translateY(0);
-}
 
 .container_imagem_card {
-  height: 270px;
-  width: 320px;
-  flex-shrink: 0;
-  flex: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%; 
+  height: 100%;
+  z-index: 1;
 }
+
 
 .container_imagem_card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-position: center; 
+  border-radius: 0; 
+
+ 
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+  mask-image: linear-gradient(to right, transparent 0%, black 45%);
 }
 
-/* ==========================================
-   2. ESTRUTURA DA SEÇÃO INFERIOR
-   ========================================== */
 .secao-contato-inferior {
   display: flex;
   justify-content: space-between;
@@ -123,9 +94,6 @@
   margin-bottom: 20px;
 }
 
-/* ==========================================
-   3. FORMULÁRIO (COLUNA ESQUERDA)
-   ========================================== */
 .form-contato {
   display: flex;
   flex-direction: column;
@@ -176,9 +144,6 @@
   background-color: #e06d0e;
 }
 
-/* ==========================================
-   4. CARDS DE CANAIS (COLUNA DIREITA)
-   ========================================== */
 .grid-canais {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
