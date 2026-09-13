@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "nome": "Maldivas",
+    "imagemPrincipal": "../img/trips/maldivas2.jpeg",
+    "desconto": "60%",
+    "tag": "Mais recomendado",
+    "avaliacao": 4.9,
+    "totalAvaliacoes": 1258,
+    "precoAntigo": "R$12.990",
+    "precoNovo": "R$ 7.990",
+    "parcelas": "ou 12x de R$649,00",
+    "economia": "Economize R$5200",
+    "sobre": "As ilhas Maldivas são um verdadeiro paraíso tropical com mais de 1000 ilhas espalhadas pelo Oceano Índico. Conhecidas por suas praias de areia branca, águas cristalinas em tons de azul turquesa e resorts exclusivos as águas. As Maldivas oferecem uma experiência única de luxo, tranquilidade e contato com a natureza. Perfeito para curtir uma lua de mel, viagens românticas ou para quem só quer curtir boas experiências.",
+    "galeria": [
+      "../img/trips/maldivas.jpeg",
+      "../img/trips/maldivas2.jpeg",
+      "../img/trips/maldivas.jpeg"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "7 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "22/05/2026",
+    "dataVolta": "22/05/2026"
+  },
+  {
+    "id": 2,
+    "nome": "Toquio",
+    "imagemPrincipal": "../img/trips/toquio.webp",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Tóquio é uma metrópole onde tradição e futuro convivem lado a lado. Templos milenares dividem espaço com arranha-céus futuristas, e a gastronomia é reconhecida mundialmente. Uma experiência única entre cultura, tecnologia e sabores inesquecíveis.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFbbI4czfPlAglgIqTkrvmt2zFXammcYkTPttMYfogA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNw9QdO-r2yTpkBKBJFYxtOWCGGgX_LNk9560-uv6pA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRJHfkK5BcMQzYCDqK_iLOS2yREp0aHqD5qbah5RzvZw&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 3,
+    "nome": "Berlim",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22paag3lfqEg_CWcf_TrVPLHAu0jmBu8h-ONObwwmog&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Berlim é uma das capitais mais fascinantes da Europa, unindo marcos históricos com uma das cenas artísticas e musicais mais inovadoras do mundo. Visite o icônico Portão de Brandemburgo, os murais preservados do Muro de Berlim na East Side Gallery, a Ilha dos Museus e os vibrantes cafés do bairro Mitte.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFjhdcvpgNqixCbnxW8rxyv69vJ53tngcvnFTRSVatbg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGSYP6rR6UBoykGPM7LfXYQGrDcsFJPvIibepO0kRrJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA0vo5IRqCwYhvwiJRxCopI1uQZl35QtH6bDuOcNb5vQ&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 4,
+    "nome": "Grécia",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGJsiDj6LslJ_EtymOMLrFGWCZHslMxovXOFFOHxfsA&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "A Grécia convida a uma jornada mágica entre a grandiosidade da antiguidade clássica e praias paradisíacas. Explore a majestosa Acrópole de Atenas, encante-se com as casinhas caiadas de branco e cúpulas azuis em Santorini, e testemunhe um dos pores do sol mais aclamados do planeta sobre o Mar Egeu.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWBvPHrYpR4uddxsNcmrft0XvEPYt0heOg1Ah_ek1NA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScDq4xOQUO4WHJQ6f7kPm6-hFn0zulaqVDAw7rxu4YEw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJUYxTMJuIxd0zTSO4xO2wWtgUTn-BtXB-I3XxImiLPw&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 5,
+    "nome": "Porto",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMS4o9IYvv3jHEwt3ennXHL6-IEeZsEAa-UOIv4KSvQ&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Banhada pelo belo Rio Douro, a cidade do Porto fascina por seus azulejos típicos, ladeiras históricas, a imponente Ponte Dom Luís I e as renomadas caves de Vinho do Porto em Vila Nova de Gaia. Desfrute da inigualável hospitalidade lusitana, pratos de bacalhau e da mágica Livraria Lello.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1ptyTYcVPInL2JYt1qht_QuLpjq_glqQ2uxCbt-4xrg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJFf5L2zM4KKg0xKF7S5peRRvt_RtlKzwlPMskvcqmA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDtQuJHkt2TYWtLlHzwDix7kmZJUHA40IrwTlvI6QzXA&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 6,
+    "nome": "Nova York",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoB4pRG4F4crx4PXqHis15NbF5wueomfMFIGnuK_n1oA&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "A cidade que nunca dorme vibra com energia incessante. Do alto do Empire State Building e do Summit One Vanderbilt às luzes radiantes da Times Square e caminhadas pelo Central Park. Descubra musicais premiados na Broadway, museus como o MoMA e MET, e bairros descolados como Soho e Brooklyn.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbb5qiaoBB_wnVynSj_NHW_ayloYD9T-SBnXTN0AjMUg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkgdB-cfWRABrC4pF9p1ztsk_Kk5FwN1Qqff5eSRkESw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnz4fpKxNIAlvSEl5IwOg0d7-ITvo6gDVqG7cPi7-Nlw&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 7,
+    "nome": "Havana",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRimk9sDkw3ZTJohr67R5b71OuKq0ZR50c_iiOW_PqHvg&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Havana é uma viagem no tempo irresistível. Prédios coloniais em tons pastéis na Habana Vieja, música ao vivo em cada esquina com os ritmos da salsa e son cubano, e os famosos carros americanos conversíveis dos anos 1950. Percorra o icônico Malecón à beira-mar e sinta a alma calorosa de Cuba.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRmCOiLR0Gh50ZMN53bjeSmj5rEpwX3ZBZKR1GUhzaOQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJU90p3YEIO9G0j083m_Knzr97Ihbm3-Y2OlKA9JhugQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIzhSaJ4dNoNsbrkwPYUPTSrAtUZB7TYxC7ZER1pHxA&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 8,
+    "nome": "Buenos Aires",
+    "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc5MEnCahsjBncJyCVn7pUW-y7aqlEzhZfhrVbsCUU-A&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "A capital argentina mescla a elegância dos bulevares europeus com a paixão latina. Aprecie os melhores cortes de carne em tradicionais parrillas em Palermo, assista a um espetáculo de tango no Café de los Angelitos, encante-se com as cores do Caminito e passeie pela modernidade de Puerto Madero.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCOg5GlHuj3tbbvoBi15jXex2wjYV0l6_uBAZpCzIRfA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1nmB1s0yMZBF9Ns-GSFAfnMlKhmY5g26xEFisSf1bLg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviAcbpmt74G1259vYTX8dREU470sSt79DBjfEbmhW_A&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 9,
+    "nome": "Dublin",
+    "imagemPrincipal": " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSAXuWoA0DBWw0CLaij6jb_oWJHlBTrQlG6O5omdlVjQ&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Dublin é uma capital calorosa, amigável e cheia de histórias para contar. Sinta a alegria do bairro Temple Bar com música folclórica ao vivo, visite a lendária Guinness Storehouse com vista panorâmica da cidade, conheça a centenária biblioteca de Trinity College e explore castelos medievais de contos de fadas.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQi5KQ4tJRuZceMQZ23cV2iipJ5lzWHfj_QExgMFcEFw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8lWyCu6rR14p_2z9CUOgm7JJL_jE1Mza7odXmd8EyTQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7CPfQApOOo7hJbEyrYCwzCabV7AduM8VKuW7dmiDJg&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 10,
+    "nome": "Madrid",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1cHiog4jnaZWrPPrKU4LYcvNqA6EXBrDH8Zlq-EWZg&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Madri é uma cidade cheia de luz, alegria e elegância real. Admire obras-primas no Triângulo da Arte (Museu do Prado e Reina Sofía), relaxe no Parque do Retiro passeando de barco a remo, descubra o Mercado de San Miguel com deliciosas tapas e maravilhe-se com o imponente Palácio Real espanhol.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpBcpP3Cfz0k5QGP7U_rOyngobPyoan2WkLky5W2qvVQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFLx-51xy41I-mLxMgxAI2OJtweWqvVgEA1_3sjrcYWw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxekudzdfKbFhPTogx95rB-aSbf8WBIJteXbPSuuIumA&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 11,
+    "nome": "Santiago",
+    "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJgj1fBZbSRwNkw4DE6omL4Hsz41dy7mLLIWQKQ-w3nQ&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Cercada pelas imponentes montanhas nevadas da Cordilheira dos Andes, a capital chilena é moderna, arborizada e charmosa. Faça passeios até o mirante do Sky Costanera, viva experiências inesquecíveis de degustação em vinhedos tradicionais como Concha y Toro e explore as belezas naturais do Cajón del Maipo.",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqeyIeWYunHPE0gjNu0S-oVzWWwR1JZMRbZN9B1FnUA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNoeisqk7xJiVD38oTbvZQASrLLd2Cz49r4WSmUVPwnw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTbqSUwxYk4cL1b35wbFIJIJqFskq5z29Jtq8fADxqdg&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  },
+  {
+    "id": 12,
+    "nome": "Paris",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi4PIx9zv8Xg0Buv77deSr57IQrgHk7YLOLaH7CNqJWQ&s=10",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 890,
+    "precoAntigo": "R$1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "Paris dispensa apresentações: a Cidade Luz é referência em arte, arquitetura, romance e culinária. Maravilhe-se com a Torre Eiffel ao entardecer, contemple relíquias mundiais no Museu do Louvre, caminhe pelas ladeiras históricas de Montmartre até a Basílica de Sacré-Cœur e sinta a poesia de um cruzeiro no Rio Sena",
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWKtA2L3Oug5F5Y5c8qGVfikCiwPSwbp4ynWBy1sv8Jg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRId1Miz8vgXR1SM5E78qPahLMZl1oZGIyQJ-591ih-zQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6SZoQvokxyKeDgpPl8Tj5dpGaSf08UCp_NjHNUQ37OA&s=10"
+    ],
+    "inclui": [
+      "Passagens áreas de ida e volta",
+      "5 noites de hospedagem",
+      "City tour incluso",
+      "Seguro viagem"
+    ],
+    "dataIda": "10/06/2026",
+    "dataVolta": "17/06/2026"
+  }
+]

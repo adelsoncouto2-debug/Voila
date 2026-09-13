@@ -8,15 +8,21 @@ main {
   width: 100%;
 }
 .conteiner {
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  margin: 10px auto 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  gap: 30px;
 }
 .left-column {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-left: 170px;
+  min-width: 0;
 }
 .card_main {
   box-sizing: border-box;
@@ -69,12 +75,12 @@ main {
   margin: 40px 0 0 0;
   max-width: 300px;
   width: 100%;
-  background-color: #e9e9e9; /* era hsl(34, 100%, 80%) - laranja */
-  height: auto; /* era 640px fixo - com auto o conteúdo não corta nem sobra vazio */
+  background-color: #e9e9e9;
+  height: auto;
   min-height: 640px;
   border-radius: 21px;
-  padding: 20px 15px; /* era só padding-left: 10px */
-  box-sizing: border-box; /* necessário pro padding não estourar o max-width */
+  padding: 20px 15px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,7 +134,7 @@ main {
   font-size: 3rem;
   color: white;
   position: absolute;
-  bottom: 50px;
+  bottom: 20px;
   left: 20px;
   z-index: 2;
 
@@ -137,6 +143,15 @@ main {
 .maldivas {
   background-image: url("../img/trips/maldivas2.jpeg");
   opacity: 0.6;
+}
+.maldivas-1 {
+  background-image: url("https://res.cloudinary.com/kangarootours/image/upload/prod/cover/anantara-kihavah-villas-kihavah-spa-e-sea-fire-spice-sky-1.jpg");
+}
+.maldivas-2 {
+  background-image: url("../img/trips/maldivas.jpeg");
+}
+.maldivas-3 {
+  background-image: url("https://forbes.com.br/wp-content/uploads/2020/08/ForbesLife-Maldivas-200820-Reprodu%C3%A7%C3%A3oForbes4-1.jpg");
 }
 .rating {
   display: flex;

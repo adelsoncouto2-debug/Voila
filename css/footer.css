@@ -70,7 +70,6 @@
   cursor: pointer;
 }
 
-/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
   .footer {
     flex-direction: column;

@@ -1,5 +1,6 @@
 const promocoes = [
   {
+    id: 1,
     titulo: "Maldivas",
     descricao: "Pacote 7 noites - All Inclusive",
     precoAntigo: "R$ 23.000",
@@ -9,6 +10,8 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 2,
+
     titulo: "Toquio",
     descricao: "Pacote completo com desconto",
     precoAntigo: "R$ 1.800",
@@ -18,6 +21,8 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 3,
+
     titulo: "Berlim",
     descricao: "Viaje para a Alemanha",
     precoAntigo: "R$ 1.499",
@@ -27,6 +32,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 4,
     titulo: "Grécia",
     descricao: "Conheça o berço da filosofia",
     precoAntigo: "R$ 1.999",
@@ -36,6 +42,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 5,
     titulo: "Porto",
     descricao: "Conheça a terra do bacalhau",
     precoAntigo: "R$ 1.999",
@@ -45,6 +52,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 6,
     titulo: "Nova York",
     descricao: "Conheça a capital do mundo",
     precoAntigo: "R$ 1.999",
@@ -54,6 +62,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 7,
     titulo: "Havana",
     descricao: "Conheça uma das ilhas mais famosas do mundo",
     precoAntigo: "R$ 1.999",
@@ -63,6 +72,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 8,
     titulo: "Buenos Aires",
     descricao: "Experimente o melhor churrasco do mundo",
     precoAntigo: "R$ 1.999",
@@ -72,6 +82,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 9,
     titulo: "Dublin",
     descricao: "Experimente o melhor churrasco do mundo",
     precoAntigo: "R$ 1.999",
@@ -81,6 +92,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 10,
     titulo: "Madri",
     descricao: "Experimente o melhor churrasco do mundo",
     precoAntigo: "R$ 1.999",
@@ -90,6 +102,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 11,
     titulo: "Santiago",
     descricao: "Experimente o melhor churrasco do mundo",
     precoAntigo: "R$ 1.999",
@@ -99,6 +112,7 @@ const promocoes = [
     tipo: "Pacote",
   },
   {
+    id: 12,
     titulo: "Paris",
     descricao: "Experimente o melhor churrasco do mundo",
     precoAntigo: "R$ 1.999",
@@ -127,7 +141,7 @@ function criarCard(promo) {
           <p class="old-price">${promo.precoAntigo}</p>
           <p class="new-price">${promo.precoNovo}</p>
         </div>
-        <button class="details-button">Ver detalhes</button>
+        <button class="details-button" data-id="${promo.id}">Ver detalhes</button>
       </div>
     </div>
   `;
@@ -143,5 +157,19 @@ function renderizarCards() {
 
   container.innerHTML = promocoes.map(criarCard).join("");
 }
+function configurarCliqueDetalhes() {
+  const container = document.getElementById("cards");
 
-document.addEventListener("DOMContentLoaded", renderizarCards);
+  container.addEventListener("click", (evento) => {
+    const botao = evento.target.closest(".details-button");
+    if (!botao) return;
+
+    const id = botao.getAttribute("data-id");
+    window.location.href = `../components/details.html?id=${id}`;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderizarCards();
+  configurarCliqueDetalhes();
+});
