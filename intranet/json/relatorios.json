@@ -1,0 +1,321 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Maria Silva",
+    "role": "Agente de viagens"
+  },
+  "months": [
+    {
+      "month": "2026-01",
+      "clientsServed": 142,
+      "clientsMissed": 18,
+      "avgRating": 4.43,
+      "ratingsCount": 96,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 3,
+        "3": 8,
+        "4": 26,
+        "5": 58
+      },
+      "bookings": 38,
+      "revenue": 84500,
+      "avgResponseMinutes": 14,
+      "topDestinations": [
+        {
+          "name": "Paris",
+          "bookings": 11
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 8
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 7
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 5
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 4
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "clientsServed": 131,
+      "clientsMissed": 22,
+      "avgRating": 4.31,
+      "ratingsCount": 94,
+      "ratingDistribution": {
+        "1": 2,
+        "2": 4,
+        "3": 9,
+        "4": 27,
+        "5": 52
+      },
+      "bookings": 34,
+      "revenue": 76200,
+      "avgResponseMinutes": 15,
+      "topDestinations": [
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 10
+        },
+        {
+          "name": "Paris",
+          "bookings": 8
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 6
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 5
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 3
+        }
+      ]
+    },
+    {
+      "month": "2026-03",
+      "clientsServed": 156,
+      "clientsMissed": 15,
+      "avgRating": 4.49,
+      "ratingsCount": 106,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 2,
+        "3": 7,
+        "4": 30,
+        "5": 66
+      },
+      "bookings": 44,
+      "revenue": 98300,
+      "avgResponseMinutes": 12,
+      "topDestinations": [
+        {
+          "name": "Paris",
+          "bookings": 13
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 10
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 8
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 7
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 4
+        }
+      ]
+    },
+    {
+      "month": "2026-04",
+      "clientsServed": 149,
+      "clientsMissed": 17,
+      "avgRating": 4.43,
+      "ratingsCount": 102,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 3,
+        "3": 8,
+        "4": 29,
+        "5": 61
+      },
+      "bookings": 41,
+      "revenue": 91800,
+      "avgResponseMinutes": 12,
+      "topDestinations": [
+        {
+          "name": "Tóquio",
+          "bookings": 12
+        },
+        {
+          "name": "Paris",
+          "bookings": 10
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 7
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 6
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 5
+        }
+      ]
+    },
+    {
+      "month": "2026-05",
+      "clientsServed": 168,
+      "clientsMissed": 14,
+      "avgRating": 4.54,
+      "ratingsCount": 114,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 2,
+        "3": 6,
+        "4": 31,
+        "5": 74
+      },
+      "bookings": 49,
+      "revenue": 112400,
+      "avgResponseMinutes": 11,
+      "topDestinations": [
+        {
+          "name": "Paris",
+          "bookings": 14
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 11
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 9
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 8
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 5
+        }
+      ]
+    },
+    {
+      "month": "2026-06",
+      "clientsServed": 175,
+      "clientsMissed": 12,
+      "avgRating": 4.6,
+      "ratingsCount": 119,
+      "ratingDistribution": {
+        "1": 0,
+        "2": 2,
+        "3": 6,
+        "4": 30,
+        "5": 81
+      },
+      "bookings": 53,
+      "revenue": 120450,
+      "avgResponseMinutes": 10,
+      "topDestinations": [
+        {
+          "name": "Maldivas",
+          "bookings": 15
+        },
+        {
+          "name": "Paris",
+          "bookings": 13
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 10
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 9
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 6
+        }
+      ]
+    },
+    {
+      "month": "2026-07",
+      "clientsServed": 190,
+      "clientsMissed": 16,
+      "avgRating": 4.54,
+      "ratingsCount": 133,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 3,
+        "3": 7,
+        "4": 34,
+        "5": 88
+      },
+      "bookings": 58,
+      "revenue": 138900,
+      "avgResponseMinutes": 11,
+      "topDestinations": [
+        {
+          "name": "Paris",
+          "bookings": 16
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 14
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 11
+        },
+        {
+          "name": "Tóquio",
+          "bookings": 10
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 7
+        }
+      ]
+    },
+    {
+      "month": "2026-08",
+      "clientsServed": 171,
+      "clientsMissed": 13,
+      "avgRating": 4.56,
+      "ratingsCount": 120,
+      "ratingDistribution": {
+        "1": 1,
+        "2": 2,
+        "3": 5,
+        "4": 33,
+        "5": 79
+      },
+      "bookings": 50,
+      "revenue": 119300,
+      "avgResponseMinutes": 10,
+      "topDestinations": [
+        {
+          "name": "Tóquio",
+          "bookings": 14
+        },
+        {
+          "name": "Paris",
+          "bookings": 12
+        },
+        {
+          "name": "Maldivas",
+          "bookings": 9
+        },
+        {
+          "name": "Rio de Janeiro",
+          "bookings": 8
+        },
+        {
+          "name": "Lisboa",
+          "bookings": 7
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,110 @@
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/header.css">
-        <link rel="stylesheet" href="../css/contato.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="header"></div>
-        <script src="../js/header.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/contato.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main>
+      <div class="card_main">
+        <div class="card_text">
+          <div class="text_in_card">
+            Viaje melhor com<br />
+            <span class="text_in_card except" style="margin: 0"
+              >nossa equipe</span
+            >
+          </div>
+
+          <div class="low_text_in_card">
+            Estamos aqui para te ajudar a transformar sua<br />
+            experiência de viagem na melhor
+          </div>
+        </div>
+        <div class="card_img">
+          <img src="../img/woman_in_card.png" alt="Mulher viajando" />
+          <img src="../img/man_in_card.png" alt="Mulher viajando" />
+        </div>
+      </div>
+      <div class="main-area">
+        <div class="forms">
+          <p class="text_under_card">Enviei sua Mensagem</p>
+
+          <form method="POST">
+            <div class="form-row">
+              <input
+                type="text"
+                class="style_forms"
+                placeholder="Nome"
+                oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '')"
+              />
+              <input type="email" class="style_forms" placeholder="E-mail" />
+            </div>
+
+            <input type="text" class="style_forms full" placeholder="Assunto" />
+
+            <textarea class="message" placeholder="Sua mensagem"></textarea>
+
+            <button type="submit" class="submit_button">Enviar Mensagem</button>
+          </form>
+        </div>
+        <div class="channels_area">
+          <p class="text_under_card">Outros Canais de Atendimento</p>
+          <div class="channels_row">
+            <div class="channels_cards">
+              <div class="card_icon phone"></div>
+              <div class="card_info">
+                <h3>Telefone</h3>
+                <p class="main_detail">(34) 99765-2830</p>
+                <p class="sub_detail">
+                  De segunda a sexta: 8 ás 18<br />Sábado: 8 a 12h
+                </p>
+              </div>
+            </div>
+            <div class="channels_cards">
+              <div class="card_icon whatsapp"></div>
+              <div class="card_info">
+                <h3>Whatssap</h3>
+                <p class="main_detail">(34) 9765-2830</p>
+                <p class="sub_detail">
+                  De segunda a sexta: 8 ás 18<br />Sábado: 8 a 12h
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="channels_row">
+            <div class="channels_cards">
+              <div class="card_icon email"></div>
+              <div class="card_info">
+                <h3>Email</h3>
+                <p class="main_detail">contato@voila.com</p>
+                <p class="sub_detail">
+                  De segunda a sexta: 8 ás 18<br />Sábado: 8 a 12h
+                </p>
+              </div>
+            </div>
+            <div class="channels_cards">
+              <div class="card_icon address"></div>
+              <div class="card_info">
+                <h3>Endereço</h3>
+                <p class="main_detail">R. do Policial, 171</p>
+                <p class="sub_detail">Uberlândia, MG <br />38408-144</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
 </html>

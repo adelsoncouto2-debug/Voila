@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/details.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <div class="conteiner">
+        <div class="left-column">
+          <div class="card_main">
+            <div class="card-image maldivas" id="imagem-principal"></div>
+            <span class="discount" id="desconto">60%</span>
+            <div class="package" id="tag">Mais recomendado</div>
+            <div class="heart">
+              <a>
+                <img class="heart-img" src="../img/heart.png" />
+              </a>
+            </div>
+            <div class="text_in_image" id="nome-destino">Maldivas</div>
+          </div>
+
+          <div class="tabs-bar">
+            <div class="tab-item active">
+              <img class="tab-icon" src="../img/book.png" />
+              Visão Geral
+            </div>
+            <div class="tab-item">
+              <img class="tab-icon" src="../img/check.webp" />
+              O que está incluso
+            </div>
+            <div class="tab-item">
+              <img class="tab-icon" src="../img/bedroom.png" />
+              Hospedagem
+            </div>
+            <div class="tab-item">
+              <img class="tab-icon" src="../img/calendario.webp" />
+              Roteiro
+            </div>
+            <div class="tab-item disabled">
+              <img class="tab-icon" src="../img/star.png" />
+              Avaliações
+            </div>
+          </div>
+
+          <div class="about-box">
+            <h2>Sobre o destino</h2>
+            <p id="sobre-destino">
+              As ilhas Maldivas são um verdadeiro paraíso tropical com mais de
+              1000 ilhas espalhadas pelo Oceano Índico. Conhecidas por suas
+              praias de areia branca, águas cristalinas em tons de azul turquesa
+              e resorts exclusivos as águas. As Maldivas oferecem uma
+              experiência única de luxo, tranquilidade e contato com a natureza.
+              Perfeito para curtir uma lua de mel, viagens românticas ou para
+              quem só quer curtir boas experiências.
+            </p>
+          </div>
+
+          <div class="gallery-section">
+            <h2>Galeria de fotos</h2>
+            <div class="gallery-grid" id="galeria-fotos">
+              <div
+                class="gallery-img"
+                style="
+                  background-image: url(&quot;https://res.cloudinary.com/kangarootours/image/upload/prod/cover/anantara-kihavah-villas-kihavah-spa-e-sea-fire-spice-sky-1.jpg&quot;);
+                "
+                ;
+              ></div>
+              <div
+                class="gallery-img"
+                style="
+                  background-image: url(&quot;../img/trips/maldivas.jpeg&quot;);
+                "
+              ></div>
+              <div
+                class="gallery-img"
+                style="
+                  background-image: url(&quot;https://forbes.com.br/wp-content/uploads/2020/08/ForbesLife-Maldivas-200820-Reprodu%C3%A7%C3%A3oForbes4-1.jpg&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="price">
+          <div class="rating">
+            <span id="avaliacao">⭐ 4,9</span>
+            <span class="reviews" id="total-avaliacoes">(1258 avaliações)</span>
+          </div>
+
+          <div class="price-values">
+            <p class="old-price-big" id="preco-antigo">R$12.990</p>
+            <p class="new-price-big" id="preco-novo">R$ 7.990</p>
+            <div class="installments-row">
+              <span id="parcelas">ou 12x de R$649,00</span>
+              <span class="savings-tag" id="economia">Economize R$5200</span>
+            </div>
+          </div>
+
+          <div class="trip-builder">
+            <h3>Monte sua viagem</h3>
+
+            <div class="date-group">
+              <label>Data de ida</label>
+              <input type="text" id="data-ida" value="22/05/2026" />
+            </div>
+
+            <div class="date-group">
+              <label>Data de volta</label>
+              <input type="text" id="data-volta" value="22/05/2026" />
+            </div>
+
+            <p class="passengers-label">Passageiros</p>
+            <div class="passenger-row">
+              <span>Adultos</span>
+              <div class="qty-controls">
+                <button class="qty-btn">-</button>
+                <span>2</span>
+                <button class="qty-btn">+</button>
+              </div>
+            </div>
+            <div class="passenger-row">
+              <span>Crianças (até 12 anos)</span>
+              <div class="qty-controls">
+                <button class="qty-btn">-</button>
+                <span>2</span>
+                <button class="qty-btn">+</button>
+              </div>
+            </div>
+
+            <button class="cta-button">Ver opções de passagens</button>
+          </div>
+
+          <div class="includes-box">
+            <h3>Esse pacote inclui</h3>
+            <ul class="includes-list" id="lista-inclui">
+              <li>Passagens áreas de ida e volta</li>
+              <li>7 noites de hospedagem</li>
+              <li>Café da manhã incluso</li>
+              <li>Seguro viagem</li>
+              <li>Suporte 24 horas durante a viagem</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/details.js"></script>
+  </body>
+</html>
