@@ -1,8 +1,15 @@
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/filters.css" />
     <link rel="stylesheet" href="../css/vai.css" />
+    <link rel="stylesheet" href="../css/cards.css" />
+    <link rel="stylesheet" href="../css/pagination.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,8 +17,120 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div id="header"></div>
+
+    <main>
+      <div class="vai-hero">
+        <div class="vai-logo-wrap">
+          <!--<img src="../img/vai.webp" alt="VAI" class="vai-logo" />!-->
+        </div>
+        <p class="vai-subtitle">Seu agente inteligente de viagens</p>
+        <p class="vai-description">
+          Planeje, prepare e reserve com a ajuda da Inteligência Artificial
+        </p>
+
+        <div class="vai-chat-box">
+          <input
+            type="text"
+            id="vaiInput"
+            class="vai-input"
+            placeholder="Olá como posso de ajudar?"
+          />
+          <button id="vaiSend" class="vai-send-btn" aria-label="Enviar">
+            <img src="../img/send-icon.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+      <div class="vai-info-area">
+        <div class="vai-card" id="suggestionsCard">
+          <div class="vai-card-header">
+            <span class="vai-icon">✨</span>
+            <h3>Sugestões para você</h3>
+          </div>
+          <ul class="vai-suggestion-list" id="vaiSuggestions">
+            <li>
+              <span class="vai-suggestion-icon">⛰️</span>
+              <span
+                >Quero viajar para Gramado em julho gastando até R$ 2.000</span
+              >
+              <span class="vai-arrow">›</span>
+            </li>
+            <li>
+              <span class="vai-suggestion-icon">🏷️</span>
+              <span>Qual é o destino mais barato saindo de Uberlândia?</span>
+              <span class="vai-arrow">›</span>
+            </li>
+            <li>
+              <span class="vai-suggestion-icon">🗺️</span>
+              <span>Monte um roteiro de 5 dias em Buenos Aires</span>
+              <span class="vai-arrow">›</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="vai-card" id="howHelpsCard">
+          <div class="vai-card-header">
+            <span class="vai-icon">🧠</span>
+            <h3>Como a VAI pode te ajudar</h3>
+          </div>
+          <div class="vai-help-grid">
+            <div class="vai-help-item">
+              <span class="vai-help-icon vai-help-icon-blue">✈️</span>
+              <h4>Pesquisa centenas de companhias aéreas</h4>
+              <p>Encontre as melhores opções de voos para o seu destino.</p>
+            </div>
+            <div class="vai-help-item">
+              <span class="vai-help-icon vai-help-icon-orange">🏷️</span>
+              <h4>Encontra promoções automaticamente</h4>
+              <p>Monitoramos preços 24h para você economizar.</p>
+            </div>
+            <div class="vai-help-item">
+              <span class="vai-help-icon vai-help-icon-blue">📅</span>
+              <h4>Sugere datas mais baratas</h4>
+              <p>Descobrimos os dias com as melhores tarifas para você.</p>
+            </div>
+            <div class="vai-help-item">
+              <span class="vai-help-icon vai-help-icon-orange">🗺️</span>
+              <h4>Monta roteiros personalizados</h4>
+              <p>Roteiros completos de acordo com seu perfil e orçamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="vai-card" id="faqCard">
+          <div class="vai-card-header">
+            <span class="vai-icon">💬</span>
+            <h3>Perguntas frequentes</h3>
+          </div>
+          <ul class="vai-faq-list" id="vaiFaq">
+            <li>
+              <span class="vai-suggestion-icon">🔒</span>
+              <span>Meus dados de viagem ficam seguros com a VAI?</span>
+              <span class="vai-arrow">›</span>
+            </li>
+            <li>
+              <span class="vai-suggestion-icon">💳</span>
+              <span
+                >Como funciona o pagamento das reservas feitas pela VAI?</span
+              >
+              <span class="vai-arrow">›</span>
+            </li>
+            <li>
+              <span class="vai-suggestion-icon">🕒</span>
+              <span>A VAI está disponível 24 horas por dia?</span>
+              <span class="vai-arrow">›</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../js/footer.js"></script>
     <script src="../js/header.js"></script>
+    <script src="../js/vai.js"></script>
   </body>
 </html>

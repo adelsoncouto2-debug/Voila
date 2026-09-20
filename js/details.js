@@ -1,4 +1,3 @@
-// Pega o id da URL, ex: details.html?id=1
 function getIdDaUrl() {
   const params = new URLSearchParams(window.location.search);
   return parseInt(params.get("id"));

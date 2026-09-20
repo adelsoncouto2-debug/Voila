@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Voilà</title>
+
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/cards.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="dashboard-main">
+      <div class="dashboard-title">
+        <h1>Dashboard</h1>
+        <p>
+          Seja bem vinda, <span id="dashUserName">Maria</span>! Veja o
+          desempenho da empresa hoje
+        </p>
+      </div>
+
+      <!-- Os 4 cards de KPI são renderizados via JS a partir de getDashboardData() -->
+      <section class="kpi-grid" id="kpiGrid" aria-label="Indicadores do mês">
+        <!-- preenchido por dashboard.js -->
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="dash-card chart-card">
+          <h3 class="dash-card-title">Receita Mensal</h3>
+          <div class="chart-wrap" id="revenueChartWrap">
+            <!-- SVG gerado por dashboard.js a partir de getDashboardData().revenue -->
+          </div>
+        </div>
+
+        <div class="dash-card destinations-card">
+          <h3 class="dash-card-title">Destinos mais procurados</h3>
+          <ul class="destinations-list" id="destinationsList"></ul>
+        </div>
+      </section>
+
+      <section class="dashboard-grid dashboard-grid-bottom">
+        <div class="dash-card">
+          <h3 class="dash-card-title">Últimas reservas</h3>
+          <ul class="info-list" id="recentBookingsList"></ul>
+        </div>
+        <div class="dash-card">
+          <h3 class="dash-card-title">Atividade de clientes</h3>
+          <ul class="info-list" id="customerActivityList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="./js/footer.js"></script>
+    <script src="./js/header.js">
+      fetch("./components/header.html")
+    </script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

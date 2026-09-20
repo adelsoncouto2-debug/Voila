@@ -1,0 +1,486 @@
+/* =========================================================
+   RELATÓRIOS
+   Reaproveita as variáveis, os cards e as grades do dashboard.css.
+   Aqui ficam só os componentes que existem nesta página.
+   ========================================================= */
+
+.dashboard-grid > * {
+  min-width: 0; /* evita que gráficos empurrem a grade para fora */
+}
+
+/* ---------- CABEÇALHO DA PÁGINA + FILTROS ---------- */
+
+.report-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.report-head .dashboard-title p {
+  margin-bottom: 0;
+}
+
+.report-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  color: var(--dash-gray-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 48px;
+  min-width: 210px;
+  padding: 0 44px 0 16px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d2a4d' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(13, 42, 77, 0.04);
+  color: var(--dash-navy);
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.field select:hover:not(:disabled) {
+  border-color: var(--dash-orange);
+}
+
+.field select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 22px;
+  background: var(--dash-orange);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(245, 121, 58, 0.28);
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.btn-primary svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #e4652a;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.btn-primary.is-loading svg {
+  animation: rp-spin 0.9s linear infinite;
+}
+
+.field select:focus-visible,
+.btn-primary:focus-visible,
+.report-status button:focus-visible {
+  outline: 3px solid rgba(245, 121, 58, 0.45);
+  outline-offset: 2px;
+}
+
+/* ---------- ESTADOS: CARREGANDO / ERRO / VAZIO ---------- */
+
+.report-status:empty {
+  display: none;
+}
+
+.report-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 64px 24px;
+  background: #fff;
+  border: 1px solid var(--dash-border);
+  border-radius: 16px;
+  color: var(--dash-navy);
+  font-size: 15px;
+  text-align: center;
+}
+
+.report-status strong {
+  font-size: 18px;
+}
+
+.report-status p {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--dash-gray-text);
+}
+
+.report-status button {
+  height: 44px;
+  padding: 0 20px;
+  background: var(--dash-navy);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid var(--dash-orange-light);
+  border-top-color: var(--dash-orange);
+  border-radius: 50%;
+  animation: rp-spin 0.9s linear infinite;
+}
+
+@keyframes rp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- CARDS ---------- */
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+.card-head .dash-card-title {
+  margin: 0;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--dash-gray-text);
+  font-size: 13px;
+}
+
+.chart-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.dot-served {
+  background: var(--dash-orange);
+}
+
+.dot-missed {
+  background: var(--dash-navy);
+}
+
+/* ---------- GRÁFICOS SVG ---------- */
+
+.rp-chart {
+  width: 100%;
+  min-height: 280px;
+}
+
+.rp-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.rp-chart .chart-axis-label {
+  fill: var(--dash-gray-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 11px;
+}
+
+.chart-gridline {
+  stroke: #f0f1f3;
+  stroke-width: 1;
+}
+
+.chart-value {
+  fill: var(--dash-navy);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* colunas clicáveis (barras e pontos) */
+.col-group {
+  cursor: pointer;
+  outline: none;
+}
+
+.col-hit {
+  fill: transparent;
+  transition: fill 0.2s;
+}
+
+.col-group:hover .col-hit {
+  fill: rgba(251, 217, 184, 0.18);
+}
+
+.col-group.is-selected .col-hit {
+  fill: rgba(251, 217, 184, 0.38);
+}
+
+.col-group:focus-visible .col-hit {
+  stroke: var(--dash-orange);
+  stroke-width: 2;
+}
+
+.col-group.is-selected .x-label {
+  fill: var(--dash-navy);
+  font-weight: 700;
+}
+
+.bar-served {
+  fill: var(--dash-orange);
+}
+
+.bar-missed {
+  fill: var(--dash-navy);
+}
+
+.col-group:not(.is-selected) .bar {
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+
+.col-group:hover .bar {
+  opacity: 1;
+}
+
+.line-stroke {
+  fill: none;
+  stroke: var(--dash-navy);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.point {
+  fill: #fff;
+  stroke: var(--dash-navy);
+  stroke-width: 2;
+}
+
+.col-group.is-selected .point {
+  fill: var(--dash-orange);
+  stroke: #fff;
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 4px rgba(13, 42, 77, 0.35));
+}
+
+/* rosca */
+.donut-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.donut {
+  width: 168px;
+  height: 168px;
+}
+
+.donut-track {
+  fill: none;
+  stroke: var(--dash-border);
+  stroke-width: 18;
+}
+
+.donut-arc {
+  fill: none;
+  stroke: var(--dash-orange);
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+
+.donut-value {
+  fill: var(--dash-navy);
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.donut-label {
+  fill: var(--dash-gray-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+
+/* distribuição das avaliações */
+.star-track {
+  fill: var(--dash-border);
+}
+
+.star-fill {
+  fill: var(--dash-orange);
+}
+
+.star-label {
+  fill: var(--dash-navy);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.star-label .star {
+  fill: var(--dash-orange);
+}
+
+.star-pct {
+  fill: var(--dash-gray-text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+}
+
+/* ---------- ESTATÍSTICAS DO RESUMO ---------- */
+
+.stat-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0;
+}
+
+.stat {
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.stat dt {
+  color: var(--dash-gray-text);
+  font-size: 12px;
+  margin: 0 0 2px;
+}
+
+.stat dd {
+  margin: 0;
+  color: var(--dash-navy);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.stat .kpi-delta {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.stat .kpi-delta.neutral {
+  color: var(--dash-gray-text);
+}
+
+/* ---------- AVISO (toast) ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  z-index: 10000;
+  max-width: calc(100% - 32px);
+  padding: 14px 20px;
+  background: var(--dash-navy);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(13, 42, 77, 0.3);
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media (max-width: 640px) {
+  .report-head {
+    align-items: stretch;
+  }
+
+  .report-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field select {
+    width: 100%;
+  }
+
+  .rp-chart {
+    min-height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .btn-primary.is-loading svg {
+    animation-duration: 2.5s;
+  }
+}
