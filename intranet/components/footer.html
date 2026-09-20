@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <title>Document</title>
+    <style>
+      .body {
+        height: 100%;
+      }
+
+      .footer {
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+        margin: 50px auto 0 auto;
+        padding: 30px 20px;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .logo {
+        height: 140px;
+        flex-shrink: 0;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+        flex: 1;
+        margin-top: 20px;
+      }
+
+      .letter {
+        font-size: 0.8rem;
+        margin: 0 0 10px 0;
+        font-family: "Poppins", "Outfit", sans-serif;
+        text-decoration: none;
+        max-width: 250px;
+      }
+
+      /*.img-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons img {
+  width: 30px;
+  height: 30px;
+  mix-blend-mode: multiply;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.icons > :nth-child(1) {
+  width: 40px;
+  margin-left: 0;
+}*/
+
+      .links {
+        display: block;
+        font-size: 0.7rem;
+        line-height: 1;
+        margin: 5px 0 10px 0;
+        font-family: "Poppins", "Outfit", sans-serif;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+
+      @media (max-width: 900px) {
+        .footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-content {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .img-conteiner {
+          align-items: center;
+        }
+
+        .icons {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer {
+          padding: 20px 12px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .letter {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="footer">
+      <img src="../../img/header-logo.webp" class="logo" />
+
+      <div class="footer-content">
+        <div class="img-conteiner">
+          <p class="letter">
+            Pessoas incríveis constroem experiências inesquecíveis.<br />
+            Orgulho em ter você no time
+          </p>
+
+          <!--<div class="icons">
+            <img src="../img/instagram.png" />
+            <img src="../img/youtube.png" />
+            <img src="../img/facebook.jpg" />
+          </div>!-->
+        </div>
+
+        <div class="img-conteiner">
+          <b class="letter">Recursos Humanos</b>
+          <a class="links" href="#">Portal do Colaborador (Ponto)</a>
+          <a class="links" href="#">Folha de Pagamento</a>
+          <a class="links" href="#">Código de Conduta</a>
+          <a class="links" href="#">Políticas de Privacidade Interna</a>
+        </div>
+
+        <div class="img-conteiner">
+          <b class="letter">Links Úteis</b>
+          <a class="links" href="#">Sistemas Internos (ERP/CRM)</a>
+          <a class="links" href="#">Manual da Marca / Identity</a>
+          <a class="links" href="#">Aniversariantes do Mês</a>
+          <a class="links" href="#">Comunicados Oficiais</a>
+        </div>
+
+        <div class="img-conteiner">
+          <b class="letter">Suporte de TI</b>
+          <a class="links" href="#">Abrir Chamado (Help Desk)</a>
+          <a class="links" href="#">E-mail do Suporte Técnico</a>
+          <a class="links" href="#">Ramais Úteis (Telefonia)</a>
+          <a class="links" href="#" style="font-size: 0.8rem; opacity: 0.7"
+            >Versão do Sistema: v1.0.0</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
