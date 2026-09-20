@@ -20,7 +20,7 @@ body {
   }
 }
 .dashboard-main {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", "Open Sans", sans-serif;
   width: var(--container-width);
   max-width: var(--container-max);
   margin: 0 auto;

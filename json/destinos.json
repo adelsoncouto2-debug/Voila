@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "tipo": "promocao",
     "nome": "Maldivas",
     "imagemPrincipal": "../img/trips/maldivas2.jpeg",
     "desconto": "60%",
@@ -29,6 +30,8 @@
   },
   {
     "id": 2,
+    "tipo": "promocao",
+
     "nome": "Toquio",
     "imagemPrincipal": "../img/trips/toquio.webp",
     "desconto": "50%",
@@ -56,6 +59,8 @@
   },
   {
     "id": 3,
+    "tipo": "promocao",
+
     "nome": "Berlim",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22paag3lfqEg_CWcf_TrVPLHAu0jmBu8h-ONObwwmog&s=10",
     "desconto": "50%",
@@ -83,6 +88,8 @@
   },
   {
     "id": 4,
+    "tipo": "promocao",
+
     "nome": "Grécia",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGJsiDj6LslJ_EtymOMLrFGWCZHslMxovXOFFOHxfsA&s=10",
     "desconto": "50%",
@@ -110,6 +117,8 @@
   },
   {
     "id": 5,
+    "tipo": "promocao",
+
     "nome": "Porto",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMS4o9IYvv3jHEwt3ennXHL6-IEeZsEAa-UOIv4KSvQ&s=10",
     "desconto": "50%",
@@ -137,6 +146,8 @@
   },
   {
     "id": 6,
+    "tipo": "promocao",
+
     "nome": "Nova York",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoB4pRG4F4crx4PXqHis15NbF5wueomfMFIGnuK_n1oA&s=10",
     "desconto": "50%",
@@ -164,6 +175,8 @@
   },
   {
     "id": 7,
+    "tipo": "promocao",
+
     "nome": "Havana",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRimk9sDkw3ZTJohr67R5b71OuKq0ZR50c_iiOW_PqHvg&s=10",
     "desconto": "50%",
@@ -191,6 +204,8 @@
   },
   {
     "id": 8,
+    "tipo": "promocao",
+
     "nome": "Buenos Aires",
     "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc5MEnCahsjBncJyCVn7pUW-y7aqlEzhZfhrVbsCUU-A&s=10",
     "desconto": "50%",
@@ -218,6 +233,8 @@
   },
   {
     "id": 9,
+    "tipo": "promocao",
+
     "nome": "Dublin",
     "imagemPrincipal": " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSAXuWoA0DBWw0CLaij6jb_oWJHlBTrQlG6O5omdlVjQ&s=10",
     "desconto": "50%",
@@ -245,6 +262,8 @@
   },
   {
     "id": 10,
+    "tipo": "promocao",
+
     "nome": "Madrid",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1cHiog4jnaZWrPPrKU4LYcvNqA6EXBrDH8Zlq-EWZg&s=10",
     "desconto": "50%",
@@ -272,6 +291,8 @@
   },
   {
     "id": 11,
+    "tipo": "promocao",
+
     "nome": "Santiago",
     "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJgj1fBZbSRwNkw4DE6omL4Hsz41dy7mLLIWQKQ-w3nQ&s=10",
     "desconto": "50%",
@@ -299,6 +320,8 @@
   },
   {
     "id": 12,
+    "tipo": "promocao",
+
     "nome": "Paris",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi4PIx9zv8Xg0Buv77deSr57IQrgHk7YLOLaH7CNqJWQ&s=10",
     "desconto": "50%",

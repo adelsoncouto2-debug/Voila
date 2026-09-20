@@ -1,30 +1,47 @@
-function getIdDaUrl() {
+function getParametrosDaUrl() {
   const params = new URLSearchParams(window.location.search);
-  return parseInt(params.get("id"));
+
+  return {
+    id: parseInt(params.get("id")),
+    tipo: params.get("tipo"),
+  };
 }
 
 async function carregarDetalhes() {
-  const id = getIdDaUrl();
+  const { id, tipo } = getParametrosDaUrl();
 
-  if (!id) {
-    console.error("Nenhum id foi passado na URL.");
+  if (!id || !tipo) {
+    console.error("ID ou tipo não foi passado na URL.");
+    return;
+  }
+
+  let caminhoJson;
+
+  if (tipo === "hotel") {
+    caminhoJson = "../json/hoteis.json";
+  } else if (tipo === "destino") {
+    caminhoJson = "../json/destinos.json";
+  }
+
+  if (!caminhoJson) {
+    console.error("Tipo desconhecido:", tipo);
     return;
   }
 
   try {
-    const resposta = await fetch("../json/destinos.json");
-    const destinos = await resposta.json();
+    const resposta = await fetch(caminhoJson);
+    const dados = await resposta.json();
 
-    const destino = destinos.find((item) => item.id === id);
+    const item = dados.find((item) => item.id === id);
 
-    if (!destino) {
-      console.error("Destino não encontrado para o id:", id);
+    if (!item) {
+      console.error("Item não encontrado para o id:", id);
       return;
     }
 
-    preencherPagina(destino);
+    preencherPagina(item);
   } catch (erro) {
-    console.error("Erro ao carregar os dados do destino:", erro);
+    console.error("Erro ao carregar os dados:", erro);
   }
 }
 

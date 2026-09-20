@@ -165,7 +165,7 @@ function configurarCliqueDetalhes() {
     if (!botao) return;
 
     const id = botao.getAttribute("data-id");
-    window.location.href = `../components/details.html?id=${id}`;
+    window.location.href = `../components/details.html?id=${id}&tipo=promocao`;
   });
 }
 

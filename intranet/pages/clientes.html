@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes | Voilà</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/clientes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <div class="clients-layout">
+        <aside class="clients-sidebar">
+          <div class="sidebar-search">
+            <input type="text" placeholder="Buscar cliente..." />
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-section-header">
+              <span>Clientes pendentes</span>
+              <span class="count-badge count-pending">5</span>
+            </div>
+
+            <ul class="client-list">
+              <li class="cards active">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">João Pedro Silva</p>
+                  <p class="client-last-msg">
+                    Perfeito, vou verificar a disponibilidade...
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">09:42</span>
+                  <span class="unread-badge">2</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Ana Beatriz Costa</p>
+                  <p class="client-last-msg">
+                    Ainda estou esperando o retorno do hotel
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">08:15</span>
+                  <span class="unread-badge">1</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Carlos Eduardo</p>
+                  <p class="client-last-msg">
+                    Pode me enviar o orçamento atualizado?
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">Ontem</span>
+                  <span class="unread-badge">3</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Fernanda Lima</p>
+                  <p class="client-last-msg">
+                    Combinado, fico no aguardo então
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">Ontem</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Rafael Souza</p>
+                  <p class="client-last-msg">
+                    Vocês têm pacote para o Nordeste?
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">Seg</span>
+                  <span class="unread-badge">1</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-section-header">
+              <span>Clientes finalizados</span>
+              <span class="count-badge count-finished">12</span>
+            </div>
+
+            <ul class="client-list">
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Mariana Alves</p>
+                  <p class="client-last-msg">Obrigada, chegou tudo certinho!</p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">12/06</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Pedro Henrique</p>
+                  <p class="client-last-msg">
+                    Reserva confirmada, muito obrigado
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">10/06</span>
+                </div>
+              </li>
+
+              <li class="cards">
+                <div class="photo"></div>
+                <div class="client-info">
+                  <p class="client-name">Juliana Santos</p>
+                  <p class="client-last-msg">
+                    Foi ótimo, já indiquei pra amigos
+                  </p>
+                </div>
+                <div class="client-meta">
+                  <span class="client-time">05/06</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="chat-panel">
+          <div class="chat-header">
+            <div class="photo chat-header-photo"></div>
+            <div class="chat-header-info">
+              <p class="chat-header-name">João Pedro Silva</p>
+              <p class="chat-header-status">Visto por último hoje às 09:40</p>
+            </div>
+            <span class="chat-status-tag">Pendente</span>
+          </div>
+
+          <div class="chat-messages">
+            <div class="chat-date-divider"><span>Hoje</span></div>
+
+            <div class="chat-bubble received">
+              <p>
+                Bom dia! Eu gostaria de saber se ainda tem vaga no pacote de
+                Paris para julho.
+              </p>
+              <span class="bubble-time">09:12</span>
+            </div>
+
+            <div class="chat-bubble sent">
+              <p>
+                Bom dia, João! Deixa eu verificar aqui a disponibilidade pra
+                você, só um instante 🙂
+              </p>
+              <span class="bubble-time">09:15</span>
+            </div>
+
+            <div class="chat-bubble received">
+              <p>Combinado, fico no aguardo!</p>
+              <span class="bubble-time">09:16</span>
+            </div>
+
+            <div class="chat-bubble sent">
+              <p>
+                Temos sim! Restam 3 vagas no período de 10 a 17 de julho, saída
+                de Uberlândia.
+              </p>
+              <span class="bubble-time">09:38</span>
+            </div>
+
+            <div class="chat-bubble received">
+              <p>
+                Perfeito, vou verificar a disponibilidade com minha esposa e te
+                retorno ainda hoje.
+              </p>
+              <span class="bubble-time">09:42</span>
+            </div>
+          </div>
+
+          <div class="chat-input-bar">
+            <input type="text" placeholder="Digite uma mensagem" />
+            <button class="send-btn">Enviar</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../js/footer.js"></script>
+    <script src="../js/header.js"></script>
+  </body>
+</html>

@@ -20,7 +20,6 @@ fetch("../components/header.html")
       vai.classList.add("active");
     }
 
-    // LOGIN
     const loginButton = document.querySelector(".login");
     const dropdown = document.querySelector(".user-dropdown");
 
@@ -92,7 +91,6 @@ fetch("../components/header.html")
       }
     });
 
-    // VERIFICAÇÃO DO LOGIN
     const btnEfetuarLogin = document.getElementById("btn-efetuar-login");
     const loginEmailInput = document.getElementById("login-email");
     const loginPasswordInput = document.getElementById("password");

@@ -1,15 +1,14 @@
-/* =========================================================
-   RELATÓRIOS
-   Reaproveita as variáveis, os cards e as grades do dashboard.css.
-   Aqui ficam só os componentes que existem nesta página.
-   ========================================================= */
-
-.dashboard-grid > * {
-  min-width: 0; /* evita que gráficos empurrem a grade para fora */
+.dashboard-main {
+  font-family: "Open Sans", sans-serif;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 40px 60px;
+  position: relative;
 }
-
-/* ---------- CABEÇALHO DA PÁGINA + FILTROS ---------- */
-
+.dashboard-grid > * {
+  min-width: 0;
+}
 .report-head {
   display: flex;
   align-items: flex-end;
@@ -123,9 +122,6 @@
   outline: 3px solid rgba(245, 121, 58, 0.45);
   outline-offset: 2px;
 }
-
-/* ---------- ESTADOS: CARREGANDO / ERRO / VAZIO ---------- */
-
 .report-status:empty {
   display: none;
 }
@@ -181,9 +177,6 @@
     transform: rotate(360deg);
   }
 }
-
-/* ---------- CARDS ---------- */
-
 .card-head {
   display: flex;
   align-items: center;
@@ -227,9 +220,6 @@
 .dot-missed {
   background: var(--dash-navy);
 }
-
-/* ---------- GRÁFICOS SVG ---------- */
-
 .rp-chart {
   width: 100%;
   min-height: 280px;
@@ -259,8 +249,6 @@
   font-size: 12px;
   font-weight: 700;
 }
-
-/* colunas clicáveis (barras e pontos) */
 .col-group {
   cursor: pointer;
   outline: none;
@@ -326,8 +314,6 @@
   stroke-width: 3;
   filter: drop-shadow(0 2px 4px rgba(13, 42, 77, 0.35));
 }
-
-/* rosca */
 .donut-wrap {
   display: flex;
   justify-content: center;
@@ -365,7 +351,6 @@
   font-size: 12px;
 }
 
-/* distribuição das avaliações */
 .star-track {
   fill: var(--dash-border);
 }
@@ -390,9 +375,6 @@
   font-family: "Open Sans", sans-serif;
   font-size: 13px;
 }
-
-/* ---------- ESTATÍSTICAS DO RESUMO ---------- */
-
 .stat-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -428,8 +410,6 @@
   color: var(--dash-gray-text);
 }
 
-/* ---------- AVISO (toast) ---------- */
-
 .toast {
   position: fixed;
   left: 50%;
@@ -456,9 +436,6 @@
   opacity: 1;
   transform: translate(-50%, 0);
 }
-
-/* ---------- RESPONSIVO ---------- */
-
 @media (max-width: 640px) {
   .report-head {
     align-items: stretch;
