@@ -20,7 +20,8 @@ fetch("../components/header.html")
       vai.classList.add("active");
     }
 
-    // LOGIN
+    // ===== LOGIN (usuário deslogado) =====
+    const loginContainer = document.querySelector(".login-container");
     const loginButton = document.querySelector(".login");
     const dropdown = document.querySelector(".user-dropdown");
 
@@ -31,6 +32,8 @@ fetch("../components/header.html")
 
     document.addEventListener("click", function () {
       dropdown.classList.remove("open");
+      userDropdown.classList.remove("open");
+      notificationDropdown.classList.remove("open");
     });
 
     dropdown.addEventListener("click", function (e) {
@@ -64,10 +67,10 @@ fetch("../components/header.html")
     eye.addEventListener("click", function () {
       if (password.type === "password") {
         password.type = "text";
-        eye.src = "/intranet/img/eye-off.svg";
+        eye.src = "../img/eye-off.svg";
       } else {
         password.type = "password";
-        eye.src = "/intranet/img/eye.svg";
+        eye.src = "../img/eye.svg";
       }
     });
 
@@ -92,7 +95,75 @@ fetch("../components/header.html")
       }
     });
 
-    // VERIFICAÇÃO DO LOGIN
+    // ===== HEADER LOGADO (usuário autenticado) =====
+    const loggedContainer = document.querySelector(".logged-container");
+    const userButton = document.querySelector(".user-button");
+    const userDropdown = document.querySelector(".user-dropdown-logged");
+    const userNameSpan = document.querySelector(".user-button .user-name");
+    const dropdownName = document.querySelector(".user-dropdown-name");
+    const dropdownEmail = document.querySelector(".user-dropdown-email");
+    const btnLogout = document.getElementById("btn-logout");
+
+    userButton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      notificationDropdown.classList.remove("open");
+      userDropdown.classList.toggle("open");
+    });
+
+    userDropdown.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    // Notificações
+    const notificationButton = document.querySelector(".notification-button");
+    const notificationDropdown = document.querySelector(
+      ".notification-dropdown",
+    );
+    const notificationBadge = document.querySelector(".notification-badge");
+    const btnMarcarLidas = document.getElementById("btn-marcar-lidas");
+
+    notificationButton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      userDropdown.classList.remove("open");
+      notificationDropdown.classList.toggle("open");
+    });
+
+    notificationDropdown.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+
+    btnMarcarLidas.addEventListener("click", function () {
+      document
+        .querySelectorAll(".notification-item.unread")
+        .forEach((item) => item.classList.remove("unread"));
+      notificationBadge.classList.add("hidden");
+    });
+
+    function entrar(nome, email) {
+      userNameSpan.textContent = "Olá, " + nome;
+      dropdownName.textContent = nome;
+      dropdownEmail.textContent = email;
+
+      loginContainer.classList.add("hidden");
+      loggedContainer.classList.remove("hidden");
+
+      dropdown.classList.remove("open");
+      loginModal.classList.remove("open");
+    }
+
+    function sair() {
+      loggedContainer.classList.add("hidden");
+      loginContainer.classList.remove("hidden");
+      userDropdown.classList.remove("open");
+      notificationDropdown.classList.remove("open");
+    }
+
+    btnLogout.addEventListener("click", function (e) {
+      e.stopPropagation();
+      sair();
+    });
+
+    // ===== VERIFICAÇÃO DO LOGIN =====
     const btnEfetuarLogin = document.getElementById("btn-efetuar-login");
     const loginEmailInput = document.getElementById("login-email");
     const loginPasswordInput = document.getElementById("password");
@@ -103,10 +174,13 @@ fetch("../components/header.html")
 
       if (usuario === "Voila@gmail.com" && senha === "1234") {
         alert("Login realizado com sucesso!");
-
+        
         window.location.href = "/intranet/index.html";
+      } else if (usuario === "ricardo@iftm.edu.br" && senha === "1234") {
+        alert("Login realizado com sucesso!");
+        entrar("Ricardo", usuario);
       } else {
         alert("Usuário ou senha incorretos.");
       }
     });
-  });
+});
