@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Voilà</title>
+    <title>Dashboard Voilà</title>
 
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
@@ -62,7 +62,14 @@
 
     <div id="footer"></div>
 
-    <script src="./js/footer.js"></script>
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Erro ao carregar o footer:", error));
+    </script>
     <script src="./js/header.js">
       fetch("./components/header.html")
     </script>

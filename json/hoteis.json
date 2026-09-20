@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "tipo": "hotel",
+    "nome": "Aman",
+    "descricaoCurta": "Pacote 7 noites - All Inclusive",
+    "imagemPrincipal": "../img/hotels/aman.jpeg",
+    "desconto": "60%",
+    "tag": "Mais recomendado",
+    "avaliacao": 4.9,
+    "totalAvaliacoes": 620,
+    "precoAntigo": "R$ 23.000",
+    "precoNovo": "R$ 9.200",
+    "parcelas": "ou 12x de R$766,67",
+    "economia": "Economize R$13.800",
+    "sobre": "A Aman é conhecida por resorts pequenos e reservados, onde privacidade, silêncio e espaço são o maior luxo. A arquitetura se integra à paisagem, o serviço é discreto e personalizado e a experiência é pensada para quem quer desacelerar. Este pacote reúne 7 noites com tudo incluído para você só se preocupar em descansar.",
+    "galeria": [
+      "../img/hotels/aman.jpeg",
+      "../img/hotels/aman.jpeg",
+      "../img/hotels/aman.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "7 noites de hospedagem",
+      "All inclusive",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "10/11/2026",
+    "dataVolta": "17/11/2026"
+  },
+  {
+    "id": 2,
+    "tipo": "hotel",
+    "nome": "Atlantis",
+    "descricaoCurta": "Pacote completo com desconto",
+    "imagemPrincipal": "../img/hotels/atlantis.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.6,
+    "totalAvaliacoes": 2140,
+    "precoAntigo": "R$ 1.800",
+    "precoNovo": "R$ 899,90",
+    "parcelas": "ou 10x de R$89,99",
+    "economia": "Economize R$900",
+    "sobre": "O Atlantis é um resort de grande porte, conhecido pelo parque aquático, pelo aquário com vida marinha e pela variedade de restaurantes e áreas de lazer. Uma boa escolha para quem quer um pacote completo, com diversão para toda a família sem precisar sair do hotel.",
+    "galeria": [
+      "../img/hotels/atlantis.jpeg",
+      "../img/hotels/atlantis.jpeg",
+      "../img/hotels/atlantis.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "17/11/2026",
+    "dataVolta": "22/11/2026"
+  },
+  {
+    "id": 3,
+    "tipo": "hotel",
+    "nome": "Capella",
+    "descricaoCurta": "Viaje para a Alemanha",
+    "imagemPrincipal": "../img/hotels/capella.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.8,
+    "totalAvaliacoes": 410,
+    "precoAntigo": "R$ 1.499",
+    "precoNovo": "R$ 749,90",
+    "parcelas": "ou 10x de R$74,99",
+    "economia": "Economize R$749",
+    "sobre": "A Capella cuida de hotéis boutique de luxo com atendimento muito personalizado, em que cada hóspede é tratado de forma individual. Ambientes elegantes, gastronomia refinada e atenção aos detalhes fazem da estadia uma experiência sob medida.",
+    "galeria": [
+      "../img/hotels/capella.jpeg",
+      "../img/hotels/capella.jpeg",
+      "../img/hotels/capella.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "24/11/2026",
+    "dataVolta": "29/11/2026"
+  },
+  {
+    "id": 4,
+    "tipo": "hotel",
+    "nome": "Cheval Blanc",
+    "descricaoCurta": "Conheça o berço da filosofia",
+    "imagemPrincipal": "../img/hotels/cheval.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.8,
+    "totalAvaliacoes": 530,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Cheval Blanc é a assinatura de hotelaria de luxo do grupo LVMH, com endereços pequenos e exclusivos, gastronomia de alto nível e um atendimento que valoriza a discrição e a elegância.",
+    "galeria": [
+      "../img/hotels/cheval.jpeg",
+      "../img/hotels/cheval.jpeg",
+      "../img/hotels/cheval.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "01/12/2026",
+    "dataVolta": "06/12/2026"
+  },
+  {
+    "id": 5,
+    "tipo": "hotel",
+    "nome": "Claridges",
+    "descricaoCurta": "Conheça a terra do bacalhau",
+    "imagemPrincipal": "../img/hotels/claridges.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 980,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Claridge's é um dos nomes mais tradicionais da hotelaria de luxo, com décadas de história, decoração clássica e serviço impecável. Um endereço para quem gosta de elegância atemporal e conforto refinado.",
+    "galeria": [
+      "../img/hotels/claridges.jpeg",
+      "../img/hotels/claridges.jpeg",
+      "../img/hotels/claridges.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "08/12/2026",
+    "dataVolta": "13/12/2026"
+  },
+  {
+    "id": 6,
+    "tipo": "hotel",
+    "nome": "Mandarin",
+    "descricaoCurta": "Conheça a capital do mundo",
+    "imagemPrincipal": "../img/hotels/mandarin.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.8,
+    "totalAvaliacoes": 1120,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Mandarin Oriental é conhecido pelo serviço atencioso, pelos spas e pelo design que mistura sofisticação e toques da cultura oriental. Hotéis em grandes cidades, com vistas marcantes e restaurantes de destaque, para quem busca conforto e praticidade no destino.",
+    "galeria": [
+      "../img/hotels/mandarin.jpeg",
+      "../img/hotels/mandarin.jpeg",
+      "../img/hotels/mandarin.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "15/12/2026",
+    "dataVolta": "20/12/2026"
+  },
+  {
+    "id": 7,
+    "tipo": "hotel",
+    "nome": "Nihi",
+    "descricaoCurta": "Conheça uma das ilhas mais famosas do mundo",
+    "imagemPrincipal": "../img/hotels/nihi.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.9,
+    "totalAvaliacoes": 380,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Nihi é um resort exclusivo e isolado, cercado por natureza, com praias, cavalos e experiências ao ar livre. Ideal para quem quer se desconectar da rotina em um refúgio tropical com serviço personalizado.",
+    "galeria": [
+      "../img/hotels/nihi.jpeg",
+      "../img/hotels/nihi.jpeg",
+      "../img/hotels/nihi.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "22/12/2026",
+    "dataVolta": "27/12/2026"
+  },
+  {
+    "id": 8,
+    "tipo": "hotel",
+    "nome": "Passalacqua",
+    "descricaoCurta": "Experimente o melhor churrasco do mundo",
+    "imagemPrincipal": "../img/hotels/passalacqua.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.8,
+    "totalAvaliacoes": 450,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Passalacqua é um hotel boutique de luxo instalado em uma villa histórica, com jardins, quartos elegantes e atendimento próximo. Uma estadia para quem valoriza charme, tranquilidade e requinte.",
+    "galeria": [
+      "../img/hotels/passalacqua.jpeg",
+      "../img/hotels/passalacqua.jpeg",
+      "../img/hotels/passalacqua.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "29/12/2026",
+    "dataVolta": "03/01/2027"
+  },
+  {
+    "id": 9,
+    "tipo": "hotel",
+    "nome": "Raffles",
+    "descricaoCurta": "Experimente o melhor churrasco do mundo",
+    "imagemPrincipal": "../img/hotels/raffles.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 870,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Raffles é uma marca com mais de um século de história, conhecida pelo serviço de mordomo, pela arquitetura clássica e por uma hospitalidade de tradição. Um clássico para quem gosta de luxo com personalidade.",
+    "galeria": [
+      "../img/hotels/raffles.jpeg",
+      "../img/hotels/raffles.jpeg",
+      "../img/hotels/raffles.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "05/01/2027",
+    "dataVolta": "10/01/2027"
+  },
+  {
+    "id": 10,
+    "tipo": "hotel",
+    "nome": "Rosewood",
+    "descricaoCurta": "Experimente o melhor churrasco do mundo",
+    "imagemPrincipal": "../img/hotels/rosewood.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.8,
+    "totalAvaliacoes": 760,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Rosewood aposta em hotéis com forte identidade local, com design, arte e gastronomia inspirados no lugar onde estão. Uma opção para quem quer luxo sem perder o sentido de destino.",
+    "galeria": [
+      "../img/hotels/rosewood.jpeg",
+      "../img/hotels/rosewood.jpeg",
+      "../img/hotels/rosewood.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "12/01/2027",
+    "dataVolta": "17/01/2027"
+  },
+  {
+    "id": 11,
+    "tipo": "hotel",
+    "nome": "Soneva",
+    "descricaoCurta": "Experimente o melhor churrasco do mundo",
+    "imagemPrincipal": "../img/hotels/soneva.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.9,
+    "totalAvaliacoes": 690,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Soneva é referência em luxo descalço e sustentável: vilas amplas em meio à natureza, gastronomia própria e experiências como cinema ao ar livre e observação de estrelas. Perfeito para quem busca conforto com consciência ambiental.",
+    "galeria": [
+      "../img/hotels/soneva.jpeg",
+      "../img/hotels/soneva.jpeg",
+      "../img/hotels/soneva.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "19/01/2027",
+    "dataVolta": "24/01/2027"
+  },
+  {
+    "id": 12,
+    "tipo": "hotel",
+    "nome": "Upper House",
+    "descricaoCurta": "Experimente o melhor churrasco do mundo",
+    "imagemPrincipal": "../img/hotels/house.jpeg",
+    "desconto": "50%",
+    "tag": "Pacote completo",
+    "avaliacao": 4.7,
+    "totalAvaliacoes": 540,
+    "precoAntigo": "R$ 1.999",
+    "precoNovo": "R$ 999,90",
+    "parcelas": "ou 10x de R$99,99",
+    "economia": "Economize R$999",
+    "sobre": "O Upper House é um hotel de design contemporâneo, com quartos amplos, decoração minimalista e vistas panorâmicas. Uma escolha para quem prefere um luxo discreto e moderno.",
+    "galeria": [
+      "../img/hotels/house.jpeg",
+      "../img/hotels/house.jpeg",
+      "../img/hotels/house.jpeg"
+    ],
+    "inclui": [
+      "Passagens aéreas de ida e volta",
+      "5 noites de hospedagem",
+      "Café da manhã incluso",
+      "Seguro viagem",
+      "Suporte 24 horas durante a viagem"
+    ],
+    "dataIda": "26/01/2027",
+    "dataVolta": "31/01/2027"
+  }
+]
