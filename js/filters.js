@@ -1,3 +1,16 @@
+function getBasePath() {
+  if (location.hostname.endsWith("github.io")) {
+    const partes = location.pathname.split("/").filter(Boolean);
+    return partes.length > 0 ? "/" + partes[0] : "";
+  }
+  return "";
+}
+
+function basePath(caminho) {
+  if (!caminho.startsWith("/")) caminho = "/" + caminho;
+  return getBasePath() + caminho;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const precoMin = document.getElementById("precoMin");
   const precoMax = document.getElementById("precoMax");
