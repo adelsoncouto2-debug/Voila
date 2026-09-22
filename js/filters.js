@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const MIN_VALOR = 500;
   const MAX_VALOR = 15000;
 
-  fetch("/components/filters.html")
+  fetch(basePath("/components/filters.html"))
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("filter").innerHTML = data;
