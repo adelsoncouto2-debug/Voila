@@ -1,5 +1,3 @@
-/* ========== CORREÇÕES DE ALINHAMENTO (Home) ========== */
-
 body {
   margin: 0;
   padding: 0;
@@ -11,15 +9,12 @@ body {
 
 main {
   flex: 1;
-  /* Remove as margens enormes e centraliza */
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px; /* respiro nas laterais */
+  padding: 0 20px;
   box-sizing: border-box;
 }
-
-/* ===== CAROUSEL PRINCIPAL ===== */
 .carousel_main {
   box-sizing: border-box;
   background-color: hsl(34, 100%, 80%);
@@ -29,7 +24,7 @@ main {
   border-radius: 21px;
   padding: 0 30px;
   line-height: 1.2;
-  width: 100%; /* agora ocupa o espaço do main */
+  width: 100%;
   max-width: 1200px;
   display: flex;
   gap: 30px;
@@ -178,12 +173,10 @@ main {
 .card_info button:hover {
   background: #e86d0d;
 }
-
-/* ===== OFERTAS E DESTINOS ===== */
 .viewport_trips {
   overflow: hidden;
   flex-grow: 1;
-  position: relative; /* importante para os botões */
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -192,7 +185,7 @@ main {
 .text_on_top_cards {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  margin-left: 0; /* remove o 80px que empurrava */
+  margin-left: 0;
   margin-top: 40px;
   margin-bottom: 25px;
   font-weight: bold;
@@ -202,14 +195,14 @@ main {
 .trips_container {
   display: flex;
   flex-wrap: nowrap;
-  gap: 30px; /* reduzido de 60px */
+  gap: 30px;
   width: 100%;
-  max-width: 1100px; /* um pouco menor para caber bem */
+  max-width: 1100px;
   margin: 0 auto;
   justify-content: center;
   position: relative;
   transition: transform 0.5s ease;
-  padding: 0 60px; /* espaço para as setas não colarem */
+  padding: 0 60px;
   box-sizing: border-box;
 }
 
@@ -289,8 +282,6 @@ main {
   background: #172e4d;
   color: white;
 }
-
-/* ===== BOTÕES DE NAVEGAÇÃO (corrigidos) ===== */
 .circle_button_left,
 .circle_button_right {
   border: 2px solid #172e4d;
@@ -324,8 +315,6 @@ main {
 .circle_button_right {
   right: 5px;
 }
-
-/* Imagens (mantidas) */
 .airplane {
   background-image: url("../img/airplane_sunset.jpeg");
 }

@@ -19,7 +19,7 @@ async function carregarDetalhes() {
 
   if (tipo === "hotel") {
     caminhoJson = "../json/hoteis.json";
-  } else if (tipo === "destino") {
+  } else if (tipo === "promocao") {
     caminhoJson = "../json/destinos.json";
   }
 

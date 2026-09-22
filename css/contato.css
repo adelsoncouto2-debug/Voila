@@ -1,3 +1,7 @@
+body {
+  background-color: #f5f7fa;
+}
+
 .card_main {
   box-sizing: border-box;
   background-color: #ffe2bb;

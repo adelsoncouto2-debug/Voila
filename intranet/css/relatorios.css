@@ -1,11 +1,19 @@
-.dashboard-main {
+main {
   font-family: "Open Sans", sans-serif;
   width: 90%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 40px 60px;
   position: relative;
 }
+/*.dashboard-main {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 60px;
+  position: relative;
+}*/
 .dashboard-grid > * {
   min-width: 0;
 }

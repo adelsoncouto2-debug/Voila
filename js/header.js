@@ -10,6 +10,7 @@ function basePath(caminho) {
   if (!caminho.startsWith("/")) caminho = "/" + caminho;
   return getBasePath() + caminho;
 }
+
 fetch(basePath("/components/header.html"))
   .then((r) => r.text())
   .then((html) => {

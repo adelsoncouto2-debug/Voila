@@ -4,7 +4,7 @@
     "tipo": "hotel",
     "nome": "Aman",
     "descricaoCurta": "Pacote 7 noites - All Inclusive",
-    "imagemPrincipal": "../img/hotels/aman.jpeg",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSNB1kp_X-MMtzOzPverqu9UoUWgvsiRATSF7Uo2Awtw&s=10",
     "desconto": "60%",
     "tag": "Mais recomendado",
     "avaliacao": 4.9,
@@ -15,9 +15,9 @@
     "economia": "Economize R$13.800",
     "sobre": "A Aman é conhecida por resorts pequenos e reservados, onde privacidade, silêncio e espaço são o maior luxo. A arquitetura se integra à paisagem, o serviço é discreto e personalizado e a experiência é pensada para quem quer desacelerar. Este pacote reúne 7 noites com tudo incluído para você só se preocupar em descansar.",
     "galeria": [
-      "../img/hotels/aman.jpeg",
-      "../img/hotels/aman.jpeg",
-      "../img/hotels/aman.jpeg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoMvW0VpJsGeBBGh1kh1QUBVb2Hda8iYIaVxe5N8ARNA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPipy7CjvMiUPbdoshrHqIm0qASfqhcBQbzVxXLlqYQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSModJHsNPtU7H2hao7lPHeDpI3rUb0WQAzjWf-Zxg05A&s=10"
     ],
     "inclui": [
       "Passagens aéreas de ida e volta",
@@ -45,9 +45,9 @@
     "economia": "Economize R$900",
     "sobre": "O Atlantis é um resort de grande porte, conhecido pelo parque aquático, pelo aquário com vida marinha e pela variedade de restaurantes e áreas de lazer. Uma boa escolha para quem quer um pacote completo, com diversão para toda a família sem precisar sair do hotel.",
     "galeria": [
-      "../img/hotels/atlantis.jpeg",
-      "../img/hotels/atlantis.jpeg",
-      "../img/hotels/atlantis.jpeg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVNro-6GH71Dtb3MHnQGujtggtZPUmpjLjwuYWSmR9nQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrqR9FjwKeOp4g7HjP8RwnLRe9j1VDvPjzRo0lE23_Jg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoZiT42vH7DelIadOW9ZZxnqzVcAuMFexR4uQAAshFmg&s=10"
     ],
     "inclui": [
       "Passagens aéreas de ida e volta",
@@ -64,7 +64,7 @@
     "tipo": "hotel",
     "nome": "Capella",
     "descricaoCurta": "Viaje para a Alemanha",
-    "imagemPrincipal": "../img/hotels/capella.jpeg",
+    "imagemPrincipal": "data:image/jpeg;base64,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",
     "desconto": "50%",
     "tag": "Pacote completo",
     "avaliacao": 4.8,
@@ -75,9 +75,9 @@
     "economia": "Economize R$749",
     "sobre": "A Capella cuida de hotéis boutique de luxo com atendimento muito personalizado, em que cada hóspede é tratado de forma individual. Ambientes elegantes, gastronomia refinada e atenção aos detalhes fazem da estadia uma experiência sob medida.",
     "galeria": [
-      "../img/hotels/capella.jpeg",
-      "../img/hotels/capella.jpeg",
-      "../img/hotels/capella.jpeg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrl7IvV8gz1om-9b-WO5zdTZosfhQwuPh_ptRklb1lcw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWISHLrlHst3a96urDGs2d29wme5oGEfyj-L-wgC_HJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCcdUBAAhOC66cLvXNLlCsa2z00mhW-ixT0nG8-0QSA&s=10"
     ],
     "inclui": [
       "Passagens aéreas de ida e volta",
@@ -94,7 +94,7 @@
     "tipo": "hotel",
     "nome": "Cheval Blanc",
     "descricaoCurta": "Conheça o berço da filosofia",
-    "imagemPrincipal": "../img/hotels/cheval.jpeg",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpbElVi2hhydguq07YwFCc2srCQL1v9h28yrhLjQHN3g&s=10",
     "desconto": "50%",
     "tag": "Pacote completo",
     "avaliacao": 4.8,
@@ -105,9 +105,9 @@
     "economia": "Economize R$999",
     "sobre": "O Cheval Blanc é a assinatura de hotelaria de luxo do grupo LVMH, com endereços pequenos e exclusivos, gastronomia de alto nível e um atendimento que valoriza a discrição e a elegância.",
     "galeria": [
-      "../img/hotels/cheval.jpeg",
-      "../img/hotels/cheval.jpeg",
-      "../img/hotels/cheval.jpeg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIn_KyA31VPiz6diIT7Z2cGcMT5GsOFNn3mPVGri3D0A&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThqo_46js5SdoDSkPI5FoEjMAdizkHhWyQoYo1ozdYJg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWfL8e-h-1pozJ3_CTkQlcxP9AiircIg58Wa8_BEIaw&s=10"
     ],
     "inclui": [
       "Passagens aéreas de ida e volta",
@@ -124,7 +124,7 @@
     "tipo": "hotel",
     "nome": "Claridges",
     "descricaoCurta": "Conheça a terra do bacalhau",
-    "imagemPrincipal": "../img/hotels/claridges.jpeg",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ06-aatmonihFqdgDo6DLR75GbRMLwU-Kz6MFemdjmtg&s=10",
     "desconto": "50%",
     "tag": "Pacote completo",
     "avaliacao": 4.7,
@@ -135,9 +135,9 @@
     "economia": "Economize R$999",
     "sobre": "O Claridge's é um dos nomes mais tradicionais da hotelaria de luxo, com décadas de história, decoração clássica e serviço impecável. Um endereço para quem gosta de elegância atemporal e conforto refinado.",
     "galeria": [
-      "../img/hotels/claridges.jpeg",
-      "../img/hotels/claridges.jpeg",
-      "../img/hotels/claridges.jpeg"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcMGoMWxxAZxtieny3WbiqkLV_iJwsEd8zKjLie_GMA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP3JW_iigc0GudwdK_LAOo-mtvT30BPu9IER2fRhDoYA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTimkt2DYWsyxPCWkjCN10UWknkx528Q-7GJbwgYg-G0A&s=10"
     ],
     "inclui": [
       "Passagens aéreas de ida e volta",
@@ -154,7 +154,7 @@
     "tipo": "hotel",
     "nome": "Mandarin",
     "descricaoCurta": "Conheça a capital do mundo",
-    "imagemPrincipal": "../img/hotels/mandarin.jpeg",
+    "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpjOu__hE3XpxkEWxCGimMGDFKdvr9jJdOGTsGJ3HY4Q&s=10",
     "desconto": "50%",
     "tag": "Pacote completo",
     "avaliacao": 4.8,

@@ -230,10 +230,6 @@ a {
   display: none !important;
 }
 
-/* =========================
-   HEADER LOGADO
-   ========================= */
-
 .logged-container {
   position: relative;
   margin-right: 2%;
@@ -371,8 +367,6 @@ a {
 .dropdown-logout svg {
   stroke: #ff6200;
 }
-
-/* Cabeçalho do dropdown do usuário */
 .edit-profile-link {
   margin-left: auto;
   align-self: flex-start;
@@ -385,8 +379,6 @@ a {
 .edit-profile-link:hover {
   text-decoration: underline;
 }
-
-/* Bloco de milhas */
 .miles-box {
   display: flex;
   align-items: center;
@@ -427,11 +419,6 @@ a {
 .miles-box:hover .miles-link {
   text-decoration: underline;
 }
-
-/* =========================
-   NOTIFICAÇÕES
-   ========================= */
-
 .notification-wrapper {
   position: relative;
 }
@@ -698,11 +685,6 @@ a {
 .login-button:hover {
   background: #17254b;
 }
-
-/* =========================
-   RESPONSIVIDADE
-   ========================= */
-
 @media (max-width: 1400px) {
   .header {
     width: calc(100% - 80px);
