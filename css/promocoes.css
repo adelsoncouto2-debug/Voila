@@ -191,8 +191,6 @@ html {
   background-color: #172e4d;
   color: white;
 }
-
-/* ===== MEDIA QUERIES (agora corretamente fechadas) ===== */
 @media (max-width: 1100px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);

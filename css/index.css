@@ -15,6 +15,8 @@ main {
   padding: 0 20px;
   box-sizing: border-box;
 }
+
+/* ===================== CAROUSEL (NÃO MEXI EM NADA) ===================== */
 .carousel_main {
   box-sizing: border-box;
   background-color: hsl(34, 100%, 80%);
@@ -173,6 +175,8 @@ main {
 .card_info button:hover {
   background: #e86d0d;
 }
+
+/* ===================== SEÇÃO DE VIAGENS ===================== */
 .viewport_trips {
   overflow: hidden;
   flex-grow: 1;
@@ -206,6 +210,136 @@ main {
   box-sizing: border-box;
 }
 
+/* ========== NOVO CARD (mesmo tamanho dos antigos) ========== */
+.trips_container .card {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px; /* igual ao antigo */
+  height: 240px; /* igual ao antigo */
+  min-height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: 3px solid #d8dbddcc;
+  transition: 0.3s ease;
+}
+
+.trips_container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.card-image-container {
+  position: relative;
+  height: 115px; /* proporção boa pro tamanho 240px */
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fc811c;
+  color: white;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 0 0 10px 0;
+}
+
+.package {
+  position: absolute;
+  top: 28px;
+  left: 8px;
+  background-color: white;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.62rem;
+  padding: 2px 9px;
+  border-radius: 8px;
+}
+
+.text_in_low_card {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 14px 0 14px;
+  flex-grow: 1;
+}
+
+.text_in_low_card h2 {
+  font-size: 0.95rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin: 0;
+  color: #172e4d;
+}
+
+.text_in_low_card p {
+  font-size: 0.68rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin: 3px 0 0 0;
+  color: #555;
+  line-height: 1.35;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 14px 12px 14px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.old-price {
+  font-size: 0.58rem;
+  color: #888;
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.new-price {
+  font-size: 0.9rem;
+  color: #172e4d;
+  font-weight: 600;
+  margin: 0;
+}
+
+.details-button {
+  background-color: white;
+  border: 1px solid #172e4d;
+  border-radius: 20px;
+  padding: 5px 14px;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.details-button:hover {
+  background-color: #172e4d;
+  color: white;
+}
+
+/* ========== ESTILOS ANTIGOS (mantidos caso ainda use) ========== */
 .cards_trips {
   display: flex;
   align-items: center;
@@ -282,6 +416,8 @@ main {
   background: #172e4d;
   color: white;
 }
+
+/* ===================== BOTÕES ===================== */
 .circle_button_left,
 .circle_button_right {
   border: 2px solid #172e4d;
@@ -315,6 +451,8 @@ main {
 .circle_button_right {
   right: 5px;
 }
+
+/* ===================== BACKGROUNDS ===================== */
 .airplane {
   background-image: url("../img/airplane_sunset.jpeg");
 }
@@ -356,11 +494,11 @@ main {
 .copacabana {
   background-image: url("../img/trips/copacabana_palace.jpg");
 }
-.burj_khalifa {
-  background-image: url("../img/trips/burj_khalifa.jpeg");
-}
 .empire_state {
   background-image: url("../img/trips/empire_state.jpeg");
+}
+.aman {
+  background-image: url("../img/hotels/aman.jpeg");
 }
 
 .text_in_card {

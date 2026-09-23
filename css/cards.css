@@ -9,6 +9,11 @@
   display: flex;
   flex-direction: column;
 }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+  transition: 0.5s ease;
+}
 
 .card-image-container {
   position: relative;

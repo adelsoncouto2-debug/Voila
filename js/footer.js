@@ -5,7 +5,6 @@ function getBasePath() {
   }
   return "";
 }
-
 function basePath(caminho) {
   if (!caminho.startsWith("/")) caminho = "/" + caminho;
   return getBasePath() + caminho;
@@ -14,6 +13,11 @@ function basePath(caminho) {
 fetch(basePath("/components/footer.html"))
   .then((response) => response.text())
   .then((data) => {
+    data = data.replace(
+      /(src|href)="(?:\.\.\/|\/(?!\/))/g,
+      `$1="${basePath("/")}`,
+    );
+
     document.getElementById("footer").innerHTML = data;
   })
   .catch((error) => console.error("Erro ao carregar o footer:", error));
