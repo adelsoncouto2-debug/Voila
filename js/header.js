@@ -193,7 +193,6 @@ fetch("../components/header.html")
     if (usuarioSalvo){
       if (usuarioSalvo == "Voila@gmail.com"){
         entrar("Admin", usuarioSalvo);
-        window.location.href = "/intranet/index.html";
       }
       else {
         entrar("Ricardo", usuarioSalvo);
