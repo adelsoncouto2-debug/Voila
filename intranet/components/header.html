@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <div class="header-left">
-        <img class="header-logo" src="../../img/header-logo.webp" alt="logo" />
+        <img class="header-logo" src="/img/header-logo.webp" alt="logo" />
         <div class="header-text">
           <h3><a class="text" href="/intranet/index.html">Dashboard</a></h3>
 
@@ -28,59 +28,10 @@
             <a class="text" href="/intranet/pages/clientes.html">Clientes</a>
           </h3>
 
-          <a class="vai-container" href="/intranet/pages/vai.html">
+          <a class="vai-container" href="/pages/vai.html">
             <img class="vai-logo" src="/img/vai.webp" alt="VAI" />
             <img class="vai-selected" src="/img/vai-selected.webp" alt="VAI" />
           </a>
-        </div>
-      </div>
-        <div class="user-dropdown">
-          <h2 class="dropdown-title">Bem-vindo!</h2>
-          <p class="dropdown-subtitle">Faça login para acessar sua conta.</p>
-          <button class="dropdown-google">
-            <img src="../../img/google-icon.svg" class="google-icon" alt="" />
-            <span>Continuar com Google</span>
-          </button>
-          <button class="dropdown-email">Entrar com e-mail</button>
-          <p class="dropdown-register">
-            Não possui uma conta?
-            <a href="../pages/cadastro.html">Criar conta</a>
-          </p>
-        </div>
-        <div class="login-modal">
-          <div class="login-modal-box">
-            <button class="login-close">✕</button>
-            <h2 class="login-modal-title">Entrar</h2>
-            <p class="login-modal-subtitle">Continue para acessar sua conta.</p>
-            <input type="email" class="login-input" placeholder="E-mail" />
-            <div class="password-container">
-              <input
-                id="password"
-                type="password"
-                class="login-input"
-                placeholder="Senha"
-              />
-              <img
-                src="../../img/eye.svg"
-                class="eye-icon"
-                alt="Mostrar senha"
-              />
-            </div>
-            <a href="#" class="forgot-password"> Esqueceu sua senha? </a>
-
-            <button class="login-button">Entrar</button>
-          </div>
-        </div>
-        <div class="forgot-modal">
-          <div class="login-modal-box">
-            <button class="forgot-close login-close">✕</button>
-            <h2 class="login-modal-title">Recuperar senha</h2>
-            <p class="login-modal-subtitle">
-              Digite seu e-mail para receber as instruções de redefinição.
-            </p>
-            <input type="email" class="login-input" placeholder="E-mail" />
-            <button class="login-button">Enviar link</button>
-          </div>
         </div>
       </div>
       <div class="logged-container hidden">
@@ -141,9 +92,6 @@
                 </div>
               </div>
             </div>
-            <a href="../pages/notificacoes.html" class="notification-see-all"
-              >Ver todas as notificações</a
-            >
           </div>
         </div>
 
@@ -171,12 +119,12 @@
               <p class="user-dropdown-name">Usuário</p>
               <p class="user-dropdown-email">usuario@email.com</p>
             </div>
-            <a href="../pages/perfil.html" class="edit-profile-link"
+            <a href="/pages/perfil.html" class="edit-profile-link"
               >Editar</a
             >
           </div>
 
-          <a href="../pages/milhas.html" class="miles-box">
+          <a href="/intranet/pages/milhas.html" class="miles-box">
             <span class="miles-icon">✈</span>
             <span class="miles-text">
               <span class="miles-label">Suas milhas Voilà</span>
@@ -186,41 +134,41 @@
           </a>
 
           <div class="dropdown-section">
-            <a href="../pages/minhas-viagens.html" class="dropdown-item">
+            <a href="/intranet/pages/minhas-viagens.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="6" width="14" height="8" rx="2" />
                 <line x1="10" y1="6" x2="10" y2="14" stroke-dasharray="2 2" />
               </svg>
               Minhas Viagens
             </a>
-            <a href="../pages/checkin.html" class="dropdown-item">
+            <a href="/intranet/pages/checkin.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="7" />
                 <polyline points="7,10 9,12 13,8" />
               </svg>
               Check-in Online
             </a>
-            <a href="../pages/milhas.html" class="dropdown-item">
+            <a href="/intranet/pages/milhas.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="10,2 12.4,7.2 18,7.8 13.8,11.5 15,17 10,14 5,17 6.2,11.5 2,7.8 7.6,7.2" />
               </svg>
               Programa de Milhas
             </a>
-            <a href="../pages/pagamento.html" class="dropdown-item">
+            <a href="/intranet/pages/pagamento.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="5" width="16" height="10" rx="2" />
                 <line x1="2" y1="8.5" x2="18" y2="8.5" />
               </svg>
               Formas de Pagamento
             </a>
-            <a href="../pages/perfil.html" class="dropdown-item">
+            <a href="/intranet/pages/perfil.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="7" r="3" />
                 <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" />
               </svg>
               Meus Dados
             </a>
-            <a href="../pages/ajuda.html" class="dropdown-item">
+            <a href="/intranet/pages/ajuda.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="7" />
                 <path d="M7.8 7.8a2.2 2.2 0 114 1.3c-.5.6-1.3.9-1.6 1.6-.1.3-.2.6-.2 1" />
@@ -228,7 +176,7 @@
               </svg>
               Central de Ajuda
             </a>
-            <a href="../pages/configuracoes.html" class="dropdown-item">
+            <a href="/intranet/pages/configuracoes.html" class="dropdown-item">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="10" r="2.6" />
                 <path d="M10 3v2M10 15v2M3 10h2M15 10h2M5.3 5.3l1.4 1.4M13.3 13.3l1.4 1.4M14.7 5.3l-1.4 1.4M6.7 13.3l-1.4 1.4" />
