@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Check-in</title>
+    <link rel="stylesheet" href="../../css/user/check-in.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-plane" viewBox="0 0 24 24">
+        <path
+          d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"
+        />
+      </symbol>
+      <symbol id="i-flash" viewBox="0 0 24 24">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+      </symbol>
+      <symbol id="i-seat" viewBox="0 0 24 24">
+        <path d="M6 3h4a2 2 0 0 1 2 2v7h5a2 2 0 0 1 2 2v3H8a2 2 0 0 1-2-2z" />
+        <path d="M8 21v-2M18 21v-2" />
+      </symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24">
+        <path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z" />
+        <path d="M14 7v10" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="M20 20l-4-4" />
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 11v5M12 8h.01" />
+      </symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24">
+        <path d="M4 5h16v11H9l-5 4z" />
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21a8 8 0 0 1 16 0" />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M3 10h18M8 3v4M16 3v4" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M5 12l5 5 9-10" />
+      </symbol>
+    </svg>
+
+    <div id="header"></div>
+    <main>
+      <div class="card_main">
+        <div class="carousel_main_text">
+          <div class="low_text_position">
+            <h2 class="text_size_carousel">Check-in</h2>
+            <p class="low_text_size">
+              Deixamos a sua viagem na palma da sua mão <br />com o check-in
+              online
+            </p>
+          </div>
+        </div>
+        <div class="card_img"></div>
+      </div>
+
+      <div class="content_grid">
+        <div class="left_column">
+          <section class="checkin_card">
+            <div class="steps">
+              <button type="button" class="step step_active" data-step="1">
+                <span class="circle_bellow">1</span>
+                <span class="step_label">Buscar reserva</span>
+              </button>
+              <button type="button" class="step step_todo" data-step="2">
+                <span class="circle_bellow">2</span>
+                <span class="step_label">Escolha de assento</span>
+              </button>
+              <button type="button" class="step step_todo" data-step="3">
+                <span class="circle_bellow">3</span>
+                <span class="step_label">Confirmação</span>
+              </button>
+              <button type="button" class="step step_todo" data-step="4">
+                <span class="circle_bellow">4</span>
+                <span class="step_label">Cartão de embarque</span>
+              </button>
+            </div>
+
+            <!-- Etapa 1: buscar reserva -->
+            <div class="step_panel" id="step_1">
+              <h3 class="panel_title">Encontre sua reserva</h3>
+              <p class="panel_text">
+                Digite os dados da sua reserva para iniciar o check-in.
+              </p>
+              <div class="form_grid">
+                <label class="field">
+                  <svg class="icon"><use href="#i-ticket" /></svg>
+                  <span class="field_text">
+                    <span class="field_label">Código da reserva</span>
+                    <input
+                      type="text"
+                      id="input_code"
+                      placeholder="Ex.: VLA123456"
+                      maxlength="10"
+                    />
+                  </span>
+                </label>
+                <label class="field">
+                  <svg class="icon"><use href="#i-user" /></svg>
+                  <span class="field_text">
+                    <span class="field_label">Sobrenome do passageiro</span>
+                    <input
+                      type="text"
+                      id="input_surname"
+                      placeholder="Ex.: Silva"
+                    />
+                  </span>
+                </label>
+                <label class="field">
+                  <svg class="icon"><use href="#i-calendar" /></svg>
+                  <span class="field_text">
+                    <span class="field_label">Data da viagem</span>
+                    <input type="date" id="input_date" />
+                  </span>
+                </label>
+                <label class="field">
+                  <svg class="icon"><use href="#i-plane" /></svg>
+                  <span class="field_text">
+                    <span class="field_label">Companhia aérea</span>
+                    <select id="input_airline">
+                      <option value="">Selecione</option>
+                      <option value="LATAM">LATAM</option>
+                      <option value="GOL">GOL</option>
+                      <option value="Azul">Azul</option>
+                      <option value="Voepass">Voepass</option>
+                    </select>
+                  </span>
+                  <svg class="icon icon_small"><use href="#i-chevron" /></svg>
+                </label>
+              </div>
+              <p class="form_error" id="form_error"></p>
+              <button type="button" class="btn_main" id="btn_search">
+                <svg class="icon"><use href="#i-search" /></svg>
+                Buscar reserva
+              </button>
+              <div class="info_box">
+                <svg class="icon icon_big"><use href="#i-info" /></svg>
+                <p>
+                  Se você ainda não possui o código da reserva, verifique em seu
+                  e-mail de confirmação ou entre em contato com nossa central de
+                  atendimento.
+                </p>
+              </div>
+            </div>
+
+            <!-- Etapa 2: escolha de assento -->
+            <div class="step_panel" id="step_2" hidden>
+              <h3 class="panel_title">Escolha seu assento</h3>
+              <p class="panel_text">
+                Toque em um assento livre para selecioná-lo.
+              </p>
+              <div class="seat_layout">
+                <div class="plane">
+                  <div class="seat_map" id="seat_map"></div>
+                </div>
+                <div class="seat_side">
+                  <ul class="legend">
+                    <li><span class="legend_box legend_free"></span>Livre</li>
+                    <li>
+                      <span class="legend_box legend_occupied"></span>Ocupado
+                    </li>
+                    <li>
+                      <span class="legend_box legend_selected"></span
+                      >Selecionado
+                    </li>
+                  </ul>
+                  <p class="seat_chosen">
+                    Assento escolhido:
+                    <strong id="seat_selected">nenhum</strong>
+                  </p>
+                  <button
+                    type="button"
+                    class="btn_main"
+                    id="btn_seat_next"
+                    disabled
+                  >
+                    Continuar
+                  </button>
+                  <button type="button" class="btn_outline" id="btn_seat_back">
+                    Voltar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Etapa 3: confirmação -->
+            <div class="step_panel" id="step_3" hidden>
+              <h3 class="panel_title">Confirme seus dados</h3>
+              <p class="panel_text">
+                Confira as informações do voo antes de finalizar o check-in.
+              </p>
+              <dl class="data_list" id="data_list"></dl>
+              <button type="button" class="btn_main" id="btn_confirm">
+                <svg class="icon"><use href="#i-check" /></svg>
+                Confirmar check-in
+              </button>
+              <button type="button" class="btn_outline" id="btn_confirm_back">
+                Voltar
+              </button>
+            </div>
+
+            <!-- Etapa 4: cartão de embarque -->
+            <div class="step_panel" id="step_4" hidden>
+              <h3 class="panel_title">Check-in concluído</h3>
+              <p class="panel_text">
+                Seu cartão de embarque está pronto. Apresente o QR code no
+                aeroporto.
+              </p>
+              <div id="final_pass"></div>
+              <div class="final_buttons">
+                <button type="button" class="btn_main" id="btn_print">
+                  Imprimir cartão
+                </button>
+                <button type="button" class="btn_outline" id="btn_restart">
+                  Fazer novo check-in
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="help_card">
+            <svg class="icon icon_big"><use href="#i-plane" /></svg>
+            <div class="help_text">
+              <h4>Dúvidas sobre o check-in?</h4>
+              <p>Nossa equipe está pronta para te ajudar.</p>
+            </div>
+            <button type="button" class="btn_outline btn_inline">
+              <svg class="icon icon_small"><use href="#i-chat" /></svg>
+              Falar com um atendente
+            </button>
+          </section>
+        </div>
+
+        <aside class="right_column">
+          <section class="side_card">
+            <h3 class="side_title">Por que fazer o check-in online?</h3>
+            <ul class="why_list">
+              <li>
+                <span class="why_icon"
+                  ><svg class="icon"><use href="#i-flash" /></svg
+                ></span>
+                <div>
+                  <h4>Evite filas no aeroporto</h4>
+                  <p>Ganhe tempo e mais comodidade.</p>
+                </div>
+              </li>
+              <li>
+                <span class="why_icon"
+                  ><svg class="icon"><use href="#i-seat" /></svg
+                ></span>
+                <div>
+                  <h4>Escolha seu assento</h4>
+                  <p>Garanta o lugar ideal para sua viagem.</p>
+                </div>
+              </li>
+              <li>
+                <span class="why_icon"
+                  ><svg class="icon"><use href="#i-ticket" /></svg
+                ></span>
+                <div>
+                  <h4>Receba seu cartão de embarque digital</h4>
+                  <p>Tudo no seu celular ou impresso.</p>
+                </div>
+              </li>
+              <li>
+                <span class="why_icon"
+                  ><svg class="icon"><use href="#i-clock" /></svg
+                ></span>
+                <div>
+                  <h4>Disponível para a maioria dos voos</h4>
+                  <p>Faça o check-in de 24h até 1h antes da decolagem.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script src="../../js/user/check-in.js"></script>
+  </body>
+</html>

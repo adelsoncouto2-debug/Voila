@@ -1,0 +1,622 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.card_main {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  height: 230px;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding-left: 30px;
+  max-width: 1150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.carousel_main_text {
+  box-sizing: border-box;
+  width: 440px;
+  flex-shrink: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.card_img {
+  height: 100%;
+  width: 55%;
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image:
+    linear-gradient(to right, hsl(34, 100%, 80%) 0%, transparent 80%),
+    url("../../img/airplane_trips.jpg");
+  background-size: cover;
+  background-position: 100% 45%;
+  background-repeat: no-repeat;
+}
+
+.low_text_position {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.text_size_carousel {
+  color: #172e4d;
+  margin: 20px 0 0 20px;
+  font-size: 2.5rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: bold;
+}
+
+.low_text_size {
+  color: #172e4d;
+  margin: 0 0 0 20px;
+  font-size: 1rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+}
+
+.circle_bellow {
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(34, 100%, 57%);
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 0;
+  border: none;
+  margin: 0;
+  justify-content: center;
+}
+
+/* ---------- Ícones ---------- */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.icon_small {
+  width: 18px;
+  height: 18px;
+}
+.icon_big {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- Layout abaixo do card principal ---------- */
+.content_grid {
+  box-sizing: border-box;
+  max-width: 1150px;
+  width: 100%;
+  margin: 24px auto 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+  font-family: "Poppins", "Outfit", sans-serif;
+  color: #172e4d;
+}
+
+.left_column,
+.right_column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.checkin_card,
+.help_card,
+.side_card {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+}
+
+.checkin_card {
+  padding: 0 28px 28px 28px;
+}
+
+/* ---------- Stepper ---------- */
+.steps {
+  display: flex;
+  border-bottom: 1px solid #e3e8ef;
+  margin-bottom: 28px;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 24px 8px 12px 0;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  cursor: default;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  text-align: left;
+}
+
+.step_label {
+  font-size: 0.85rem;
+}
+
+.step_active {
+  border-bottom-color: hsl(34, 100%, 80%);
+}
+.step_active .step_label {
+  font-weight: bold;
+}
+.step_done {
+  cursor: pointer;
+}
+.step_todo .circle_bellow {
+  background-color: hsl(40, 3%, 81%);
+}
+
+/* ---------- Painéis ---------- */
+.panel_title {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+}
+.panel_text {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: #5b6b82;
+}
+
+/* ---------- Formulário ---------- */
+.form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 66px;
+  padding: 8px 16px;
+  border: 1px solid #d5dce6;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #5b6b82;
+}
+.field:focus-within {
+  border-color: hsl(34, 100%, 60%);
+}
+
+.field_text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.field_label {
+  font-size: 0.8rem;
+  color: #172e4d;
+}
+.field input,
+.field select {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 2px 0;
+  font-size: 0.9rem;
+  font-family: "Poppins", "Outfit", sans-serif;
+  color: #172e4d;
+  width: 100%;
+  appearance: none;
+}
+
+.form_error {
+  min-height: 20px;
+  margin: 12px 0 0 0;
+  font-size: 0.85rem;
+  color: #b42318;
+}
+
+.btn_main {
+  box-sizing: border-box;
+  width: 100%;
+  height: 54px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, hsl(34, 100%, 70%), hsl(35, 100%, 50%));
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn_main:hover {
+  translateY(-4px);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
+.btn_main:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn_outline {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  margin-top: 12px;
+  border: 1px solid #172e4d;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn_outline:hover {
+  background-color: hsl(34, 100%, 94%);
+}
+
+.info_box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background-color: hsl(34, 100%, 94%);
+}
+.info_box p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ---------- Mapa de assentos ---------- */
+.seat_layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.plane {
+  box-sizing: border-box;
+  width: 340px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 70px 20px 24px 20px;
+  background-color: #f5f7fa;
+  border: 2px solid #d5dce6;
+  border-radius: 140px 140px 24px 24px;
+}
+
+.seat_map {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seat_row {
+  display: grid;
+  grid-template-columns: repeat(3, 36px) 30px repeat(3, 36px);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat_head span,
+.seat_number {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #5b6b82;
+}
+
+.seat {
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 2px solid #d5dce6;
+  border-radius: 10px 10px 4px 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.seat:hover {
+  border-color: hsl(34, 100%, 60%);
+}
+.seat_occupied {
+  background-color: hsl(40, 3%, 81%);
+  border-color: hsl(40, 3%, 81%);
+  cursor: not-allowed;
+}
+.seat_occupied:hover {
+  border-color: hsl(40, 3%, 81%);
+}
+.seat_chosen_on {
+  background-color: hsl(34, 100%, 80%);
+  border-color: hsl(34, 100%, 55%);
+}
+
+.seat_side {
+  flex: 1;
+  min-width: 200px;
+}
+
+.legend {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.legend_box {
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px 6px 3px 3px;
+  border: 2px solid #d5dce6;
+}
+.legend_free {
+  background-color: #ffffff;
+}
+.legend_occupied {
+  background-color: hsl(40, 3%, 81%);
+  border-color: hsl(40, 3%, 81%);
+}
+.legend_selected {
+  background-color: hsl(34, 100%, 80%);
+  border-color: hsl(34, 100%, 55%);
+}
+
+.seat_chosen {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Confirmação ---------- */
+.data_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin: 0 0 12px 0;
+}
+.data_list div {
+  padding: 12px 16px;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+}
+.data_list dt {
+  font-size: 0.8rem;
+  color: #5b6b82;
+}
+.data_list dd {
+  margin: 4px 0 0 0;
+  font-weight: bold;
+}
+
+.final_buttons {
+  margin-top: 24px;
+}
+
+/* ---------- Cartão de embarque ---------- */
+.boarding_pass {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
+  color: #172e4d;
+}
+.pass_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: #172e4d;
+  color: #ffffff;
+  font-weight: bold;
+}
+.pass_body {
+  padding: 18px;
+}
+.pass_route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pass_code {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.pass_city {
+  font-size: 0.75rem;
+  color: #5b6b82;
+}
+.pass_info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.pass_info span {
+  display: block;
+  font-size: 0.7rem;
+  color: #5b6b82;
+}
+.pass_info strong {
+  font-size: 0.95rem;
+}
+.pass_qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 2px dashed #d5dce6;
+  font-size: 0.8rem;
+}
+.pass_qr svg {
+  width: 110px;
+  height: 110px;
+}
+
+/* ---------- Ajuda ---------- */
+.help_card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+}
+.help_text {
+  flex: 1;
+}
+.help_text h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+}
+.help_text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5b6b82;
+}
+.btn_inline {
+  width: auto;
+  margin-top: 0;
+  padding: 0 18px;
+  white-space: nowrap;
+}
+
+/* ---------- Coluna direita ---------- */
+.side_card {
+  padding: 24px;
+}
+.side_title {
+  margin: 0 0 20px 0;
+  font-size: 1.05rem;
+}
+.side_text {
+  margin: 0 0 20px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #5b6b82;
+}
+
+.why_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.why_list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.why_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: hsl(34, 100%, 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.why_list h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.95rem;
+}
+.why_list p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5b6b82;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .content_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkin_card {
+    padding: 0 16px 20px 16px;
+  }
+  .step_label {
+    font-size: 0.7rem;
+  }
+  .form_grid,
+  .data_list {
+    grid-template-columns: 1fr;
+  }
+  .help_card {
+    flex-wrap: wrap;
+  }
+  .btn_inline {
+    width: 100%;
+  }
+}
