@@ -1,32 +1,60 @@
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passagens - Voilà</title>
     <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/filters.css" />
     <link rel="stylesheet" href="../css/passagens.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div id="header"></div>
+
     <main>
       <div class="products-area">
+        <!-- Filtro -->
         <div id="filter"></div>
+
+        <!-- Área de resultados -->
         <div class="passagens-container">
           <div class="display-format">
-            <button class="format-button">Separar ida e volta</button>
-            <button class="format-button">Agrupar ida e volta</button>
+            <button class="format-button active" data-format="separar">
+              Separar ida e volta
+            </button>
+            <button class="format-button" data-format="agrupar">
+              Agrupar ida e volta
+            </button>
           </div>
+
+          <!-- Cabeçalho da lista -->
+          <div class="lista-header">
+            <div class="col-cia">Companhia</div>
+            <div class="col-horarios">Horários</div>
+            <div class="col-preco">Valor</div>
+            <div class="col-bagagem">Bagagem</div>
+            <div class="col-toggle"></div>
+          </div>
+
+          <!-- Cards serão injetados aqui -->
           <div class="cards-container" id="cards"></div>
+
+          <!-- Mensagem quando não encontrar resultados -->
+          <div id="sem-resultados" class="sem-resultados" style="display: none;">
+            Nenhum voo encontrado com os filtros selecionados.
+          </div>
         </div>
       </div>
     </main>
+
     <script src="../js/header.js"></script>
-    <script src="../js/passagens.js"></script>
     <script src="../js/filters.js"></script>
+    <script src="../js/passagens.js"></script>
   </body>
 </html>
