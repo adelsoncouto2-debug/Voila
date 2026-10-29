@@ -1,13 +1,23 @@
+.flight-card [hidden] {
+  display: none !important;
+}
+
 .flight-card {
   background: #fff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  border-top: none;
   overflow: hidden;
   transition: box-shadow 0.2s ease;
 }
 
+.flight-card:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
 .flight-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+  position: relative;
 }
 
 .flight-card__header {
@@ -34,7 +44,6 @@
 
 .airline-name {
   font-weight: 600;
-  font-family: "Poppins", "Outfit", sans-serif;
   font-size: 14px;
   color: #1f2937;
 }
@@ -48,21 +57,17 @@
 .time-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .time {
   font-size: 18px;
   font-weight: 700;
-  font-family: "Poppins", "Outfit", sans-serif;
   color: #111827;
   line-height: 1.2;
 }
 
 .duration {
   font-size: 12px;
-
-  font-family: "Poppins", "Outfit", sans-serif;
   color: #6b7280;
   margin-top: 2px;
 }
@@ -77,9 +82,7 @@
 .path-label {
   font-size: 12px;
   font-weight: 500;
-
-  font-family: "Poppins", "Outfit", sans-serif;
-  color: #f97316; /* laranja do design */
+  color: #f97316;
   margin-bottom: 4px;
 }
 
@@ -106,6 +109,7 @@
 .path-line::before {
   left: 0;
 }
+
 .path-line::after {
   right: 0;
 }
@@ -116,22 +120,19 @@
 
 .price {
   font-size: 18px;
-
-  font-family: "Poppins", "Outfit", sans-serif;
   font-weight: 700;
-  color: #13396a; /* azul do preço */
+  color: #1d4ed8;
 }
 
-/* Bagagem */
 .flight-card__baggage {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   justify-content: center;
+  color: #4b5563;
 }
 
-.baggage-icon {
-  font-size: 16px;
-  opacity: 0.85;
+.flight-card__baggage svg {
+  flex-shrink: 0;
 }
 
 .flight-card__toggle {
@@ -159,7 +160,7 @@
 }
 
 .flight-card.is-expanded .flight-card__details {
-  max-height: 220px; /* ajuste se precisar de mais espaço */
+  max-height: 240px;
 }
 
 .details-top {
@@ -193,14 +194,13 @@
 .info-item.negative {
   color: #ef4444;
 }
+
 .info-item.positive {
   color: #16a34a;
 }
 
-.info-item .icon {
-  font-weight: 700;
-  width: 16px;
-  text-align: center;
+.info-item svg {
+  flex-shrink: 0;
 }
 
 .baggage-details {
@@ -217,6 +217,11 @@
   color: #374151;
 }
 
+.baggage-item svg {
+  flex-shrink: 0;
+  color: #4b5563;
+}
+
 @media (max-width: 900px) {
   .flight-card__header {
     grid-template-columns: 1fr 1fr;
@@ -228,18 +233,4 @@
   .flight-card__baggage {
     justify-self: start;
   }
-}
-.flight-card__baggage svg,
-.baggage-item svg,
-.info-item svg {
-  flex-shrink: 0;
-  color: #4b5563;
-}
-
-.info-item.negative svg {
-  color: #ef4444;
-}
-
-.info-item.positive svg {
-  color: #16a34a;
 }
