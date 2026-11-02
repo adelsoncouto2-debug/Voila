@@ -121,7 +121,7 @@
 .price {
   font-size: 18px;
   font-weight: 700;
-  color: #1d4ed8;
+  color: #172e4d;
 }
 
 .flight-card__baggage {
@@ -233,4 +233,30 @@
   .flight-card__baggage {
     justify-self: start;
   }
+}
+.flight-card__baggage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.flight-card__baggage span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  cursor: help;
+}
+
+.flight-card__baggage span:hover {
+  color: #3b8fa6;
+  transform: translateY(-2px);
+}
+
+.flight-card__baggage svg {
+  display: block;
 }

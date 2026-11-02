@@ -352,6 +352,10 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
   font-size: 0.9rem;
   color: #172e4d;
   cursor: pointer;
@@ -369,6 +373,95 @@ main {
 .tab-item.disabled {
   color: #bbb;
   cursor: default;
+}
+
+.detail-panel[hidden] {
+  display: none;
+}
+
+.detail-panel:not([hidden]) {
+  width: 100%;
+}
+
+.detail-panel h3 {
+  color: #172e4d;
+}
+
+.detail-list,
+.itinerary-list {
+  padding-left: 22px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.detail-list li,
+.itinerary-list li {
+  margin-bottom: 12px;
+}
+
+.itinerary-list p {
+  margin: 4px 0 0;
+}
+
+.reviews-list {
+  display: grid;
+  gap: 16px;
+}
+
+.review-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.review-avatar {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #172e4d;
+}
+
+.review-item p {
+  margin: 8px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.review-item small {
+  color: #777;
+}
+
+@media (max-width: 480px) {
+  .review-item {
+    gap: 12px;
+  }
+
+  .review-avatar {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .tab-icon {

@@ -27,7 +27,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "10/11/2026",
-    "dataVolta": "17/11/2026"
+    "dataVolta": "17/11/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Aman",
+      "descricao": "Estadia confortável em Aman, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Aman, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Aman no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Aman. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Aman. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Aman. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 2,
@@ -57,7 +114,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "17/11/2026",
-    "dataVolta": "22/11/2026"
+    "dataVolta": "22/11/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Atlantis",
+      "descricao": "Estadia confortável em Atlantis, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Atlantis, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Atlantis no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Atlantis. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Atlantis. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Atlantis. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 3,
@@ -87,7 +201,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "24/11/2026",
-    "dataVolta": "29/11/2026"
+    "dataVolta": "29/11/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Capella",
+      "descricao": "Estadia confortável em Capella, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Capella, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Capella no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Capella. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Capella. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Capella. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 4,
@@ -117,7 +288,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "01/12/2026",
-    "dataVolta": "06/12/2026"
+    "dataVolta": "06/12/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Cheval Blanc",
+      "descricao": "Estadia confortável em Cheval Blanc, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Cheval Blanc, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Cheval Blanc no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Cheval Blanc. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Cheval Blanc. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Cheval Blanc. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 5,
@@ -147,7 +375,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "08/12/2026",
-    "dataVolta": "13/12/2026"
+    "dataVolta": "13/12/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Claridges",
+      "descricao": "Estadia confortável em Claridges, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Claridges, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Claridges no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Claridges. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Claridges. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Claridges. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 6,
@@ -177,7 +462,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "15/12/2026",
-    "dataVolta": "20/12/2026"
+    "dataVolta": "20/12/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Mandarin",
+      "descricao": "Estadia confortável em Mandarin, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Mandarin, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Mandarin no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Mandarin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Mandarin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Mandarin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 7,
@@ -207,7 +549,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "22/12/2026",
-    "dataVolta": "27/12/2026"
+    "dataVolta": "27/12/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Nihi",
+      "descricao": "Estadia confortável em Nihi, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Nihi, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Nihi no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nihi. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nihi. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nihi. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 8,
@@ -237,7 +636,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "29/12/2026",
-    "dataVolta": "03/01/2027"
+    "dataVolta": "03/01/2027",
+    "hospedagem": {
+      "nome": "Hospedagem em Passalacqua",
+      "descricao": "Estadia confortável em Passalacqua, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Passalacqua, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Passalacqua no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Passalacqua. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Passalacqua. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Passalacqua. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 9,
@@ -267,7 +723,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "05/01/2027",
-    "dataVolta": "10/01/2027"
+    "dataVolta": "10/01/2027",
+    "hospedagem": {
+      "nome": "Hospedagem em Raffles",
+      "descricao": "Estadia confortável em Raffles, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Raffles, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Raffles no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Raffles. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Raffles. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Raffles. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 10,
@@ -297,7 +810,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "12/01/2027",
-    "dataVolta": "17/01/2027"
+    "dataVolta": "17/01/2027",
+    "hospedagem": {
+      "nome": "Hospedagem em Rosewood",
+      "descricao": "Estadia confortável em Rosewood, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Rosewood, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Rosewood no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Rosewood. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Rosewood. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Rosewood. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 11,
@@ -327,7 +897,64 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "19/01/2027",
-    "dataVolta": "24/01/2027"
+    "dataVolta": "24/01/2027",
+    "hospedagem": {
+      "nome": "Hospedagem em Soneva",
+      "descricao": "Estadia confortável em Soneva, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Soneva, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Soneva no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Soneva. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Soneva. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Soneva. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 12,
@@ -357,6 +984,63 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "26/01/2027",
-    "dataVolta": "31/01/2027"
+    "dataVolta": "31/01/2027",
+    "hospedagem": {
+      "nome": "Hospedagem em Upper House",
+      "descricao": "Estadia confortável em Upper House, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Upper House, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Upper House no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Upper House. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Upper House. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Upper House. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   }
 ]
