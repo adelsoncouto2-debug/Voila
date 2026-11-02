@@ -1,0 +1,550 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.card_main {
+  box-sizing: border-box;
+  background-color: hsl(34, 100%, 80%);
+  height: 270px;
+  margin: 40px auto 0 auto;
+  border-radius: 21px;
+  padding-left: 30px;
+  max-width: 1150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card_img {
+  height: 100%;
+  width: 65%;
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image:
+    linear-gradient(to right, hsl(34, 100%, 80%) 0%, transparent 80%),
+    url("../../img/card.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card_text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  flex: 1;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  position: relative;
+}
+.text_in_card {
+  color: #172e4d;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  margin-left: 10px;
+}
+.low_text_in_card {
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  text-align: left;
+  font-family: "Poppins", "Outfit", sans-serif;
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+}
+
+.text_bellow_main {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  box-sizing: border-box;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 44px 0 64px 0;
+  font-family: "Open Sans", sans-serif;
+  color: #172e4d;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.icon_small {
+  width: 18px;
+  height: 18px;
+}
+
+.pay_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.section_title {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 4px solid hsl(26, 100%, 50%);
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  color: #172e4d;
+}
+
+.section_count {
+  font-size: 0.9rem;
+  color: #5b6b82;
+}
+
+.method_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.method_card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 132px;
+  padding: 18px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background-color: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.method_card:hover {
+  box-shadow: 0 10px 24px rgba(23, 46, 77, 0.1);
+  transform: translateY(-2px);
+}
+.method_card:focus-visible,
+.btn_primary:focus-visible,
+.btn_secondary:focus-visible,
+.btn_ghost:focus-visible,
+.btn_close:focus-visible {
+  outline: 3px solid #172e4d;
+  outline-offset: 2px;
+}
+
+.method_logo {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+.method_logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.method_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.method_icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-color: hsl(34, 100%, 92%);
+  color: hsl(24, 95%, 38%);
+}
+.method_icon .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.method_badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: #e8effa;
+  color: #172e4d;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.method_badge_green {
+  background-color: #fff7e9;
+  color: #905b00;
+}
+
+.method_name {
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #172e4d;
+}
+.method_cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: hsl(24, 95%, 38%);
+}
+
+.saved_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.saved_item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+}
+.saved_info {
+  flex: 1;
+  min-width: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.saved_title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-weight: 700;
+  color: #172e4d;
+}
+.saved_sub {
+  font-size: 0.88rem;
+  color: #5b6b82;
+}
+
+.saved_actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.empty_state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 36px 20px;
+  text-align: center;
+  background-color: hsl(34, 100%, 96%);
+  border: 2px dashed hsl(34, 100%, 75%);
+  border-radius: 16px;
+}
+.empty_state .method_icon {
+  margin-bottom: 8px;
+  background-color: #ffffff;
+}
+.empty_title {
+  margin: 0;
+  font-weight: 700;
+  color: #172e4d;
+}
+.empty_text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #5b6b82;
+}
+
+.sim_note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0;
+  padding: 16px 20px;
+  background-color: #e8effa;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #172e4d;
+}
+
+.btn_primary,
+.btn_secondary,
+.btn_ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+.btn_primary {
+  padding: 12px 24px;
+  border: none;
+  background-color: hsl(24, 95%, 42%);
+  color: #ffffff;
+}
+.btn_primary:hover {
+  background-color: hsl(24, 95%, 36%);
+}
+.btn_secondary {
+  padding: 12px 20px;
+  border: 1.5px solid #c9d3e0;
+  background-color: #ffffff;
+  color: #172e4d;
+}
+.btn_secondary:hover {
+  border-color: #172e4d;
+}
+.btn_ghost {
+  padding: 8px 14px;
+  border: 1.5px solid #e3e8ef;
+  background-color: #ffffff;
+  color: #172e4d;
+  font-size: 0.85rem;
+}
+.btn_ghost:hover {
+  border-color: #172e4d;
+}
+.btn_danger:hover {
+  border-color: #c23b3b;
+  color: #c23b3b;
+}
+
+#pay_modal {
+  width: min(480px, calc(100% - 32px));
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #172e4d;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 24px 60px rgba(23, 46, 77, 0.35);
+}
+#pay_modal::backdrop {
+  background-color: rgba(23, 46, 77, 0.55);
+}
+#pay_modal[open] {
+  animation: modal_in 0.22s ease-out;
+}
+@keyframes modal_in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.modal_head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background-color: hsl(34, 100%, 80%);
+  border-radius: 20px 20px 0 0;
+}
+.modal_head .method_icon {
+  background-color: #ffffff;
+}
+.modal_head h3 {
+  flex: 1;
+  margin: 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  font-size: 1.15rem;
+  color: #172e4d;
+}
+.btn_close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #172e4d;
+  cursor: pointer;
+}
+.btn_close:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.modal_body {
+  padding: 24px;
+}
+#form_fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.field input,
+.field select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  color: #172e4d;
+  background-color: #ffffff;
+  border: 1.5px solid #c9d3e0;
+  border-radius: 12px;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: hsl(26, 100%, 50%);
+  box-shadow: 0 0 0 3px hsl(34, 100%, 85%);
+}
+.field input[aria-invalid="true"] {
+  border-color: #c23b3b;
+}
+.field_short {
+  max-width: 140px;
+}
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #5b6b82;
+}
+
+.form_error {
+  margin: 16px 0 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #fdeaea;
+  color: #9b2c2c;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.modal_foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px 24px 24px;
+}
+
+/* ---------- Aviso "Cadastrado com sucesso!" ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background-color: #172e4d;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(23, 46, 77, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 16px);
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+.toast_show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.toast_icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #2fb27a;
+  color: #ffffff;
+}
+.toast_error .toast_icon {
+  background-color: #c23b3b;
+}
+
+@media (max-width: 600px) {
+  .saved_actions {
+    width: 100%;
+  }
+  .saved_actions .btn_ghost {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pay_modal[open] {
+    animation: none;
+  }
+  .method_card,
+  .toast {
+    transition: none;
+  }
+}
