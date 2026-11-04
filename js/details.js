@@ -1,42 +1,73 @@
 function getParametrosDaUrl() {
   const params = new URLSearchParams(window.location.search);
+  const id = Number(params.get("id"));
 
   return {
-    id: parseInt(params.get("id")),
+    id: Number.isInteger(id) && id > 0 ? id : null,
     tipo: params.get("tipo"),
   };
 }
 
+function configurarAbas() {
+  const abas = document.querySelectorAll(".tab-item[data-tab]");
+  const paineis = document.querySelectorAll(".detail-panel[data-panel]");
+
+  abas.forEach((aba) => {
+    aba.addEventListener("click", () => {
+      const painelAtivo = aba.dataset.tab;
+
+      abas.forEach((item) => {
+        const ativo = item === aba;
+        item.classList.toggle("active", ativo);
+        item.setAttribute("aria-selected", String(ativo));
+      });
+
+      paineis.forEach((painel) => {
+        const ativo = painel.dataset.panel === painelAtivo;
+        painel.hidden = !ativo;
+        painel.classList.toggle("active", ativo);
+      });
+    });
+  });
+}
+
+function preencherLista(elemento, itens, criarItem = (li, item) => {
+  li.textContent = item;
+}) {
+  elemento.replaceChildren();
+
+  itens.forEach((item, indice) => {
+    const li = document.createElement("li");
+    criarItem(li, item, indice);
+    elemento.appendChild(li);
+  });
+}
+
 async function carregarDetalhes() {
   const { id, tipo } = getParametrosDaUrl();
+  const caminhos = {
+    hotel: "../json/hoteis.json",
+    combo: "../json/destinos.json",
+    promocao: "../json/destinos.json",
+  };
+  const caminhoJson = caminhos[tipo];
 
-  if (!id || !tipo) {
-    console.error("ID ou tipo não foi passado na URL.");
-    return;
-  }
-
-  let caminhoJson;
-
-  if (tipo === "hotel") {
-    caminhoJson = "../json/hoteis.json";
-  } else if (tipo === "destino") {
-    caminhoJson = "../json/destinos.json";
-  }
-
-  if (!caminhoJson) {
-    console.error("Tipo desconhecido:", tipo);
+  if (!id || !caminhoJson) {
+    console.error("ID ou tipo inválido na URL.", { id, tipo });
     return;
   }
 
   try {
     const resposta = await fetch(caminhoJson);
-    const dados = await resposta.json();
+    if (!resposta.ok) {
+      throw new Error(`Falha ao carregar os detalhes: HTTP ${resposta.status}`);
+    }
 
-    const item = dados.find((item) => item.id === id);
+    const dados = await resposta.json();
+    const item = dados.find((registro) => registro.id === id);
 
     if (!item) {
-      console.error("Item não encontrado para o id:", id);
-      return;
+      throw new Error(`Item do tipo "${tipo}" com ID ${id} não encontrado.`);
     }
 
     preencherPagina(item);
@@ -45,40 +76,83 @@ async function carregarDetalhes() {
   }
 }
 
-function preencherPagina(destino) {
+function preencherPagina(item) {
   document.getElementById("imagem-principal").style.backgroundImage =
-    `url("${destino.imagemPrincipal}")`;
-  document.getElementById("desconto").textContent = destino.desconto;
-  document.getElementById("tag").textContent = destino.tag;
-  document.getElementById("nome-destino").textContent = destino.nome;
+    `url("${item.imagemPrincipal}")`;
+  document.getElementById("desconto").textContent = item.desconto;
+  document.getElementById("tag").textContent = item.tag;
+  document.getElementById("nome-destino").textContent = item.nome;
 
-  document.getElementById("avaliacao").textContent = `⭐ ${destino.avaliacao}`;
+  document.getElementById("avaliacao").textContent = `⭐ ${item.avaliacao}`;
   document.getElementById("total-avaliacoes").textContent =
-    `(${destino.totalAvaliacoes} avaliações)`;
+    `(${item.totalAvaliacoes} avaliações)`;
+  document.getElementById("preco-antigo").textContent = item.precoAntigo;
+  document.getElementById("preco-novo").textContent = item.precoNovo;
+  document.getElementById("parcelas").textContent = item.parcelas;
+  document.getElementById("economia").textContent = item.economia;
+  document.getElementById("data-ida").value = item.dataIda;
+  document.getElementById("data-volta").value = item.dataVolta;
+  document.getElementById("sobre-destino").textContent = item.sobre;
+  document.title = `${item.nome} - Voilà`;
 
-  document.getElementById("preco-antigo").textContent = destino.precoAntigo;
-  document.getElementById("preco-novo").textContent = destino.precoNovo;
-  document.getElementById("parcelas").textContent = destino.parcelas;
-  document.getElementById("economia").textContent = destino.economia;
+  preencherLista(document.getElementById("lista-inclui"), item.inclui);
+  preencherLista(
+    document.getElementById("lista-inclui-resumo"),
+    item.inclui.slice(0, 3),
+  );
 
-  document.getElementById("data-ida").value = destino.dataIda;
-  document.getElementById("data-volta").value = destino.dataVolta;
+  document.getElementById("hospedagem-nome").textContent =
+    item.hospedagem.nome;
+  document.getElementById("hospedagem-descricao").textContent =
+    item.hospedagem.descricao;
+  preencherLista(
+    document.getElementById("lista-comodidades"),
+    item.hospedagem.comodidades,
+  );
 
-  document.getElementById("sobre-destino").textContent = destino.sobre;
+  preencherLista(
+    document.getElementById("lista-roteiro"),
+    item.roteiro,
+    (li, etapa) => {
+      const titulo = document.createElement("strong");
+      titulo.textContent = `${etapa.dia}: ${etapa.titulo}`;
+      const descricao = document.createElement("p");
+      descricao.textContent = etapa.descricao;
+      li.append(titulo, descricao);
+    },
+  );
 
-  document.title = destino.nome + " - Voilà";
+  preencherLista(
+    document.getElementById("lista-avaliacoes"),
+    item.avaliacoes,
+    (li, avaliacao, indice) => {
+      li.className = "review-item";
+      const avatar = document.createElement("img");
+      avatar.className = "review-avatar";
+      avatar.src = `../img/user_${(indice % 3) + 1}.jpeg`;
+      avatar.alt = `Foto de ${avaliacao.nome}`;
 
-  const listaInclui = document.getElementById("lista-inclui");
-  listaInclui.innerHTML = "";
-  destino.inclui.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    listaInclui.appendChild(li);
-  });
+      const conteudo = document.createElement("div");
+      conteudo.className = "review-content";
+      const cabecalho = document.createElement("div");
+      cabecalho.className = "review-header";
+      const autor = document.createElement("strong");
+      autor.textContent = avaliacao.nome;
+      const nota = document.createElement("span");
+      nota.textContent = `⭐ ${avaliacao.nota}/5`;
+      const comentario = document.createElement("p");
+      comentario.textContent = avaliacao.comentario;
+      const data = document.createElement("small");
+      data.textContent = avaliacao.data;
+      cabecalho.append(autor, nota);
+      conteudo.append(cabecalho, comentario, data);
+      li.append(avatar, conteudo);
+    },
+  );
 
   const galeria = document.getElementById("galeria-fotos");
-  galeria.innerHTML = "";
-  destino.galeria.forEach((imagem) => {
+  galeria.replaceChildren();
+  item.galeria.forEach((imagem) => {
     const div = document.createElement("div");
     div.classList.add("gallery-img");
     div.style.backgroundImage = `url("${imagem}")`;
@@ -86,4 +160,5 @@ function preencherPagina(destino) {
   });
 }
 
+configurarAbas();
 carregarDetalhes();

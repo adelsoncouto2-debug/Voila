@@ -8,59 +8,93 @@ main {
   width: 100%;
 }
 
+/* ==================== LAYOUT GERAL ==================== */
 .products-area {
-  width: 1200px;
-  max-width: calc(100% - 40px);
+  display: flex;
+  gap: 32px;
+  max-width: 1280px;
   margin: 40px auto;
-  display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 30px;
-  align-items: start;
-}
-
-#filter {
-  width: 350px;
-  min-width: 0;
+  padding: 0 24px;
 }
 
 .passagens-container {
-  width: 90%;
+  flex: 1;
   min-width: 0;
-  margin-top: 4.5%;
-  margin-left: 10%;
 }
 
+/* Botões Separar / Agrupar */
 .display-format {
-  width: 100%;
-  height: 55px;
   display: flex;
-  background-color: white;
-  border: 1px solid #d8dbdd;
-  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .format-button {
-  position: relative;
-  width: 50%;
-  height: 100%;
+  flex: 1;
+  padding: 14px 20px;
   border: none;
-  background-color: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  color: #111;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
   cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  position: relative;
 }
 
-.format-button:first-child {
-  border-right: 1px solid #999;
+.format-button.active {
+  color: #ff6200;
+  font-weight: 600;
 }
+
 .format-button.active::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 3px;
-  background-color: #ff6200;
+  background: #ff6200;
+}
+
+/* Cabeçalho da lista */
+.lista-header {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px 100px 40px;
+  gap: 16px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f9fafb;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+}
+
+/* Sem resultados */
+.sem-resultados {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .products-area {
+    flex-direction: column;
+  }
+
+  .lista-header {
+    display: none;
+  }
 }

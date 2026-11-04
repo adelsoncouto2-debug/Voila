@@ -1,13 +1,27 @@
-fetch("../components/header.html")
+function getBasePath() {
+  if (location.hostname.endsWith("github.io")) {
+    const partes = location.pathname.split("/").filter(Boolean);
+    return partes.length > 0 ? "/" + partes[0] : "";
+  }
+  return "";
+}
+
+function basePath(caminho) {
+  if (!caminho.startsWith("/")) caminho = "/" + caminho;
+  return getBasePath() + caminho;
+}
+
+fetch(basePath("/components/header.html"))
   .then((r) => r.text())
   .then((html) => {
+    html = html.replace(/(src|href)="\.\.\//g, `$1="${basePath("/")}`);
+
     document.getElementById("header").innerHTML = html;
 
     const pagina = window.location.pathname.split("/").pop() || "index.html";
 
     document.querySelectorAll(".header-text a.text").forEach((link) => {
       const href = link.getAttribute("href").split("/").pop();
-
       if (href === pagina) {
         link.classList.remove("text");
         link.classList.add("text-selected");
@@ -15,12 +29,9 @@ fetch("../components/header.html")
     });
 
     const vai = document.querySelector(".vai-container");
-
-    if (pagina === "vai.html") {
+    if (vai && pagina === "vai.html") {
       vai.classList.add("active");
     }
-
-    // ===== LOGIN (usuário deslogado) =====
     const loginContainer = document.querySelector(".login-container");
     const loginButton = document.querySelector(".login");
     const dropdown = document.querySelector(".user-dropdown");
@@ -46,7 +57,6 @@ fetch("../components/header.html")
 
     emailButton.addEventListener("click", function (e) {
       e.stopPropagation();
-
       dropdown.classList.remove("open");
       loginModal.classList.add("open");
     });
@@ -67,10 +77,10 @@ fetch("../components/header.html")
     eye.addEventListener("click", function () {
       if (password.type === "password") {
         password.type = "text";
-        eye.src = "../img/eye-off.svg";
+        eye.src = basePath("/img/eye-off.svg");
       } else {
         password.type = "password";
-        eye.src = "../img/eye.svg";
+        eye.src = basePath("/img/eye.svg");
       }
     });
 
@@ -80,7 +90,6 @@ fetch("../components/header.html")
 
     forgotLink.addEventListener("click", function (e) {
       e.preventDefault();
-
       loginModal.classList.remove("open");
       forgotModal.classList.add("open");
     });
@@ -94,8 +103,6 @@ fetch("../components/header.html")
         forgotModal.classList.remove("open");
       }
     });
-
-    // ===== HEADER LOGADO (usuário autenticado) =====
     const loggedContainer = document.querySelector(".logged-container");
     const userButton = document.querySelector(".user-button");
     const userDropdown = document.querySelector(".user-dropdown-logged");
@@ -113,8 +120,6 @@ fetch("../components/header.html")
     userDropdown.addEventListener("click", function (e) {
       e.stopPropagation();
     });
-
-    // Notificações
     const notificationButton = document.querySelector(".notification-button");
     const notificationDropdown = document.querySelector(
       ".notification-dropdown",
@@ -143,10 +148,8 @@ fetch("../components/header.html")
       userNameSpan.textContent = "Olá, " + nome;
       dropdownName.textContent = nome;
       dropdownEmail.textContent = email;
-
       loginContainer.classList.add("hidden");
       loggedContainer.classList.remove("hidden");
-
       dropdown.classList.remove("open");
       loginModal.classList.remove("open");
     }
@@ -163,8 +166,6 @@ fetch("../components/header.html")
       e.stopPropagation();
       sair();
     });
-
-    // ===== VERIFICAÇÃO DO LOGIN =====
     const btnEfetuarLogin = document.getElementById("btn-efetuar-login");
     const loginEmailInput = document.getElementById("login-email");
     const loginPasswordInput = document.getElementById("password");
@@ -174,13 +175,11 @@ fetch("../components/header.html")
       const senha = loginPasswordInput.value.trim();
       if (usuario === "Voila@gmail.com" && senha === "1234") {
         alert("Login realizado com sucesso!");
-        // Informa q o usuário logou
         sessionStorage.setItem("usuarioLogado", usuario);
-        
-        window.location.href = "/intranet/index.html";
-      }
-      else if (usuario === "ricardo@iftm.edu.br" && senha === "1234") {
+        window.location.href = basePath("/intranet/index.html");
+      } else if (usuario === "ricardo@iftm.edu.br" && senha === "1234") {
         alert("Login realizado com sucesso!");
+        sessionStorage.setItem("usuarioLogado", usuario);
         entrar("Ricardo", usuario);
         sessionStorage.setItem("usuarioLogado", usuario);
       } 
@@ -190,12 +189,12 @@ fetch("../components/header.html")
     });
 
     const usuarioSalvo = sessionStorage.getItem("usuarioLogado");
-    if (usuarioSalvo){
-      if (usuarioSalvo == "Voila@gmail.com"){
+    if (usuarioSalvo) {
+      if (usuarioSalvo === "Voila@gmail.com") {
         entrar("Admin", usuarioSalvo);
-      }
-      else {
+      } else {
         entrar("Ricardo", usuarioSalvo);
       }
     }
-});
+  })
+  .catch((erro) => console.error("Erro ao carregar o header:", erro));

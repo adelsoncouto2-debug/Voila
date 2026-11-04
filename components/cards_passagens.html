@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/cards_passagens.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <template id="flight-card-template">
+      <article class="flight-card">
+        <div class="flight-card__header">
+          <div class="flight-card__airline">
+            <img class="airline-logo" src="" alt="" />
+            <span class="airline-name" data-field="airline"></span>
+          </div>
+
+          <div class="flight-card__times">
+            <div class="time-block">
+              <span class="time" data-field="departure"></span>
+            </div>
+
+            <div class="flight-path">
+              <span class="path-label" data-field="type"></span>
+              <div class="path-line"></div>
+              <span class="duration" data-field="duration"></span>
+            </div>
+
+            <div class="time-block">
+              <span class="time" data-field="arrival"></span>
+            </div>
+          </div>
+
+          <div class="flight-card__price">
+            <span class="price" data-field="price"></span>
+          </div>
+
+          <div class="flight-card__baggage">
+            <!-- Mochila -->
+            <span data-bag-icon="mochila" title="Mochila">
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M9 6V4.5A2.5 2.5 0 0 1 11.5 2h1A2.5 2.5 0 0 1 15 4.5V6"
+                />
+                <path
+                  d="M6 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"
+                />
+                <path d="M8 7V5h8v2" />
+                <path d="M4 12h3M17 12h3" />
+                <path d="M8 21v-3M16 21v-3" />
+                <path d="M9 11h6" />
+              </svg>
+            </span>
+
+            <!-- Bagagem de mão -->
+            <span data-bag-icon="mao" title="Bagagem de mão">
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 7V5a3 3 0 0 1 6 0v2" />
+                <rect x="4" y="7" width="16" height="14" rx="2" />
+                <path d="M8 7v14M16 7v14" />
+                <path d="M4 11h16" />
+              </svg>
+            </span>
+
+            <!-- Bagagem despachada -->
+            <span data-bag-icon="despachada" title="Bagagem despachada">
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="4" y="6" width="16" height="15" rx="2" />
+                <path d="M9 6V4a3 3 0 0 1 6 0v2" />
+                <path d="M8 21v1M16 21v1" />
+                <path d="M9 10v7M15 10v7" />
+              </svg>
+            </span>
+          </div>
+
+          <button
+            class="flight-card__toggle"
+            type="button"
+            aria-label="Expandir detalhes"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flight-card__details">
+          <div class="details-top">
+            <span data-field="class"></span>
+            <span data-field="flight-number"></span>
+            <span data-field="aircraft"></span>
+          </div>
+
+          <div class="details-bottom">
+            <div class="info-list">
+              <div class="info-item" data-field="cancellation">
+                <svg
+                  data-icon="positive"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <svg
+                  data-icon="negative"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+                <span></span>
+              </div>
+
+              <div class="info-item" data-field="seat">
+                <svg
+                  data-icon="positive"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <svg
+                  data-icon="negative"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="baggage-details">
+              <div class="baggage-item" data-baggage="mochila">Mochila</div>
+              <div class="baggage-item" data-baggage="mao">Bagagem de mão</div>
+              <div class="baggage-item" data-baggage="despachada">
+                Bagagem despachada
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

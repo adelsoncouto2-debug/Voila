@@ -26,12 +26,68 @@
       "Suporte 24 horas durante a viagem"
     ],
     "dataIda": "22/05/2026",
-    "dataVolta": "22/05/2026"
+    "dataVolta": "22/05/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Maldivas",
+      "descricao": "Estadia confortável em Maldivas, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Maldivas, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Maldivas no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Maldivas. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Maldivas. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Maldivas. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 2,
     "tipo": "promocao",
-
     "nome": "Toquio",
     "imagemPrincipal": "../img/trips/toquio.webp",
     "desconto": "50%",
@@ -55,12 +111,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Toquio",
+      "descricao": "Estadia confortável em Toquio, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Toquio, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Toquio no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Toquio. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Toquio. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Toquio. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 3,
     "tipo": "promocao",
-
     "nome": "Berlim",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22paag3lfqEg_CWcf_TrVPLHAu0jmBu8h-ONObwwmog&s=10",
     "desconto": "50%",
@@ -84,12 +196,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Berlim",
+      "descricao": "Estadia confortável em Berlim, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Berlim, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Berlim no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Berlim. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Berlim. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Berlim. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 4,
     "tipo": "promocao",
-
     "nome": "Grécia",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGJsiDj6LslJ_EtymOMLrFGWCZHslMxovXOFFOHxfsA&s=10",
     "desconto": "50%",
@@ -113,12 +281,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Grécia",
+      "descricao": "Estadia confortável em Grécia, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Grécia, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Grécia no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Grécia. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Grécia. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Grécia. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 5,
     "tipo": "promocao",
-
     "nome": "Porto",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMS4o9IYvv3jHEwt3ennXHL6-IEeZsEAa-UOIv4KSvQ&s=10",
     "desconto": "50%",
@@ -142,12 +366,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Porto",
+      "descricao": "Estadia confortável em Porto, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Porto, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Porto no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Porto. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Porto. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Porto. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 6,
     "tipo": "promocao",
-
     "nome": "Nova York",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoB4pRG4F4crx4PXqHis15NbF5wueomfMFIGnuK_n1oA&s=10",
     "desconto": "50%",
@@ -171,12 +451,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Nova York",
+      "descricao": "Estadia confortável em Nova York, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Nova York, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Nova York no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nova York. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nova York. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Nova York. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 7,
     "tipo": "promocao",
-
     "nome": "Havana",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRimk9sDkw3ZTJohr67R5b71OuKq0ZR50c_iiOW_PqHvg&s=10",
     "desconto": "50%",
@@ -200,12 +536,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Havana",
+      "descricao": "Estadia confortável em Havana, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Havana, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Havana no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Havana. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Havana. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Havana. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 8,
     "tipo": "promocao",
-
     "nome": "Buenos Aires",
     "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc5MEnCahsjBncJyCVn7pUW-y7aqlEzhZfhrVbsCUU-A&s=10",
     "desconto": "50%",
@@ -229,12 +621,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Buenos Aires",
+      "descricao": "Estadia confortável em Buenos Aires, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Buenos Aires, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Buenos Aires no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Buenos Aires. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Buenos Aires. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Buenos Aires. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 9,
     "tipo": "promocao",
-
     "nome": "Dublin",
     "imagemPrincipal": " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSAXuWoA0DBWw0CLaij6jb_oWJHlBTrQlG6O5omdlVjQ&s=10",
     "desconto": "50%",
@@ -258,12 +706,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Dublin",
+      "descricao": "Estadia confortável em Dublin, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Dublin, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Dublin no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Dublin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Dublin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Dublin. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 10,
     "tipo": "promocao",
-
     "nome": "Madrid",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1cHiog4jnaZWrPPrKU4LYcvNqA6EXBrDH8Zlq-EWZg&s=10",
     "desconto": "50%",
@@ -287,12 +791,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Madrid",
+      "descricao": "Estadia confortável em Madrid, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Madrid, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Madrid no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Madrid. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Madrid. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Madrid. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 11,
     "tipo": "promocao",
-
     "nome": "Santiago",
     "imagemPrincipal": "  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJgj1fBZbSRwNkw4DE6omL4Hsz41dy7mLLIWQKQ-w3nQ&s=10",
     "desconto": "50%",
@@ -316,12 +876,68 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Santiago",
+      "descricao": "Estadia confortável em Santiago, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Santiago, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Santiago no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Santiago. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Santiago. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Santiago. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   },
   {
     "id": 12,
     "tipo": "promocao",
-
     "nome": "Paris",
     "imagemPrincipal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi4PIx9zv8Xg0Buv77deSr57IQrgHk7YLOLaH7CNqJWQ&s=10",
     "desconto": "50%",
@@ -345,6 +961,63 @@
       "Seguro viagem"
     ],
     "dataIda": "10/06/2026",
-    "dataVolta": "17/06/2026"
+    "dataVolta": "17/06/2026",
+    "hospedagem": {
+      "nome": "Hospedagem em Paris",
+      "descricao": "Estadia confortável em Paris, com localização conveniente e suporte durante toda a viagem.",
+      "comodidades": [
+        "Wi-Fi disponível durante a estadia",
+        "Café da manhã incluso",
+        "Recepção e suporte ao viajante",
+        "Quarto com banheiro privativo"
+      ]
+    },
+    "roteiro": [
+      {
+        "dia": "Dia 1",
+        "titulo": "Chegada e acomodação",
+        "descricao": "Chegada ao Paris, traslado e acomodação na hospedagem."
+      },
+      {
+        "dia": "Dia 2",
+        "titulo": "Primeiro passeio",
+        "descricao": "Dia livre para conhecer os principais pontos da região."
+      },
+      {
+        "dia": "Dia 3",
+        "titulo": "Experiência local",
+        "descricao": "Aproveite uma atividade ou passeio sugerido pela equipe local."
+      },
+      {
+        "dia": "Dia 4",
+        "titulo": "Dia livre",
+        "descricao": "Tempo livre para descansar ou explorar o Paris no seu ritmo."
+      },
+      {
+        "dia": "Dia 5",
+        "titulo": "Retorno",
+        "descricao": "Check-out, traslado de retorno e encerramento da viagem."
+      }
+    ],
+    "avaliacoes": [
+      {
+        "nome": "Mariana",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Paris. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Rafael",
+        "nota": 5,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Paris. A viagem foi bem organizada e aproveitamos muito a estadia."
+      },
+      {
+        "nome": "Camila",
+        "nota": 4,
+        "data": "Avaliação de viajante",
+        "comentario": "Foi uma ótima experiência em Paris. A viagem foi bem organizada e aproveitamos muito a estadia."
+      }
+    ]
   }
 ]

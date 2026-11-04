@@ -1,0 +1,258 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <link rel="stylesheet" href="../../css/user/pagamentos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <symbol id="i-pix" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M12 3l3.5 3.5a2 2 0 0 1 0 2.8L12 12.8 8.5 9.3a2 2 0 0 1 0-2.8L12 3z"
+          />
+          <path
+            d="M12 21l-3.5-3.5a2 2 0 0 1 0-2.8L12 11.2l3.5 3.5a2 2 0 0 1 0 2.8L12 21z"
+          />
+          <path d="M3 12h3M18 12h3" />
+        </g>
+      </symbol>
+      <symbol id="i-card" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2.5" y="5" width="19" height="14" rx="3" />
+          <path d="M2.5 10h19M6.5 15h4" />
+        </g>
+      </symbol>
+      <symbol id="i-barcode" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 5v14M7 5v14M10.5 5v14M14 5v14M17 5v14M20 5v14" />
+        </g>
+      </symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H17v3" />
+          <rect x="3" y="8" width="18" height="12" rx="2.5" />
+          <circle cx="16.5" cy="14" r="1.2" />
+        </g>
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"
+          />
+        </g>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12.5l4.5 4.5L19 7.5" />
+        </g>
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 5v14M5 12h14" />
+        </g>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 6l12 12M18 6L6 18" />
+        </g>
+      </symbol>
+    </svg>
+
+    <div id="header"></div>
+    <main>
+      <div class="card_main">
+        <div class="card_text">
+          <h2 class="text_in_card">Pagamentos</h2>
+          <p class="low_text_in_card">
+            Pague sua viagem com segurança e praticidade com a Voilà
+          </p>
+        </div>
+        <div class="card_img"></div>
+      </div>
+
+      <div class="text_bellow_main">
+        <!-- Métodos disponíveis -->
+        <section class="pay_section" aria-labelledby="titulo_metodos">
+          <div class="section_head">
+            <h3 class="section_title" id="titulo_metodos">
+              Adicionar forma de pagamento
+            </h3>
+          </div>
+
+          <div class="method_grid">
+            <button type="button" class="method_card" data-method="pix">
+              <span class="method_logo">
+                <img src="../../img/pix.png" alt="" />
+              </span>
+              <span class="method_content">
+                <span class="method_name">PIX</span>
+                <span class="method_badge method_badge_green">Recomendado</span>
+                <span class="method_cta">
+                  <svg class="icon icon_small"><use href="#i-plus"></use></svg>
+                  Adicionar
+                </span>
+              </span>
+            </button>
+
+            <button type="button" class="method_card" data-method="cartao">
+              <span class="method_logo">
+                <img src="../../img/mastercard.png" alt="" />
+              </span>
+              <span class="method_content">
+                <span class="method_name">Cartão</span>
+                <span class="method_badge">Até 12x</span>
+                <span class="method_cta">
+                  <svg class="icon icon_small"><use href="#i-plus"></use></svg>
+                  Adicionar
+                </span>
+              </span>
+            </button>
+
+            <button type="button" class="method_card" data-method="boleto">
+              <span class="method_logo">
+                <img src="../../img/boleto.png" alt="" />
+              </span>
+              <span class="method_content">
+                <span class="method_name">Boleto</span>
+                <span class="method_badge">Até 3 dias</span>
+                <span class="method_cta">
+                  <svg class="icon icon_small"><use href="#i-plus"></use></svg>
+                  Adicionar
+                </span>
+              </span>
+            </button>
+
+            <button type="button" class="method_card" data-method="carteira">
+              <span class="method_logo">
+                <img src="../../img/carteira.png" alt="" />
+              </span>
+              <span class="method_content">
+                <span class="method_name">Carteira</span>
+                <span class="method_badge">Rápido</span>
+                <span class="method_cta">
+                  <svg class="icon icon_small"><use href="#i-plus"></use></svg>
+                  Adicionar
+                </span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="pay_section" aria-labelledby="titulo_salvas">
+          <div class="section_head">
+            <h3 class="section_title" id="titulo_salvas">
+              Suas formas de pagamento
+            </h3>
+            <span class="section_count" id="saved_count"></span>
+          </div>
+
+          <ul class="saved_list" id="saved_list"></ul>
+        </section>
+      </div>
+
+      <dialog id="pay_modal" aria-labelledby="modal_title">
+        <form id="pay_form" novalidate>
+          <header class="modal_head">
+            <span class="method_icon" id="modal_icon"></span>
+            <h3 id="modal_title"></h3>
+            <button
+              type="button"
+              class="btn_close"
+              id="modal_close"
+              aria-label="Fechar"
+            >
+              <svg class="icon"><use href="#i-close"></use></svg>
+            </button>
+          </header>
+
+          <div class="modal_body">
+            <div id="form_fields"></div>
+            <p class="form_error" id="form_error" role="alert" hidden></p>
+          </div>
+
+          <footer class="modal_foot">
+            <button type="button" class="btn_secondary" id="modal_cancel">
+              Cancelar
+            </button>
+            <button type="submit" class="btn_primary">Cadastrar</button>
+          </footer>
+        </form>
+      </dialog>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast_icon"
+          ><svg class="icon icon_small"><use href="#i-check"></use></svg
+        ></span>
+        <span id="toast_text"></span>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/footer.js"></script>
+    <script src="../../js/user/pagamentos.js"></script>
+  </body>
+</html>

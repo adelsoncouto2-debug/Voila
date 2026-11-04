@@ -1,6 +1,3 @@
-/* ===== Componente de Paginação (bolinhas) ===== */
-/* Reutilizável em qualquer lista de cards paginada */
-
 .pagination-dots {
   display: flex;
   align-items: center;
