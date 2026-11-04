@@ -173,7 +173,6 @@ fetch(basePath("/components/header.html"))
     btnEfetuarLogin.addEventListener("click", () => {
       const usuario = loginEmailInput.value.trim();
       const senha = loginPasswordInput.value.trim();
-
       if (usuario === "Voila@gmail.com" && senha === "1234") {
         alert("Login realizado com sucesso!");
         sessionStorage.setItem("usuarioLogado", usuario);
@@ -182,7 +181,9 @@ fetch(basePath("/components/header.html"))
         alert("Login realizado com sucesso!");
         sessionStorage.setItem("usuarioLogado", usuario);
         entrar("Ricardo", usuario);
-      } else {
+        sessionStorage.setItem("usuarioLogado", usuario);
+      } 
+      else {
         alert("Usuário ou senha incorretos.");
       }
     });
