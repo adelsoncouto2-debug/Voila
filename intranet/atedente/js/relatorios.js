@@ -1,4 +1,5 @@
 "use strict";
+const reportScriptUrl = document.currentScript.src;
 
 /* =====================================================================
    RELATÓRIOS - Voilà
@@ -6,10 +7,9 @@
    Organização do arquivo:
      1. CONFIG ............ único lugar para trocar JSON local por backend
      2. Camada de dados ... fetchReport() + normalizeReport()
-     3. Métricas .......... definição dos indicadores (usada na tela e no PDF)
+     3. Métricas .......... definição dos indicadores exibidos na tela
      4. Gráficos SVG ...... barras, linhas/área, rosca e distribuição
      5. Tela .............. renderização e eventos
-     6. PDF ............... geração com jsPDF a partir dos mesmos dados
 
    CONTRATO DE DADOS (o que o backend precisa devolver)
    GET {API_BASE_URL}{REPORTS_ENDPOINT}
@@ -47,7 +47,7 @@ const CONFIG = {
   REPORTS_ENDPOINT: "/reports/me",
 
   // Arquivo usado enquanto API_BASE_URL estiver vazio.
-  LOCAL_DATA_URL: "../json/relatorios.json",
+  LOCAL_DATA_URL: new URL("../json/relatorios.json", reportScriptUrl).href,
 
   LOCALE: "pt-BR",
   CURRENCY: "BRL",
@@ -89,10 +89,6 @@ const money = new Intl.NumberFormat(CONFIG.LOCALE, {
   style: "currency",
   currency: CONFIG.CURRENCY,
 });
-const compact = new Intl.NumberFormat(CONFIG.LOCALE, {
-  notation: "compact",
-  maximumFractionDigits: 1,
-});
 const pct = (ratio) => `${nf1.format(ratio * 100)}%`;
 
 const monthDate = (id) => {
@@ -109,14 +105,6 @@ const monthName = (id) => monthFormat(id, { month: "long" }); // "janeiro"
 const monthLong = (id) =>
   capitalize(monthFormat(id, { month: "long", year: "numeric" })); // "Janeiro de 2026"
 const monthShort = (id) => monthFormat(id, { month: "short" }).replace(".", ""); // "jan"
-
-const slugify = (text) =>
-  String(text)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 
 /* Escala "bonita" para eixos: devolve { max, step, count } */
 function niceScale(maxValue, targetTicks = 4) {
@@ -220,7 +208,7 @@ function normalizeReport(raw) {
 }
 
 /* ---------------------------------------------------------------------
-   3. MÉTRICAS (compartilhadas entre a tela e o PDF)
+   3. MÉTRICAS
    --------------------------------------------------------------------- */
 const METRICS = {
   clientsServed: {
@@ -702,15 +690,6 @@ function setStatus(type, message = "") {
       : "");
 }
 
-let toastTimer;
-function toast(message) {
-  const el = $("#toast");
-  el.textContent = message;
-  el.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove("show"), 4500);
-}
-
 async function init() {
   setStatus("loading");
   $("#report-content").hidden = true;
@@ -746,7 +725,6 @@ async function init() {
   setStatus("ready");
   $("#report-content").hidden = false;
   fillMonthSelect();
-  $("#btn-download").disabled = false;
   render();
 }
 
@@ -754,7 +732,6 @@ function bindEvents() {
   $("#month-select").addEventListener("change", (e) =>
     selectMonth(e.target.value),
   );
-  $("#btn-download").addEventListener("click", downloadPdf);
 
   const content = $("#report-content");
   content.addEventListener("click", (e) => {
@@ -788,562 +765,6 @@ function bindEvents() {
   }).observe(content);
 }
 
-/* ---------------------------------------------------------------------
-   6. PDF
-   --------------------------------------------------------------------- */
-const PDF_COLORS = {
-  orange: [245, 121, 58],
-  orangeLight: [251, 217, 184],
-  navy: [13, 42, 77],
-  gray: [107, 114, 128],
-  border: [229, 231, 235],
-  green: [46, 158, 91],
-  red: [217, 83, 79],
-  white: [255, 255, 255],
-};
-
-/* jsPDF usa fontes padrão (Latin-1): troca espaços especiais do Intl. */
-const clean = (text) => String(text).replace(/[\u00a0\u202f]/g, " ");
-
-async function downloadPdf() {
-  const button = $("#btn-download");
-  const label = $("#btn-download-label");
-
-  if (!window.jspdf?.jsPDF) {
-    toast(
-      "O gerador de PDF não carregou. Verifique sua conexão e tente de novo.",
-    );
-    return;
-  }
-
-  button.disabled = true;
-  button.classList.add("is-loading");
-  label.textContent = "Gerando PDF...";
-
-  try {
-    await new Promise((resolve) => setTimeout(resolve, 60)); // deixa o botão atualizar
-    const { current, previous } = currentAndPrevious();
-    const doc = buildPdf(state.report, current, previous);
-    doc.save(`relatorio-${slugify(state.report.user.name)}-${current.id}.pdf`);
-    toast("Relatório baixado.");
-  } catch (error) {
-    console.error(error);
-    toast("Não foi possível gerar o PDF. Tente novamente.");
-  } finally {
-    button.disabled = false;
-    button.classList.remove("is-loading");
-    label.textContent = "Baixar meu relatório";
-  }
-}
-
-function buildPdf(report, current, previous) {
-  const { jsPDF } = window.jspdf;
-  const C = PDF_COLORS;
-  const doc = new jsPDF({ unit: "mm", format: "a4" });
-  const PW = 210,
-    PH = 297,
-    M = 15,
-    CW = PW - 2 * M;
-  const months = report.months;
-  let y = 0;
-
-  /* --- helpers de desenho --- */
-  const fill = (c) => doc.setFillColor(...c);
-  const stroke = (c) => doc.setDrawColor(...c);
-  const text = (
-    value,
-    x,
-    yy,
-    { size = 9, bold = false, color = C.navy, align = "left" } = {},
-  ) => {
-    doc.setFont("helvetica", bold ? "bold" : "normal");
-    doc.setFontSize(size);
-    doc.setTextColor(...color);
-    doc.text(clean(value), x, yy, { align });
-  };
-  const ensureSpace = (height) => {
-    if (y + height > PH - 20) {
-      doc.addPage();
-      y = M + 4;
-    }
-  };
-  const sectionTitle = (title, x = M, yy = y) => {
-    fill(C.orange);
-    doc.rect(x, yy - 3.6, 1.2, 4.6, "F");
-    text(title, x + 3.2, yy, { size: 11, bold: true });
-  };
-
-  /* --- faixa superior --- */
-  fill(C.orange);
-  doc.rect(0, 0, PW, 36, "F");
-  text("VOILÀ", M, 17, { size: 22, bold: true, color: C.white });
-  text("O mundo é seu", M, 24, { size: 9, color: C.white });
-  text("Relatório de desempenho", PW - M, 16, {
-    size: 13,
-    bold: true,
-    color: C.white,
-    align: "right",
-  });
-  text(monthLong(current.id), PW - M, 24, {
-    size: 10,
-    color: C.white,
-    align: "right",
-  });
-
-  /* --- identificação --- */
-  const generated = new Intl.DateTimeFormat(CONFIG.LOCALE, {
-    dateStyle: "short",
-    timeStyle: "short",
-  }).format(new Date());
-  text(report.user.name, M, 47, { size: 14, bold: true });
-  text(
-    `${report.user.role ? `${report.user.role}  |  ` : ""}Gerado em ${generated}`,
-    M,
-    53,
-    { size: 9, color: C.gray },
-  );
-
-  /* --- cartões de indicadores --- */
-  const pdfDelta = (key) => {
-    const metric = METRICS[key];
-    const delta = metricDelta(metric, current, previous);
-    if (!delta) return { line: "", color: C.gray };
-    return {
-      line: `${delta.up ? "+" : "-"}${delta.text} vs. ${monthName(previous.id)}`,
-      color: delta.good ? C.green : C.red,
-    };
-  };
-
-  const kpiRow = (keys, yy) => {
-    const gap = 4;
-    const w = (CW - gap * (keys.length - 1)) / keys.length;
-    keys.forEach((key, i) => {
-      const x = M + i * (w + gap);
-      const metric = METRICS[key];
-      const d = pdfDelta(key);
-      fill(C.white);
-      stroke(C.border);
-      doc.setLineWidth(0.3);
-      doc.roundedRect(x, yy, w, 24, 2.5, 2.5, "FD");
-      text(metric.label, x + 3, yy + 6.5, { size: 7.5, color: C.gray });
-      text(metric.format(current), x + 3, yy + 14.5, {
-        size: key === "revenue" ? 11.5 : 14,
-        bold: true,
-      });
-      text(d.line, x + 3, yy + 20.5, { size: 7, bold: true, color: d.color });
-    });
-  };
-
-  y = 62;
-  kpiRow(["clientsServed", "clientsMissed", "avgRating", "revenue"], y);
-  kpiRow(
-    ["attendanceRate", "bookings", "conversionRate", "avgResponseMinutes"],
-    y + 28,
-  );
-  y += 66;
-
-  /* --- gráfico de barras --- */
-  sectionTitle("Atendimentos por mês", M, y);
-  // legenda
-  fill(C.orange);
-  doc.rect(PW - M - 58, y - 3, 3, 3, "F");
-  text("Atendidos", PW - M - 54, y - 0.4, { size: 8, color: C.gray });
-  fill(C.navy);
-  doc.rect(PW - M - 30, y - 3, 3, 3, "F");
-  text("Não atendidos", PW - M - 26, y - 0.4, { size: 8, color: C.gray });
-  y += 6;
-  pdfBarChart(
-    doc,
-    C,
-    { x: M, y, w: CW, h: 50 },
-    months,
-    current.id,
-    text,
-    fill,
-    stroke,
-  );
-  y += 50 + 12;
-
-  /* --- avaliação e receita lado a lado --- */
-  const half = (CW - 8) / 2;
-  sectionTitle("Avaliação média por mês", M, y);
-  sectionTitle("Receita gerada por mês", M + half + 8, y);
-  y += 6;
-
-  const lowest = Math.min(...months.map((m) => m.avgRating));
-  const ratingLo = Math.max(0, Math.floor((lowest - 0.1) * 4) / 4);
-  const ratingTicks = [];
-  for (let v = ratingLo; v <= 5 + 1e-9; v += 0.25) ratingTicks.push(v);
-  const revScale = niceScale(Math.max(...months.map((m) => m.revenue)));
-  const revTicks = Array.from(
-    { length: revScale.count + 1 },
-    (_, i) => i * revScale.step,
-  );
-
-  pdfLineChart(
-    doc,
-    C,
-    { x: M, y, w: half, h: 40 },
-    months,
-    current.id,
-    {
-      value: (m) => m.avgRating,
-      ticks: ratingTicks,
-      tickFormat: (v) => nf2.format(v),
-      valueFormat: (v) => nf2.format(v),
-    },
-    text,
-    fill,
-    stroke,
-  );
-  pdfLineChart(
-    doc,
-    C,
-    { x: M + half + 8, y, w: half, h: 40 },
-    months,
-    current.id,
-    {
-      value: (m) => m.revenue,
-      ticks: revTicks,
-      tickFormat: (v) => compact.format(v),
-      valueFormat: (v) => money.format(v).replace(/,00$/, ""),
-    },
-    text,
-    fill,
-    stroke,
-  );
-  y += 40 + 14;
-
-  /* --- tabela comparativa --- */
-  ensureSpace(14 + (months.length + 1) * 7);
-  sectionTitle("Comparativo mensal", M, y);
-  y += 5;
-
-  const cols = [
-    { title: "Mês", w: 44, align: "left", get: (m) => monthLong(m.id) },
-    {
-      title: "Atendidos",
-      w: 24,
-      align: "right",
-      get: (m) => nf0.format(m.clientsServed),
-    },
-    {
-      title: "Não atend.",
-      w: 26,
-      align: "right",
-      get: (m) => nf0.format(m.clientsMissed),
-    },
-    {
-      title: "Avaliação",
-      w: 26,
-      align: "right",
-      get: (m) => nf2.format(m.avgRating),
-    },
-    {
-      title: "Reservas",
-      w: 24,
-      align: "right",
-      get: (m) => nf0.format(m.bookings),
-    },
-    {
-      title: "Receita",
-      w: 36,
-      align: "right",
-      get: (m) => money.format(m.revenue),
-    },
-  ];
-  const drawRow = (cells, yy, options) => {
-    let x = M;
-    cols.forEach((col, i) => {
-      const tx = col.align === "right" ? x + col.w - 3 : x + 3;
-      text(cells[i], tx, yy + 4.8, { size: 8.5, align: col.align, ...options });
-      x += col.w;
-    });
-  };
-
-  fill(C.navy);
-  doc.rect(M, y, CW, 7, "F");
-  drawRow(
-    cols.map((c) => c.title),
-    y,
-    { bold: true, color: C.white },
-  );
-  y += 7;
-
-  months.forEach((m) => {
-    const selected = m.id === current.id;
-    if (selected) {
-      fill(C.orangeLight);
-      doc.rect(M, y, CW, 7, "F");
-    }
-    stroke(C.border);
-    doc.setLineWidth(0.2);
-    doc.line(M, y + 7, M + CW, y + 7);
-    drawRow(
-      cols.map((c) => c.get(m)),
-      y,
-      { bold: selected },
-    );
-    y += 7;
-  });
-  y += 12;
-
-  /* --- avaliações e destinos --- */
-  ensureSpace(58);
-  sectionTitle(`Avaliações de ${monthName(current.id)}`, M, y);
-  sectionTitle(`Destinos mais vendidos`, M + half + 8, y);
-  y += 8;
-
-  const total = current.ratingsCount || 1;
-  for (let i = 0; i < 5; i++) {
-    const stars = 5 - i;
-    const count = Number(current.ratingDistribution[stars]) || 0;
-    const share = count / total;
-    const rowY = y + i * 8;
-    const trackX = M + 22;
-    const trackW = half - 22 - 20;
-    text(`${stars} ${stars === 1 ? "estrela" : "estrelas"}`, M, rowY + 3, {
-      size: 8.5,
-    });
-    fill(C.border);
-    doc.roundedRect(trackX, rowY, trackW, 3.4, 1.7, 1.7, "F");
-    if (count) {
-      fill(C.orange);
-      doc.roundedRect(
-        trackX,
-        rowY,
-        Math.max(2.5, trackW * share),
-        3.4,
-        1.7,
-        1.7,
-        "F",
-      );
-    }
-    text(pct(share), M + half, rowY + 3, {
-      size: 8.5,
-      color: C.gray,
-      align: "right",
-    });
-  }
-
-  const destTotal =
-    current.bookings ||
-    sum(current.topDestinations.map((d) => d.bookings)) ||
-    1;
-  if (!current.topDestinations.length) {
-    text("Nenhuma reserva registrada neste mês.", M + half + 8, y + 3, {
-      size: 8.5,
-      color: C.gray,
-    });
-  }
-  current.topDestinations.slice(0, 5).forEach((d, i) => {
-    const rowY = y + i * 8;
-    const x = M + half + 8;
-    text(`${i + 1}. ${d.name}`, x, rowY + 3, { size: 8.5, bold: i === 0 });
-    text(
-      `${nf0.format(d.bookings)} ${d.bookings === 1 ? "reserva" : "reservas"}  |  ${pct(d.bookings / destTotal)}`,
-      x + half,
-      rowY + 3,
-      {
-        size: 8.5,
-        color: C.gray,
-        align: "right",
-      },
-    );
-  });
-
-  /* --- rodapé em todas as páginas --- */
-  const pages = doc.getNumberOfPages();
-  for (let p = 1; p <= pages; p++) {
-    doc.setPage(p);
-    stroke(C.border);
-    doc.setLineWidth(0.2);
-    doc.line(M, PH - 14, PW - M, PH - 14);
-    text(
-      `Voilà - Relatório de ${report.user.name} - ${monthLong(current.id)}`,
-      M,
-      PH - 9,
-      { size: 8, color: C.gray },
-    );
-    text(`Página ${p} de ${pages}`, PW - M, PH - 9, {
-      size: 8,
-      color: C.gray,
-      align: "right",
-    });
-  }
-
-  return doc;
-}
-
-function pdfBarChart(doc, C, box, months, selectedId, text, fill, stroke) {
-  const padL = 9,
-    padB = 7;
-  const plotX = box.x + padL;
-  const plotW = box.w - padL;
-  const plotH = box.h - padB;
-  const scale = niceScale(
-    Math.max(...months.map((m) => Math.max(m.clientsServed, m.clientsMissed))),
-  );
-  const yOf = (v) => box.y + plotH - (v / scale.max) * plotH;
-  const colW = plotW / months.length;
-  const barW = Math.min(7, colW * 0.28);
-
-  months.forEach((m, i) => {
-    if (m.id !== selectedId) return;
-    fill(C.orangeLight);
-    doc.roundedRect(
-      plotX + colW * i + 0.5,
-      box.y,
-      colW - 1,
-      plotH,
-      1.5,
-      1.5,
-      "F",
-    );
-  });
-
-  stroke(C.border);
-  doc.setLineWidth(0.2);
-  for (let i = 0; i <= scale.count; i++) {
-    const v = scale.step * i;
-    doc.line(plotX, yOf(v), plotX + plotW, yOf(v));
-    text(nf0.format(v), plotX - 2, yOf(v) + 1, {
-      size: 7,
-      color: C.gray,
-      align: "right",
-    });
-  }
-
-  months.forEach((m, i) => {
-    const selected = m.id === selectedId;
-    const cx = plotX + colW * i + colW / 2;
-    fill(C.orange);
-    doc.rect(
-      cx - barW - 0.4,
-      yOf(m.clientsServed),
-      barW,
-      box.y + plotH - yOf(m.clientsServed),
-      "F",
-    );
-    fill(C.navy);
-    doc.rect(
-      cx + 0.4,
-      yOf(m.clientsMissed),
-      barW,
-      box.y + plotH - yOf(m.clientsMissed),
-      "F",
-    );
-    text(monthShort(m.id), cx, box.y + box.h - 1.5, {
-      size: 7.5,
-      bold: selected,
-      color: selected ? C.navy : C.gray,
-      align: "center",
-    });
-    if (selected) {
-      text(
-        String(m.clientsServed),
-        cx - barW / 2 - 0.4,
-        yOf(m.clientsServed) - 1.2,
-        { size: 7.5, bold: true, align: "center" },
-      );
-      text(
-        String(m.clientsMissed),
-        cx + barW / 2 + 0.4,
-        yOf(m.clientsMissed) - 1.2,
-        { size: 7.5, bold: true, align: "center" },
-      );
-    }
-  });
-}
-
-function pdfLineChart(
-  doc,
-  C,
-  box,
-  months,
-  selectedId,
-  opts,
-  text,
-  fill,
-  stroke,
-) {
-  const padL = 13,
-    padB = 7,
-    padT = 5;
-  const plotX = box.x + padL;
-  const plotW = box.w - padL;
-  const plotH = box.h - padB - padT;
-  const lo = opts.ticks[0];
-  const hi = opts.ticks[opts.ticks.length - 1];
-  const yOf = (v) => box.y + padT + plotH - ((v - lo) / (hi - lo)) * plotH;
-  const colW = plotW / months.length;
-  const xOf = (i) => plotX + colW * i + colW / 2;
-
-  months.forEach((m, i) => {
-    if (m.id !== selectedId) return;
-    fill(C.orangeLight);
-    doc.roundedRect(
-      plotX + colW * i + 0.5,
-      box.y + padT - 1,
-      colW - 1,
-      plotH + 1,
-      1.5,
-      1.5,
-      "F",
-    );
-  });
-
-  stroke(C.border);
-  doc.setLineWidth(0.2);
-  opts.ticks.forEach((v) => {
-    doc.line(plotX, yOf(v), plotX + plotW, yOf(v));
-    text(opts.tickFormat(v), plotX - 2, yOf(v) + 1, {
-      size: 7,
-      color: C.gray,
-      align: "right",
-    });
-  });
-
-  stroke(C.navy);
-  doc.setLineWidth(0.6);
-  for (let i = 1; i < months.length; i++) {
-    doc.line(
-      xOf(i - 1),
-      yOf(opts.value(months[i - 1])),
-      xOf(i),
-      yOf(opts.value(months[i])),
-    );
-  }
-
-  months.forEach((m, i) => {
-    const selected = m.id === selectedId;
-    const px = xOf(i);
-    const py = yOf(opts.value(m));
-    doc.setLineWidth(0.5);
-    if (selected) {
-      fill(C.orange);
-      stroke(C.white);
-      doc.circle(px, py, 1.7, "FD");
-      text(opts.valueFormat(opts.value(m)), px, py - 3.2, {
-        size: 7.5,
-        bold: true,
-        align: "center",
-      });
-    } else {
-      fill(C.white);
-      stroke(C.navy);
-      doc.circle(px, py, 1, "FD");
-    }
-    text(monthShort(m.id), px, box.y + box.h - 1.5, {
-      size: 7.5,
-      bold: selected,
-      color: selected ? C.navy : C.gray,
-      align: "center",
-    });
-  });
-}
-
-/* --------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   init();

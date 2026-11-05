@@ -12,16 +12,15 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/intranet/css/header.css" />
-    <link rel="stylesheet" href="/intranet/css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
-    <link rel="stylesheet" href="/intranet/css/relatorios.css" />
-    <link rel="stylesheet" href="/intranet/css/index.css" />
-    <script src="/intranet/js/auth.js"></script>
+    <link rel="stylesheet" href="../css/relatorios.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/auth.js"></script>
   </head>
 
   <body>
-    
     <div id="header"></div>
 
     <main>
@@ -36,23 +35,6 @@
             <label for="month-select">Mês do relatório</label>
             <select id="month-select" disabled></select>
           </div>
-
-          <button type="button" id="btn-download" class="btn-primary" disabled>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            <span id="btn-download-label">Baixar meu relatório</span>
-          </button>
         </div>
       </section>
 
@@ -117,15 +99,13 @@
       </div>
     </main>
     <div id="footer"></div>
-    <script src="/intranet/js/footer.js"></script>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
     ></script>
-    <script defer src="/intranet/js/relatorios.js"></script>
-    <script src="/intranet/js/header.js">
-      fetch("/intranet/components/header.html")
-    </script>
+    <script src="../js/footer.js"></script>
+    <script defer src="../js/relatorios.js"></script>
+    <script src="../js/header.js"></script>
   </body>
 </html>

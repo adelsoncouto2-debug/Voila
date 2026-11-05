@@ -176,14 +176,13 @@ fetch(basePath("/components/header.html"))
       if (usuario === "Voila@gmail.com" && senha === "1234") {
         alert("Login realizado com sucesso!");
         sessionStorage.setItem("usuarioLogado", usuario);
-        window.location.href = basePath("/intranet/index.html");
+        window.location.href = basePath("/intranet/atedente/index.html");
       } else if (usuario === "ricardo@iftm.edu.br" && senha === "1234") {
         alert("Login realizado com sucesso!");
         sessionStorage.setItem("usuarioLogado", usuario);
         entrar("Ricardo", usuario);
         sessionStorage.setItem("usuarioLogado", usuario);
-      } 
-      else {
+      } else {
         alert("Usuário ou senha incorretos.");
       }
     });

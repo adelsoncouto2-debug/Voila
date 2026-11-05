@@ -79,53 +79,7 @@ main {
   opacity: 0.6;
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 22px;
-  background: var(--dash-orange);
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(245, 121, 58, 0.28);
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
-
-.btn-primary svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: #e4652a;
-}
-
-.btn-primary:active:not(:disabled) {
-  transform: translateY(1px);
-}
-
-.btn-primary:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-  box-shadow: none;
-}
-
-.btn-primary.is-loading svg {
-  animation: rp-spin 0.9s linear infinite;
-}
-
 .field select:focus-visible,
-.btn-primary:focus-visible,
 .report-status button:focus-visible {
   outline: 3px solid rgba(245, 121, 58, 0.45);
   outline-offset: 2px;
@@ -418,32 +372,6 @@ main {
   color: var(--dash-gray-text);
 }
 
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 32px;
-  z-index: 10000;
-  max-width: calc(100% - 32px);
-  padding: 14px 20px;
-  background: var(--dash-navy);
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(13, 42, 77, 0.3);
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 12px);
-  transition:
-    opacity 0.25s,
-    transform 0.25s;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
 @media (max-width: 640px) {
   .report-head {
     align-items: stretch;
@@ -464,8 +392,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spinner,
-  .btn-primary.is-loading svg {
+  .spinner {
     animation-duration: 2.5s;
   }
 }

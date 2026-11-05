@@ -14,6 +14,9 @@
  *      renderDestinations) que recebe esse objeto e desenha a tela.
  * -----------------------------------------------------------------------
  */
+const dashboardSiteRootUrl = new URL("../../../", document.currentScript.src);
+const dashboardAssetUrl = (path) =>
+  new URL(`img/${path}`, dashboardSiteRootUrl).href;
 
 /**
  * @typedef {Object} DashboardData
@@ -183,25 +186,25 @@ async function getDashboardData() {
         name: "Paris",
         subLabel: "220 restantes",
         deltaPercent: 18.6,
-        thumbUrl: "../../img/trips/paris.jpeg",
+        thumbUrl: dashboardAssetUrl("trips/paris.jpeg"),
       },
       {
         name: "Tóquio",
         subLabel: "105 restantes",
         deltaPercent: 15.5,
-        thumbUrl: "../../img/trips/toquio.webp",
+        thumbUrl: dashboardAssetUrl("airplane_trips.jpg"),
       },
       {
         name: "Rio de Janeiro",
         subLabel: "70 restantes",
         deltaPercent: 10.3,
-        thumbUrl: "../../img/trips/rio_de_janeiro.jpeg",
+        thumbUrl: dashboardAssetUrl("trips/rio_de_janeiro.jpeg"),
       },
       {
         name: "Maldivas",
         subLabel: "40 restantes",
         deltaPercent: 7.2,
-        thumbUrl: "../../img/trips/maldivas.jpeg",
+        thumbUrl: dashboardAssetUrl("trips/maldivas.jpeg"),
       },
     ],
   };
