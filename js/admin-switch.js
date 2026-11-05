@@ -1,12 +1,18 @@
 /* /js/admin-switch.js */
 (function () {
   const init = () => {
-    const usuario = (sessionStorage.getItem("usuarioLogado") || "").toLowerCase();
+    const usuario = (
+      sessionStorage.getItem("usuarioLogado") || ""
+    ).toLowerCase();
     if (usuario !== "voila@gmail.com") return;
 
     const naIntranet = location.pathname.startsWith("/intranet");
-    const destino = naIntranet ? "/index.html" : "/intranet/index.html";
-    const rotulo = naIntranet ? "Ver site do cliente" : "Voltar para a intranet";
+    const destino = naIntranet
+      ? "/index.html"
+      : "/intranet/atedente/index.html";
+    const rotulo = naIntranet
+      ? "Ver site do cliente"
+      : "Voltar para a intranet";
 
     const style = document.createElement("style");
     style.textContent = `

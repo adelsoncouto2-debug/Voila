@@ -1,6 +1,15 @@
 "use strict";
+const reportScriptUrl = document.currentScript.src;
 
 
+/*
+ * Organização do arquivo:
+ *   1. CONFIG ............ único lugar para trocar JSON local por backend
+ *   2. Camada de dados ... fetchReport() + normalizeReport()
+ *   3. Métricas .......... definição dos indicadores exibidos na tela
+ *   4. Gráficos SVG ...... barras, linhas/área, rosca e distribuição
+ *   5. Tela .............. renderização e eventos
+ */
 
 
 
@@ -46,8 +55,8 @@ const CONFIG = {
   API_BASE_URL: "",
   REPORTS_ENDPOINT: "/reports/me",
 
-
-  LOCAL_DATA_URL: "../json/relatorios.json",
+  // Arquivo usado enquanto API_BASE_URL estiver vazio.
+  LOCAL_DATA_URL: new URL("../json/relatorios.json", reportScriptUrl).href,
 
   LOCALE: "pt-BR",
   CURRENCY: "BRL",
@@ -89,10 +98,6 @@ const money = new Intl.NumberFormat(CONFIG.LOCALE, {
   style: "currency",
   currency: CONFIG.CURRENCY,
 });
-const compact = new Intl.NumberFormat(CONFIG.LOCALE, {
-  notation: "compact",
-  maximumFractionDigits: 1,
-});
 const pct = (ratio) => `${nf1.format(ratio * 100)}%`;
 
 const monthDate = (id) => {
@@ -110,6 +115,7 @@ const monthLong = (id) =>
   capitalize(monthFormat(id, { month: "long", year: "numeric" }));
 const monthShort = (id) => monthFormat(id, { month: "short" }).replace(".", "");
 
+/* Escala "bonita" para eixos: devolve { max, step, count } */
 const slugify = (text) =>
   String(text)
     .normalize("NFD")
@@ -117,7 +123,6 @@ const slugify = (text) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-
 
 function niceScale(maxValue, targetTicks = 4) {
   if (!maxValue || maxValue <= 0) return { max: 1, step: 0.25, count: 4 };
@@ -219,9 +224,9 @@ function normalizeReport(raw) {
   return { user, months };
 }
 
-
-
-
+/* ---------------------------------------------------------------------
+   3. MÉTRICAS
+   --------------------------------------------------------------------- */
 const METRICS = {
   clientsServed: {
     label: "Clientes atendidos",
@@ -702,15 +707,6 @@ function setStatus(type, message = "") {
       : "");
 }
 
-let toastTimer;
-function toast(message) {
-  const el = $("#toast");
-  el.textContent = message;
-  el.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove("show"), 4500);
-}
-
 async function init() {
   setStatus("loading");
   $("#report-content").hidden = true;
@@ -746,7 +742,6 @@ async function init() {
   setStatus("ready");
   $("#report-content").hidden = false;
   fillMonthSelect();
-  $("#btn-download").disabled = false;
   render();
 }
 
@@ -754,7 +749,6 @@ function bindEvents() {
   $("#month-select").addEventListener("change", (e) =>
     selectMonth(e.target.value),
   );
-  $("#btn-download").addEventListener("click", downloadPdf);
 
   const content = $("#report-content");
   content.addEventListener("click", (e) => {
@@ -787,9 +781,6 @@ function bindEvents() {
     frame = requestAnimationFrame(renderCharts);
   }).observe(content);
 }
-
-
-
 
 const PDF_COLORS = {
   orange: [245, 121, 58],
