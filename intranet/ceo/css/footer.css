@@ -1,0 +1,107 @@
+.body {
+  height: 100%;
+}
+
+.footer {
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  margin: 50px auto 0 auto;
+  padding: 30px 20px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logo {
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.letter {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  text-decoration: none;
+  max-width: 250px;
+}
+
+.img-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons img {
+  width: 30px;
+  height: 30px;
+  mix-blend-mode: multiply;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.icons > :nth-child(1) {
+  width: 40px;
+  margin-left: 0;
+}
+
+.links {
+  display: block;
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+  font-family: "Poppins", "Outfit", sans-serif;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .img-conteiner {
+    align-items: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 12px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .letter {
+    max-width: 100%;
+  }
+}

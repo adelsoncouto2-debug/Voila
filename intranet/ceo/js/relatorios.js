@@ -1,48 +1,48 @@
-/**
- * relatorios.js  (página de Relatórios do gerente)
- * -----------------------------------------------------------------------
- * Duas partes, no mesmo padrão do dashboard:
- *
- *   1) CAMADA DE DADOS  (getReportData)
- *      Hoje gera dados de exemplo (mock). Quando o backend existir, troque
- *      só o CORPO dessa função por um fetch que devolva o mesmo formato
- *      (ver typedefs abaixo). O resto do arquivo não sabe de onde vêm os dados.
- *
- *   2) CÁLCULO + RENDERIZAÇÃO
- *      computeReport() filtra e soma tudo; as funções render*() só desenham.
- *
- * Requisitos atendidos (ERS):
- *   - Relatórios por período; vendas por destino, companhia e horário de voo.
- *   - Reclamações por assunto e situação do atendimento (SAC).
- *   - RNF-02: todo valor aparece escrito, a cor é só reforço.
- *   - RNF-04 / LGPD: o relatório não mostra dados pessoais de clientes.
- *
- * Exportação (CSV/PDF): ainda NÃO implementada, de propósito.
- * -----------------------------------------------------------------------
- */
 
-/**
- * @typedef {Object} SaleData
- * @property {string} id
- * @property {string} date          "AAAA-MM-DD"
- * @property {string} destination
- * @property {string} company
- * @property {string} flight        ex: "VL 1204"
- * @property {string} time          "HH:MM" (horário do voo)
- * @property {number} tickets
- * @property {number} value         valor total da venda, em reais
- * @property {"confirmed"|"pending"|"canceled"} status
- *
- * @typedef {Object} ComplaintData
- * @property {string} id
- * @property {string} date          "AAAA-MM-DD"
- * @property {string} subject
- * @property {"open"|"progress"|"resolved"} status
- *
- * @typedef {Object} ReportData
- * @property {SaleData[]} sales
- * @property {ComplaintData[]} complaints
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const PAGE_SIZE = 10;
 const COMPLAINT_SUBJECTS = [
@@ -59,7 +59,7 @@ const TIME_BUCKETS = [
   { label: "Noite", range: "18h – 24h" },
 ];
 
-/* ======================= utilidades de data/formatação ================== */
+
 
 function startOfDay(d) {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate());
@@ -77,18 +77,18 @@ function pad2(n) {
   return String(n).padStart(2, "0");
 }
 
-/** @returns {string} "AAAA-MM-DD" (data local, sem fuso) */
+
 function toISO(d) {
   return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
 }
 
-/** @param {string} s "AAAA-MM-DD" */
+
 function fromISO(s) {
   const [y, m, d] = s.split("-").map(Number);
   return new Date(y, m - 1, d);
 }
 
-/** @param {string} iso "AAAA-MM-DD" -> "DD/MM/AAAA" */
+
 function fmtISO(iso) {
   const [y, m, d] = iso.split("-");
   return d + "/" + m + "/" + y;
@@ -105,7 +105,7 @@ const brl2 = new Intl.NumberFormat("pt-BR", {
 });
 const num0 = new Intl.NumberFormat("pt-BR");
 
-/** Valores a partir de 1 milhão ficam compactos ("R$ 10,37 mi") para caber no cartão. */
+
 function fmtMoneyKpi(value) {
   if (value >= 1000000) {
     return (
@@ -127,7 +127,7 @@ function fmtPct(value) {
   });
 }
 
-/** Escapa texto antes de colocar em innerHTML (os dados virão do backend). */
+
 function esc(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -137,9 +137,9 @@ function esc(value) {
     .replace(/'/g, "&#39;");
 }
 
-/* ============================ 1) CAMADA DE DADOS ========================= */
 
-/** Gerador pseudo-aleatório com semente (os dados de exemplo não mudam a cada F5). */
+
+
 function mulberry32(seed) {
   return function () {
     seed |= 0;
@@ -160,11 +160,11 @@ function pickWeighted(rand, items) {
   return items[items.length - 1];
 }
 
-/**
- * Gera ~800 dias de vendas e reclamações de exemplo, terminando em `today`.
- * @param {Date} today
- * @returns {ReportData}
- */
+
+
+
+
+
 function buildMockData(today) {
   const rand = mulberry32(20261105);
 
@@ -209,17 +209,17 @@ function buildMockData(today) {
   let saleId = 1;
   let complaintId = 1;
 
-  // 800 dias: "12 meses" precisa de mais 12 meses antes para comparar.
+
   for (let age = 0; age < 800; age++) {
     const date = toISO(addDays(today, -age));
 
-    const salesToday = 3 + Math.floor(rand() * 5); // 3 a 7 vendas por dia
+    const salesToday = 3 + Math.floor(rand() * 5);
     for (let i = 0; i < salesToday; i++) {
       const dest = pickWeighted(rand, destinations);
       const company = pickWeighted(rand, companies);
       const hour = pickWeighted(rand, hours).h;
       const minute = minutes[Math.floor(rand() * minutes.length)];
-      const tickets = 1 + Math.floor(rand() * 3); // 1 a 3
+      const tickets = 1 + Math.floor(rand() * 3);
       const value =
         Math.round(tickets * dest.price * (0.85 + rand() * 0.3) * 100) / 100;
       const r = rand();
@@ -238,7 +238,7 @@ function buildMockData(today) {
       });
     }
 
-    const complaintsToday = Math.floor(rand() * 4); // 0 a 3 por dia
+    const complaintsToday = Math.floor(rand() * 4);
     for (let i = 0; i < complaintsToday; i++) {
       const r = rand();
       let status;
@@ -258,36 +258,36 @@ function buildMockData(today) {
   return { sales, complaints };
 }
 
-/**
- * Busca os dados do relatório.
- *
- * TODO(backend): quando a API estiver pronta, substituir o corpo por:
- *
- *   const res = await fetch("/api/gerente/relatorios");
- *   if (!res.ok) throw new Error("Falha ao carregar relatórios");
- *   return await res.json();   // formato ReportData
- *
- * (Com muitos registros, passe o período como parâmetro e filtre no servidor.)
- *
- * @returns {Promise<ReportData>}
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 async function getReportData() {
-  // ----- MOCK: remover quando o backend existir -----
+
   return buildMockData(startOfDay(new Date()));
-  // ----- FIM DO MOCK -----
+
 }
 
-/* ============================= 2) CÁLCULO =============================== */
 
-/**
- * @typedef {Object} Filters
- * @property {Date} start
- * @property {Date} end
- * @property {string} destination  "all" ou nome
- * @property {string} company      "all" ou nome
- */
 
-/** Vendas dentro do período e dos filtros de destino/companhia. */
+
+
+
+
+
+
+
+
+
 function filterSales(sales, start, end, f) {
   const a = toISO(start);
   const b = toISO(end);
@@ -306,7 +306,7 @@ function filterComplaints(complaints, start, end) {
   return complaints.filter((c) => c.date >= a && c.date <= b);
 }
 
-/** Totais de um conjunto de vendas. Vendas canceladas não entram nos totais. */
+
 function summarizeSales(sales) {
   let total = 0;
   let tickets = 0;
@@ -318,16 +318,16 @@ function summarizeSales(sales) {
   return { total, tickets, avg: tickets > 0 ? total / tickets : 0 };
 }
 
-/** Variação percentual; null quando não há base de comparação. */
+
 function deltaPercent(current, previous) {
   if (!previous) return null;
   return ((current - previous) / previous) * 100;
 }
 
-/**
- * @param {ReportData} data
- * @param {Filters} f
- */
+
+
+
+
 function computeReport(data, f) {
   const days = diffDays(f.start, f.end) + 1;
   const prevEnd = addDays(f.start, -1);
@@ -343,7 +343,7 @@ function computeReport(data, f) {
   const complaintsCur = filterComplaints(data.complaints, f.start, f.end);
   const complaintsPrev = filterComplaints(data.complaints, prevStart, prevEnd);
 
-  // ----- por destino (top 5 + Outros) -----
+
   const destMap = new Map();
   for (const s of salesValid) {
     destMap.set(s.destination, (destMap.get(s.destination) || 0) + s.value);
@@ -357,7 +357,7 @@ function computeReport(data, f) {
     byDestination.push({ name: "Outros", value: othersValue, muted: true });
   }
 
-  // ----- por companhia (valor e passagens, para o ticket médio) -----
+
   const compMap = new Map();
   for (const s of salesValid) {
     const row = compMap.get(s.company) || { value: 0, tickets: 0 };
@@ -369,7 +369,7 @@ function computeReport(data, f) {
     .map(([name, r]) => ({ name, value: r.value, tickets: r.tickets }))
     .sort((a, b) => b.value - a.value);
 
-  // ----- por faixa de horário (passagens) -----
+
   const byTime = TIME_BUCKETS.map((b) => ({ ...b, tickets: 0 }));
   for (const s of salesValid) {
     const hour = parseInt(s.time.slice(0, 2), 10);
@@ -377,7 +377,7 @@ function computeReport(data, f) {
     byTime[idx].tickets += s.tickets;
   }
 
-  // ----- reclamações -----
+
   const subjectMap = new Map();
   for (const c of complaintsCur) {
     subjectMap.set(c.subject, (subjectMap.get(c.subject) || 0) + 1);
@@ -385,14 +385,14 @@ function computeReport(data, f) {
   const bySubject = [...subjectMap.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => {
-      if (a.name === "Outros") return 1; // "Outros" sempre por último
+      if (a.name === "Outros") return 1;
       if (b.name === "Outros") return -1;
       return b.count - a.count;
     });
   const complaintStatus = { open: 0, progress: 0, resolved: 0 };
   for (const c of complaintsCur) complaintStatus[c.status]++;
 
-  // ----- tabela: mais recentes primeiro -----
+
   const tableRows = [...salesAll].sort((a, b) =>
     a.date !== b.date
       ? b.date.localeCompare(a.date)
@@ -422,7 +422,7 @@ function computeReport(data, f) {
   };
 }
 
-/* ============================ 3) RENDERIZAÇÃO ============================ */
+
 
 const ICONS = {
   money:
@@ -439,11 +439,11 @@ function el(id) {
   return document.getElementById(id);
 }
 
-/**
- * Variação em texto + seta (a cor só reforça).
- * @param {number|null} delta
- * @param {boolean} goodWhenDown
- */
+
+
+
+
+
 function deltaHtml(delta, goodWhenDown) {
   if (delta === null) {
     return '<span class="rel-delta flat">— sem período anterior</span>';
@@ -491,7 +491,7 @@ function renderKpis(report) {
 
 const EMPTY_HTML = '<p class="rel-empty">Sem dados no período selecionado.</p>';
 
-/** Barras horizontais de valor (R$ + % do total). */
+
 function renderValueBars(containerId, rows, fillClass) {
   const container = el(containerId);
   if (!rows.length) {
@@ -646,7 +646,7 @@ function renderTable(report, page) {
   return current;
 }
 
-/** 1 … 4 5 6 … 20 */
+
 function pageList(current, total) {
   const set = new Set([1, total, current - 1, current, current + 1]);
   const pages = [...set].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
@@ -681,16 +681,16 @@ function renderPagination(current, total) {
   el("relPagination").innerHTML = html;
 }
 
-/* ============================ 4) ESTADO E EVENTOS ======================== */
 
-/** @type {ReportData} */
+
+
 let reportData = { sales: [], complaints: [] };
 let report = null;
 
 const state = {
-  preset: "30", // "7" | "30" | "90" | "365" | "custom"
-  start: null, // Date
-  end: null, // Date
+  preset: "30",
+  start: null,
+  end: null,
   destination: "all",
   company: "all",
   page: 1,
@@ -723,7 +723,7 @@ function showDateError(message) {
   box.hidden = !message;
 }
 
-/** Recalcula e redesenha tudo. */
+
 function update() {
   report = computeReport(reportData, {
     start: state.start,
@@ -771,7 +771,7 @@ function bindEvents() {
   function onDateChange() {
     const s = el("dateStart").value;
     const e = el("dateEnd").value;
-    if (!s || !e) return; // espera o usuário preencher os dois
+    if (!s || !e) return;
 
     const start = fromISO(s);
     const end = fromISO(e);
@@ -823,7 +823,7 @@ function bindEvents() {
     state.page = renderTable(report, Number(btn.dataset.page));
   });
 
-  // Exportar CSV / PDF: propositalmente sem ação por enquanto.
+
 }
 
 async function initReports() {

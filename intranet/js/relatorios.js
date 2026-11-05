@@ -1,67 +1,67 @@
 "use strict";
 
-/* =====================================================================
-   RELATÓRIOS - Voilà
 
-   Organização do arquivo:
-     1. CONFIG ............ único lugar para trocar JSON local por backend
-     2. Camada de dados ... fetchReport() + normalizeReport()
-     3. Métricas .......... definição dos indicadores (usada na tela e no PDF)
-     4. Gráficos SVG ...... barras, linhas/área, rosca e distribuição
-     5. Tela .............. renderização e eventos
-     6. PDF ............... geração com jsPDF a partir dos mesmos dados
 
-   CONTRATO DE DADOS (o que o backend precisa devolver)
-   GET {API_BASE_URL}{REPORTS_ENDPOINT}
-   {
-     "user":   { "id": 1, "name": "Maria Silva", "role": "Agente de viagens" },
-     "months": [
-       {
-         "month": "2026-01",                 // AAAA-MM
-         "clientsServed": 142,
-         "clientsMissed": 18,
-         "ratingDistribution": { "1": 1, "2": 3, "3": 8, "4": 26, "5": 58 },
-         "bookings": 38,
-         "revenue": 84500,                   // em reais
-         "avgResponseMinutes": 14,
-         "topDestinations": [ { "name": "Paris", "bookings": 11 } ],
 
-         // opcionais - se não vierem, são calculados aqui:
-         "avgRating": 4.43,
-         "ratingsCount": 96,
-         "conversionRate": 0.268             // 0 a 1
-       }
-     ]
-   }
-   Se os nomes dos campos do seu backend forem outros, ajuste só a função
-   normalizeReport(). O resto do código não conhece o formato bruto.
-   ===================================================================== */
 
-/* ---------------------------------------------------------------------
-   1. CONFIG
-   --------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const CONFIG = {
-  // Deixe vazio para usar o JSON local. Quando o backend existir, coloque
-  // a URL base aqui, por exemplo "https://api.voila.com.br".
+
+
   API_BASE_URL: "",
   REPORTS_ENDPOINT: "/reports/me",
 
-  // Arquivo usado enquanto API_BASE_URL estiver vazio.
+
   LOCAL_DATA_URL: "../json/relatorios.json",
 
   LOCALE: "pt-BR",
   CURRENCY: "BRL",
 
-  // Cabeçalhos de autenticação enviados ao backend (não vão no JSON local).
+
   getAuthHeaders() {
     const token = localStorage.getItem("token");
     return token ? { Authorization: `Bearer ${token}` } : {};
   },
 };
 
-/* ---------------------------------------------------------------------
-   Utilidades
-   --------------------------------------------------------------------- */
+
+
+
 const $ = (selector, root = document) => root.querySelector(selector);
 
 const esc = (value) =>
@@ -105,10 +105,10 @@ const monthFormat = (id, options) =>
     timeZone: "UTC",
   }).format(monthDate(id));
 
-const monthName = (id) => monthFormat(id, { month: "long" }); // "janeiro"
+const monthName = (id) => monthFormat(id, { month: "long" });
 const monthLong = (id) =>
-  capitalize(monthFormat(id, { month: "long", year: "numeric" })); // "Janeiro de 2026"
-const monthShort = (id) => monthFormat(id, { month: "short" }).replace(".", ""); // "jan"
+  capitalize(monthFormat(id, { month: "long", year: "numeric" }));
+const monthShort = (id) => monthFormat(id, { month: "short" }).replace(".", "");
 
 const slugify = (text) =>
   String(text)
@@ -118,7 +118,7 @@ const slugify = (text) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-/* Escala "bonita" para eixos: devolve { max, step, count } */
+
 function niceScale(maxValue, targetTicks = 4) {
   if (!maxValue || maxValue <= 0) return { max: 1, step: 0.25, count: 4 };
   const rough = maxValue / targetTicks;
@@ -139,9 +139,9 @@ function niceScale(maxValue, targetTicks = 4) {
   return { max: step * count, step, count };
 }
 
-/* ---------------------------------------------------------------------
-   2. CAMADA DE DADOS
-   --------------------------------------------------------------------- */
+
+
+
 async function fetchReport() {
   const usingBackend = Boolean(CONFIG.API_BASE_URL);
   const url = usingBackend
@@ -162,7 +162,7 @@ async function fetchReport() {
   return normalizeReport(await response.json());
 }
 
-/* Único ponto que conhece o formato bruto da resposta. */
+
 function normalizeReport(raw) {
   const user = {
     id: raw.user?.id ?? null,
@@ -219,9 +219,9 @@ function normalizeReport(raw) {
   return { user, months };
 }
 
-/* ---------------------------------------------------------------------
-   3. MÉTRICAS (compartilhadas entre a tela e o PDF)
-   --------------------------------------------------------------------- */
+
+
+
 const METRICS = {
   clientsServed: {
     label: "Clientes atendidos",
@@ -281,7 +281,7 @@ const SUMMARY_KEYS = [
   "ratingsCount",
 ];
 
-/* "ratingsCount" não é comparado com o mês anterior, só exibido. */
+
 METRICS.ratingsCount = {
   label: "Avaliações recebidas",
   better: null,
@@ -289,7 +289,7 @@ METRICS.ratingsCount = {
   format: (m) => nf0.format(m.ratingsCount),
 };
 
-/* Variação em relação ao mês anterior (null quando não dá para comparar). */
+
 function metricDelta(metric, current, previous) {
   if (!previous || !metric.better) return null;
   const now = metric.get(current);
@@ -306,11 +306,11 @@ function metricDelta(metric, current, previous) {
   };
 }
 
-/* ---------------------------------------------------------------------
-   4. GRÁFICOS SVG
-   Cada função devolve uma string <svg>. A largura vem do container, então
-   o texto mantém o tamanho real em qualquer tela.
-   --------------------------------------------------------------------- */
+
+
+
+
+
 const svgWrap = (width, height, inner, label) =>
   `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${esc(label)}">${inner}</svg>`;
 
@@ -324,7 +324,7 @@ function gridLines({ left, right, ticks, y, format }) {
     .join("");
 }
 
-/* Barras agrupadas: atendidos x não atendidos por mês */
+
 function barChart(months, selectedId, width, height) {
   const L = 44,
     R = 8,
@@ -383,7 +383,7 @@ function barChart(months, selectedId, width, height) {
   );
 }
 
-/* Linha (com área opcional) para avaliação e receita */
+
 function lineChart({
   months,
   selectedId,
@@ -488,7 +488,7 @@ function revenueChart(months, selectedId, width, height) {
   });
 }
 
-/* Rosca com a taxa de atendimento */
+
 function donutChart(rate) {
   const size = 168,
     r = 64,
@@ -505,7 +505,7 @@ function donutChart(rate) {
   );
 }
 
-/* Distribuição das notas (5 a 1 estrelas) */
+
 function starsChart(month, width) {
   const rowH = 44;
   const height = rowH * 5;
@@ -537,9 +537,9 @@ function starsChart(month, width) {
   );
 }
 
-/* ---------------------------------------------------------------------
-   5. TELA
-   --------------------------------------------------------------------- */
+
+
+
 const state = { report: null, selectedId: null };
 
 const ICONS = {
@@ -629,7 +629,7 @@ function renderDestinations(current) {
     .join("");
 }
 
-/* Desenha um gráfico dentro do container, usando a largura real dele. */
+
 function drawInto(selector, height, build) {
   const el = $(selector);
   const width = Math.floor(el.clientWidth);
@@ -776,7 +776,7 @@ function bindEvents() {
     if (e.target.id === "btn-retry") init();
   });
 
-  // redesenha os gráficos quando a largura muda (zoom, rotação, janela)
+
   let lastWidth = 0;
   let frame;
   new ResizeObserver(() => {
@@ -788,9 +788,9 @@ function bindEvents() {
   }).observe(content);
 }
 
-/* ---------------------------------------------------------------------
-   6. PDF
-   --------------------------------------------------------------------- */
+
+
+
 const PDF_COLORS = {
   orange: [245, 121, 58],
   orangeLight: [251, 217, 184],
@@ -802,7 +802,7 @@ const PDF_COLORS = {
   white: [255, 255, 255],
 };
 
-/* jsPDF usa fontes padrão (Latin-1): troca espaços especiais do Intl. */
+
 const clean = (text) => String(text).replace(/[\u00a0\u202f]/g, " ");
 
 async function downloadPdf() {
@@ -821,7 +821,7 @@ async function downloadPdf() {
   label.textContent = "Gerando PDF...";
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 60)); // deixa o botão atualizar
+    await new Promise((resolve) => setTimeout(resolve, 60));
     const { current, previous } = currentAndPrevious();
     const doc = buildPdf(state.report, current, previous);
     doc.save(`relatorio-${slugify(state.report.user.name)}-${current.id}.pdf`);
@@ -847,7 +847,7 @@ function buildPdf(report, current, previous) {
   const months = report.months;
   let y = 0;
 
-  /* --- helpers de desenho --- */
+
   const fill = (c) => doc.setFillColor(...c);
   const stroke = (c) => doc.setDrawColor(...c);
   const text = (
@@ -873,7 +873,7 @@ function buildPdf(report, current, previous) {
     text(title, x + 3.2, yy, { size: 11, bold: true });
   };
 
-  /* --- faixa superior --- */
+
   fill(C.orange);
   doc.rect(0, 0, PW, 36, "F");
   text("VOILÀ", M, 17, { size: 22, bold: true, color: C.white });
@@ -890,7 +890,7 @@ function buildPdf(report, current, previous) {
     align: "right",
   });
 
-  /* --- identificação --- */
+
   const generated = new Intl.DateTimeFormat(CONFIG.LOCALE, {
     dateStyle: "short",
     timeStyle: "short",
@@ -903,7 +903,7 @@ function buildPdf(report, current, previous) {
     { size: 9, color: C.gray },
   );
 
-  /* --- cartões de indicadores --- */
+
   const pdfDelta = (key) => {
     const metric = METRICS[key];
     const delta = metricDelta(metric, current, previous);
@@ -942,9 +942,9 @@ function buildPdf(report, current, previous) {
   );
   y += 66;
 
-  /* --- gráfico de barras --- */
+
   sectionTitle("Atendimentos por mês", M, y);
-  // legenda
+
   fill(C.orange);
   doc.rect(PW - M - 58, y - 3, 3, 3, "F");
   text("Atendidos", PW - M - 54, y - 0.4, { size: 8, color: C.gray });
@@ -964,7 +964,7 @@ function buildPdf(report, current, previous) {
   );
   y += 50 + 12;
 
-  /* --- avaliação e receita lado a lado --- */
+
   const half = (CW - 8) / 2;
   sectionTitle("Avaliação média por mês", M, y);
   sectionTitle("Receita gerada por mês", M + half + 8, y);
@@ -1014,7 +1014,7 @@ function buildPdf(report, current, previous) {
   );
   y += 40 + 14;
 
-  /* --- tabela comparativa --- */
+
   ensureSpace(14 + (months.length + 1) * 7);
   sectionTitle("Comparativo mensal", M, y);
   y += 5;
@@ -1088,7 +1088,7 @@ function buildPdf(report, current, previous) {
   });
   y += 12;
 
-  /* --- avaliações e destinos --- */
+
   ensureSpace(58);
   sectionTitle(`Avaliações de ${monthName(current.id)}`, M, y);
   sectionTitle(`Destinos mais vendidos`, M + half + 8, y);
@@ -1152,7 +1152,7 @@ function buildPdf(report, current, previous) {
     );
   });
 
-  /* --- rodapé em todas as páginas --- */
+
   const pages = doc.getNumberOfPages();
   for (let p = 1; p <= pages; p++) {
     doc.setPage(p);
@@ -1343,7 +1343,7 @@ function pdfLineChart(
   });
 }
 
-/* --------------------------------------------------------------------- */
+
 document.addEventListener("DOMContentLoaded", () => {
   bindEvents();
   init();

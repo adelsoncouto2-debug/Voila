@@ -10,7 +10,7 @@ body {
   --dash-border: #e5e7eb;
 
   --container-width: 90%;
-  --container-max: 1200px;
+  --container-max: 1400px;
   --container-pad: 40px;
 }
 
@@ -25,6 +25,20 @@ body {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 40px var(--container-pad) 60px;
+}
+
+.header .logged-container { margin-right: 0; }
+
+@media (max-width: 1400px) {
+  .dashboard-main { width: calc(100% - 80px); }
+}
+
+@media (max-width: 1100px) {
+  .dashboard-main { width: calc(100% - 40px); }
+}
+
+@media (max-width: 850px) {
+  .dashboard-main { width: calc(100% - 30px); }
 }
 
 .dashboard-title h1 {
@@ -83,6 +97,14 @@ body {
 .kpi-icon svg {
   width: 26px;
   height: 26px;
+}
+
+.kpi-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .kpi-label {

@@ -41,7 +41,7 @@ body {
   margin: 0 0 32px;
 }
 
-/* ---------- KPI CARDS ---------- */
+
 
 .kpi-grid {
   display: grid;
@@ -122,7 +122,7 @@ body {
   color: #d9534f;
 }
 
-/* ---------- CHART + DESTINATIONS GRID ---------- */
+
 
 .dashboard-grid {
   display: grid;
@@ -176,7 +176,7 @@ body {
   font-size: 11px;
 }
 
-/* ---------- DESTINATIONS LIST ---------- */
+
 
 .destinations-list {
   list-style: none;
@@ -230,7 +230,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ---------- BOTTOM CARDS: RESERVAS / ATIVIDADE ---------- */
+
 
 .dashboard-grid-bottom {
   grid-template-columns: 1fr 1fr;
@@ -322,7 +322,7 @@ body {
   white-space: nowrap;
 }
 
-/* ---------- RESPONSIVE ---------- */
+
 
 @media (max-width: 1200px) {
   .kpi-grid {

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reclamações - Voilà</title>
+    <script>
+      if (!sessionStorage.getItem("usuarioLogado")) {
+        window.location.replace("../../index.html");
+      }
+    </script>
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/reclamacoes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="complaints-main">
+      <div class="complaints-heading">
+        <div>
+          <h1>Reclamações</h1>
+          <p>Acompanhe o volume e o andamento dos atendimentos do SAC</p>
+        </div>
+      </div>
+
+      <section class="complaints-kpis" id="complaintKpis" aria-label="Indicadores de atendimento"></section>
+
+      <section class="complaints-filters" aria-label="Filtros das reclamações">
+        <div class="complaint-field complaint-period-field">
+          <label for="filterPeriod">Período</label>
+          <select id="filterPeriod">
+            <option value="7">Últimos 7 dias</option>
+            <option value="30" selected>Últimos 30 dias</option>
+            <option value="90">Últimos 3 meses</option>
+            <option value="all">Todo o período</option>
+          </select>
+        </div>
+        <div class="complaint-field">
+          <label for="filterStatus">Status</label>
+          <select id="filterStatus">
+            <option value="all">Todos</option>
+            <option value="open">Aberto</option>
+            <option value="progress">Em atendimento</option>
+            <option value="resolved">Resolvido</option>
+          </select>
+        </div>
+        <div class="complaint-field">
+          <label for="filterSubject">Assunto</label>
+          <select id="filterSubject">
+            <option value="all">Todos os assuntos</option>
+          </select>
+        </div>
+        <div class="complaint-field complaint-search-field">
+          <label for="filterSearch">Buscar</label>
+          <input id="filterSearch" type="search" placeholder="Protocolo ou atendente" />
+        </div>
+        <button type="button" class="complaint-clear" id="clearFilters">Limpar</button>
+      </section>
+
+      <section class="complaint-charts" aria-label="Análise das reclamações">
+        <article class="complaint-card topic-card">
+          <div class="complaint-card-heading">
+            <div>
+              <h2>Reclamações por assunto</h2>
+              <p>Distribuição dos chamados filtrados</p>
+            </div>
+          </div>
+          <div class="topic-chart" id="topicChart"></div>
+        </article>
+        <article class="complaint-card volume-card">
+          <div class="complaint-card-heading">
+            <div>
+              <h2>Volume de atendimentos</h2>
+              <p>Chamados abertos nos últimos 7 dias</p>
+            </div>
+          </div>
+          <div class="volume-chart" id="volumeChart" role="img" aria-label="Chamados abertos por dia"></div>
+        </article>
+      </section>
+
+      <section class="complaint-card complaint-table-card">
+        <div class="complaint-card-heading table-heading">
+          <div>
+            <h2>Chamados do SAC</h2>
+            <p id="tableSummary">Acompanhe o histórico e o status dos atendimentos</p>
+          </div>
+          <span class="privacy-note">Dados de clientes protegidos</span>
+        </div>
+        <div class="complaint-table-wrap">
+          <table class="complaint-table">
+            <thead>
+              <tr>
+                <th scope="col">Protocolo</th>
+                <th scope="col">Assunto</th>
+                <th scope="col">Abertura</th>
+                <th scope="col">Canal</th>
+                <th scope="col">Atendente</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="complaintRows"></tbody>
+          </table>
+        </div>
+        <p class="complaint-empty" id="emptyState" hidden>Nenhum chamado encontrado para os filtros selecionados.</p>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/reclamacoes.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
+</html>

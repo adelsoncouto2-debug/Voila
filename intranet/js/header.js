@@ -4,7 +4,7 @@ fetch("../intranet/components/header.html")
     document.getElementById("header").innerHTML = html;
     const pagina = window.location.pathname.split("/").pop() || "index.html";
 
-    // 1. Marca a página atual selecionada no menu
+
     document.querySelectorAll(".header-text a.text").forEach((link) => {
       const href = link.getAttribute("href").split("/").pop();
       if (href === pagina) {
@@ -13,7 +13,7 @@ fetch("../intranet/components/header.html")
       }
     });
 
-    // ===== SELETORES DO COMPONENTE LOGADO COPIADO =====
+
     const loggedContainer = document.querySelector(".logged-container");
     const userButton = document.querySelector(".user-button");
     const userDropdown = document.querySelector(".user-dropdown-logged");
@@ -22,15 +22,15 @@ fetch("../intranet/components/header.html")
     const dropdownEmail = document.querySelector(".user-dropdown-email");
     const btnLogout = document.getElementById("btn-logout");
 
-    // Seletores de Notificações
+
     const notificationButton = document.querySelector(".notification-button");
     const notificationDropdown = document.querySelector(".notification-dropdown");
     const notificationBadge = document.querySelector(".notification-badge");
     const btnMarcarLidas = document.getElementById("btn-marcar-lidas");
 
-    // ===== INTEGRAÇÃO DOS CLIQUES (DROPDOWN E NOTIFICAÇÕES) =====
-    
-    // Abre/fecha o menu do perfil (Dropdown de Milhas)
+
+
+
     if (userButton && userDropdown) {
       userButton.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -42,7 +42,7 @@ fetch("../intranet/components/header.html")
       });
     }
 
-    // Abre/fecha a caixinha de notificações
+
     if (notificationButton && notificationDropdown) {
       notificationButton.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -54,7 +54,7 @@ fetch("../intranet/components/header.html")
       });
     }
 
-    // Ação do botão de marcar notificações como lidas
+
     if (btnMarcarLidas && notificationBadge) {
       btnMarcarLidas.addEventListener("click", function () {
         document
@@ -64,33 +64,33 @@ fetch("../intranet/components/header.html")
       });
     }
 
-    // Fecha qualquer dropdown aberto se clicar fora deles na tela
+
     document.addEventListener("click", function () {
       if (userDropdown) userDropdown.classList.remove("open");
       if (notificationDropdown) notificationDropdown.classList.remove("open");
     });
 
-    // ===== FUNÇÃO PARA APLICAR DADOS DO USUÁRIO EM TELA =====
+
     function entrar(nome, email) {
       if (userNameSpan) userNameSpan.textContent = "Olá, " + nome;
       if (dropdownName) dropdownName.textContent = nome;
       if (dropdownEmail) dropdownEmail.textContent = email;
-      
-      // Remove o 'hidden' para o painel aparecer lindamente
+
+
       if (loggedContainer) loggedContainer.classList.remove("hidden");
     }
 
-    // ===== COMPORTAMENTO DO BOTÃO DE LOGOUT =====
+
     if (btnLogout) {
       btnLogout.addEventListener("click", function (e) {
         e.stopPropagation();
-        // Limpa as credenciais locais e ejeta para a Home externa
+
         sessionStorage.removeItem("usuarioLogado");
         window.location.href = "../index.html";
       });
     }
 
-    // ===== AUTO-LOGIN DA SESSÃO ATIVA (Sincronizado com a Home) =====
+
     const usuarioSalvo = sessionStorage.getItem("usuarioLogado");
     if (usuarioSalvo) {
       if (usuarioSalvo === "Voila@gmail.com") {
