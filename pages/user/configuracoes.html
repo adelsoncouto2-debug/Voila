@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Configurações · Voilà</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/user/configuracoes.css">
+    <link rel="stylesheet" href="../../css/header.css">
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="wrap">
+      <section class="hero">
+        <h1>Configurações</h1>
+        <p>Gerencie seus dados, pagamentos, privacidade e a forma como o Voilà trabalha para você.</p>
+      </section>
+      <div class="grid">
+        <div class="side" role="tablist" aria-label="Seções de configurações">
+          <button role="tab" aria-selected="true" data-p="dados">👤 Meus dados</button>
+          <button role="tab" aria-selected="false" data-p="pag">💳 Formas de pagamento</button>
+          <button role="tab" aria-selected="false" data-p="pref">🧭 Preferências de viagem</button>
+          <button role="tab" aria-selected="false" data-p="notif">🔔 Notificações</button>
+          <button role="tab" aria-selected="false" data-p="seg">🔒 Segurança</button>
+          <button role="tab" aria-selected="false" data-p="priv">🛡️ Privacidade (LGPD)</button>
+          <button role="tab" aria-selected="false" data-p="acess">♿ Acessibilidade</button>
+          <button class="out">⎋ Sair</button>
+        </div>
+        <div>
+          <!-- DADOS -->
+          <section class="panel on" id="dados" role="tabpanel">
+            <h2>Meus dados</h2>
+            <p class="sub">Informações usadas na emissão das suas passagens.</p>
+            <form class="f" data-save="Dados salvos">
+              <div class="full">
+                <label for="n">Nome completo</label>
+                <input type="text" id="n" value="Ricardo">
+              </div>
+              <div>
+                <label for="e">E-mail</label>
+                <input type="email" id="e" value="ricardo@iftm.edu.br">
+              </div>
+              <div>
+                <label for="t">Telefone</label>
+                <input type="tel" id="t" placeholder="(34) 90000-0000">
+              </div>
+              <div>
+                <label for="c">CPF / CNPJ</label>
+                <input type="text" id="c" value="•••.•••.•••-••" readonly>
+                <div class="hint">Não pode ser alterado. Fale com o SAC se precisar corrigir.</div>
+              </div>
+              <div>
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" placeholder="00000-000">
+              </div>
+              <div class="full">
+                <label for="end">Endereço</label>
+                <input type="text" id="end" placeholder="Rua, número, bairro, cidade">
+              </div>
+              <div class="full acts"><button class="btn">Salvar alterações</button></div>
+            </form>
+          </section>
+          <!-- PAGAMENTO -->
+          <section class="panel" id="pag" role="tabpanel">
+            <h2>Formas de pagamento</h2>
+            <p class="sub">Cartões salvos agilizam suas próximas compras.</p>
+            <div id="cards">
+              <div class="card">
+                <div class="chip">VISA</div>
+                <div style="flex:1">
+                  <b>Visa final 4821</b>
+                  <p class="hint" style="margin:0">Vence 08/2028</p>
+                </div>
+                <span class="tag">Principal</span>
+                <button class="btn d rm">Remover</button>
+              </div>
+              <div class="card">
+                <div class="chip">MC</div>
+                <div style="flex:1">
+                  <b>Mastercard final 1190</b>
+                  <p class="hint" style="margin:0">Vence 02/2027</p>
+                </div>
+                <button class="btn d rm">Remover</button>
+              </div>
+            </div>
+            <button class="btn o" id="addC">+ Adicionar cartão</button>
+            <form class="f" id="cf" hidden style="margin-top:20px" data-save="Cartão adicionado">
+              <div class="full">
+                <label for="cn">Número do cartão</label>
+                <input type="text" id="cn" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" required>
+              </div>
+              <div class="full">
+                <label for="cnm">Nome impresso no cartão</label>
+                <input type="text" id="cnm" required>
+              </div>
+              <div>
+                <label for="cv">Validade</label>
+                <input type="text" id="cv" placeholder="MM/AA" maxlength="5" required>
+              </div>
+              <div>
+                <label for="cc">CVV</label>
+                <input type="password" id="cc" inputmode="numeric" maxlength="4" required>
+              </div>
+              <div class="full">
+                <label class="consent">
+                  <input type="checkbox" id="opt" required>
+                  <span>
+                    Autorizo o Voilà a guardar este cartão com criptografia. Posso revogar quando quiser e o consentimento fica registrado.
+                  </span>
+                </label>
+              </div>
+              <div class="full acts">
+                <button class="btn">Salvar cartão</button>
+                <button type="button" class="btn o" id="cx">Cancelar</button>
+              </div>
+            </form>
+            <div class="box" style="margin-top:22px">
+              O número completo e o CVV nunca ficam visíveis. Você vê apenas os 4 últimos dígitos.
+            </div>
+          </section>
+          <!-- PREFERENCIAS -->
+          <section class="panel" id="pref" role="tabpanel">
+            <h2>Preferências de viagem</h2>
+            <p class="sub">
+              A VAI, nossa assistente de IA, usa isso para sugerir pelo menos 3 viagens que combinam com você.
+            </p>
+            <h3 style="margin-top:0">Estilo de viagem</h3>
+            <div class="chips" id="est">
+              <button aria-pressed="true">Praia</button>
+              <button aria-pressed="false">Montanha</button>
+              <button aria-pressed="true">Cultura</button>
+              <button aria-pressed="false">Aventura</button>
+              <button aria-pressed="false">Gastronomia</button>
+              <button aria-pressed="false">Resort</button>
+            </div>
+            <form class="f" data-save="Preferências salvas">
+              <div class="full">
+                <h3>Orçamento por viagem: <output id="ov">R$ 3.000</output></h3>
+                <input type="range" id="orc" min="500" max="20000" step="500" value="3000" style="width:100%;accent-color:#f97316" aria-label="Orçamento por viagem">
+              </div>
+              <div>
+                <label for="ao">Aeroporto de origem</label>
+                <select id="ao">
+                  <option>Uberlândia (UDI)</option>
+                  <option>Belo Horizonte (CNF)</option>
+                  <option>São Paulo (GRU)</option>
+                  <option>Rio de Janeiro (GIG)</option>
+                  <option>Brasília (BSB)</option>
+                </select>
+              </div>
+              <div>
+                <label for="as">Assento preferido</label>
+                <select id="as">
+                  <option>Janela</option>
+                  <option>Corredor</option>
+                  <option>Sem preferência</option>
+                </select>
+              </div>
+              <div>
+                <label for="cl">Clima</label>
+                <select id="cl">
+                  <option>Quente</option>
+                  <option>Ameno</option>
+                  <option>Frio</option>
+                  <option>Tanto faz</option>
+                </select>
+              </div>
+              <div>
+                <label for="mes">Mês preferido</label>
+                <select id="mes">
+                  <option>Qualquer mês</option>
+                  <option>Janeiro</option>
+                  <option>Julho</option>
+                  <option>Dezembro</option>
+                </select>
+              </div>
+              <div class="full acts"><button class="btn">Salvar preferências</button></div>
+            </form>
+          </section>
+          <!-- NOTIFICACOES -->
+          <section class="panel" id="notif" role="tabpanel">
+            <h2>Notificações</h2>
+            <p class="sub">Escolha o que chega na sua caixa de entrada.</p>
+            <div class="row">
+              <div>
+                <b>E-mail de confirmação da compra</b>
+                <p>Bilhete enviado assim que o pagamento é aprovado. Obrigatório.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked disabled aria-label="E-mail de confirmação">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Lembrete 48 horas antes do voo</b>
+                <p>Aviso com horário de embarque e portão.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Lembrete 48 horas">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Confirmação de cancelamento</b>
+                <p>E-mail com os termos de reembolso.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Confirmação de cancelamento">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Respostas do SAC</b>
+                <p>Aviso quando um atendente responder seu chamado.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Respostas do SAC">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Convite para avaliar o destino</b>
+                <p>Chega após o pouso do voo de volta.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Convite para avaliar">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Promoções e combos</b>
+                <p>Ofertas para destinos que combinam com você.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" aria-label="Promoções">
+                <span></span>
+              </label>
+            </div>
+          </section>
+          <!-- SEGURANCA -->
+          <section class="panel" id="seg" role="tabpanel">
+            <h2>Segurança</h2>
+            <p class="sub">Mantenha sua conta protegida.</p>
+            <form class="f" id="pf" data-save="Senha alterada">
+              <div class="full">
+                <label for="p0">Senha atual</label>
+                <input type="password" id="p0" required>
+              </div>
+              <div>
+                <label for="p1">Nova senha</label>
+                <input type="password" id="p1" minlength="8" required>
+                <div class="hint">Mínimo de 8 caracteres.</div>
+              </div>
+              <div>
+                <label for="p2">Confirmar nova senha</label>
+                <input type="password" id="p2" required>
+              </div>
+              <div class="full acts"><button class="btn">Alterar senha</button></div>
+            </form>
+            <h3>Proteção da conta</h3>
+            <div class="box w">Após 5 tentativas de login incorretas, a conta é bloqueada por 15 minutos.</div>
+            <div class="row">
+              <div>
+                <b>Alerta de novo acesso</b>
+                <p>Receba um e-mail quando entrarem na sua conta de um novo navegador.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Alerta de novo acesso">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Sair de todos os dispositivos</b>
+                <p>Encerra todas as sessões abertas, inclusive esta.</p>
+              </div>
+              <button class="btn o" data-toast="Sessões encerradas">Sair de tudo</button>
+            </div>
+          </section>
+          <!-- PRIVACIDADE -->
+          <section class="panel" id="priv" role="tabpanel">
+            <h2>Privacidade (LGPD)</h2>
+            <p class="sub">Você controla seus dados pessoais, conforme a Lei n.º 13.709/2018.</p>
+            <h3 style="margin-top:0">Consentimentos registrados</h3>
+            <div class="row">
+              <div>
+                <b>Armazenar cartões de pagamento</b>
+                <p>Aceito em 12/09/2026 às 14:32. Revogar remove os cartões salvos.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Consentimento cartões">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Usar preferências para recomendações da IA</b>
+                <p>Aceito em 12/09/2026 às 14:30.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" checked aria-label="Consentimento IA">
+                <span></span>
+              </label>
+            </div>
+            <div class="row">
+              <div>
+                <b>Receber comunicações de marketing</b>
+                <p>Não autorizado.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" aria-label="Consentimento marketing">
+                <span></span>
+              </label>
+            </div>
+            <h3>Seus direitos</h3>
+            <div class="row">
+              <div>
+                <b>Baixar meus dados</b>
+                <p>Enviamos um arquivo com seus dados para o seu e-mail.</p>
+              </div>
+              <button class="btn o" data-toast="Pedido enviado. Você receberá o arquivo por e-mail">
+                Solicitar cópia
+              </button>
+            </div>
+            <div class="row">
+              <div>
+                <b>Excluir minha conta</b>
+                <p>Remove seus dados pessoais. Viagens futuras precisam ser canceladas antes.</p>
+              </div>
+              <button class="btn d" id="del">Excluir conta</button>
+            </div>
+          </section>
+          <!-- ACESSIBILIDADE -->
+          <section class="panel" id="acess" role="tabpanel">
+            <h2>Acessibilidade e aparência</h2>
+            <p class="sub">Status e avisos do Voilà nunca dependem só de cor: sempre vêm com ícone e texto.</p>
+            <h3 style="margin-top:0">Assentos no avião</h3>
+            <div class="seats" aria-label="Legenda dos assentos">
+              <span>✓ Livre</span>
+              <span class="oc">✕ Ocupado</span>
+              <span class="se">● Selecionado</span>
+            </div>
+            <div class="row" style="margin-top:12px">
+              <div>
+                <b>Reforçar contraste dos status</b>
+                <p>Bordas mais grossas e rótulos maiores nos status.</p>
+              </div>
+              <label class="sw">
+                <input type="checkbox" id="hc" aria-label="Reforçar contraste">
+                <span></span>
+              </label>
+            </div>
+            <h3>Tamanho do texto</h3>
+            <div class="seg" id="fz">
+              <button aria-pressed="false" data-s="14" aria-label="Diminuir">A−</button>
+              <button aria-pressed="true" data-s="16">A</button>
+              <button aria-pressed="false" data-s="19" aria-label="Aumentar">A+</button>
+            </div>
+            <h3>Tema</h3>
+            <div class="seg" id="th">
+              <button aria-pressed="true" data-t="auto">Automático</button>
+              <button aria-pressed="false" data-t="light">Claro</button>
+              <button aria-pressed="false" data-t="dark">Escuro</button>
+            </div>
+            <h3>Idioma</h3>
+            <select aria-label="Idioma" style="max-width:240px">
+              <option>Português (Brasil)</option>
+            </select>
+          </section>
+        </div>
+      </div>
+    </main>
+    <dialog id="dg">
+      <h2>Excluir conta?</h2>
+      <p>Essa ação não pode ser desfeita. Seus dados pessoais serão removidos e você perderá as 12.500 milhas Voilà.</p>
+      <div class="acts">
+        <button class="btn d" id="ok">Sim, excluir</button>
+        <button class="btn o" id="no">Manter conta</button>
+      </div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="footer"></div>
+    <script src="../../js/user/configuracoes.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/footer.js"></script>
+  </body>
+</html>
