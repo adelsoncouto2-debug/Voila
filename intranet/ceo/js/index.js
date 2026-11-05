@@ -1,51 +1,51 @@
-/**
- * @typedef {Object} KpiData
- * @property {string} id
- * @property {string} label
- * @property {string} value
- * @property {string} icon
- * @property {number} deltaPercent
- * @property {string} deltaLabel
- * @property {boolean} [goodWhenDown]
- *
- * @typedef {Object} DestinationData
- * @property {string} name
- * @property {string} subLabel
- * @property {number} deltaPercent
- * @property {string} thumbUrl
- *
- * @typedef {Object} FlightData
- * @property {string} route
- * @property {string} code
- * @property {string} when
- * @property {number} occupancy  0 a 100
- *
- * @typedef {Object} SacData
- * @property {string} clientName
- * @property {string} subject
- * @property {"open"|"progress"|"resolved"} status
- * @property {string} time
- *
- * @typedef {Object} SystemMetricData
- * @property {string} label
- * @property {string} target
- * @property {string} value
- * @property {boolean} ok
- *
- * @typedef {Object} DashboardData
- * @property {string} userName
- * @property {KpiData[]} kpis
- * @property {{ labels: string[], values: number[] }} revenue
- * @property {{ labels: string[], values: number[] }} complaints
- * @property {DestinationData[]} destinations
- * @property {FlightData[]} flights
- * @property {SacData[]} sac
- * @property {SystemMetricData[]} system
- */
 
-/**
- * @returns {Promise<DashboardData>}
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 async function getDashboardData() {
   const mockData = {
     userName: "Gerente",
@@ -54,7 +54,7 @@ async function getDashboardData() {
         id: "sales",
         label: "Vendas do Mês",
         value: "R$ 120.450,00",
-        icon: "💲",
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16 7.5c-.8-1-2.2-1.5-4-1.5-2.2 0-4 1-4 3 0 4.5 8 2 8 6.5 0 2-1.8 3-4 3-1.9 0-3.4-.6-4.2-1.8"/></svg>',
         deltaPercent: 18.6,
         deltaLabel: "em relação ao mês anterior",
       },
@@ -62,7 +62,7 @@ async function getDashboardData() {
         id: "tickets",
         label: "Passagens Vendidas",
         value: "853",
-        icon: "✈️",
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l7 2.5L12.5 21 21 4zM10 13.5 21 4"/></svg>',
         deltaPercent: 12.6,
         deltaLabel: "em relação ao mês anterior",
       },
@@ -70,7 +70,7 @@ async function getDashboardData() {
         id: "complaints",
         label: "Reclamações Abertas",
         value: "14",
-        icon: "⚠️",
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3zM12 10v5M12 17.5v.01"/></svg>',
         deltaPercent: -22.4,
         deltaLabel: "em relação ao mês anterior",
         goodWhenDown: true,
@@ -79,7 +79,7 @@ async function getDashboardData() {
         id: "occupancy",
         label: "Ocupação Média dos Voos",
         value: "78,4%",
-        icon: "💺",
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v7a3 3 0 0 0 3 3h7v6M7 11h3a3 3 0 0 1 3 3v6M4 20h16"/></svg>',
         deltaPercent: 3.2,
         deltaLabel: "em relação ao mês anterior",
       },
@@ -126,25 +126,25 @@ async function getDashboardData() {
         name: "Paris",
         subLabel: "220 passagens vendidas",
         deltaPercent: 18.6,
-        thumbUrl: "../img/trips/paris.jpeg",
+        thumbUrl: "img/trips/paris.jpeg",
       },
       {
         name: "Tóquio",
         subLabel: "105 passagens vendidas",
         deltaPercent: 15.5,
-        thumbUrl: "../img/trips/toquio.webp",
+        thumbUrl: "img/trips/toquio.webp",
       },
       {
         name: "Rio de Janeiro",
         subLabel: "70 passagens vendidas",
         deltaPercent: 10.3,
-        thumbUrl: "../img/trips/rio_de_janeiro.jpeg",
+        thumbUrl: "img/trips/rio_de_janeiro.jpeg",
       },
       {
         name: "Maldivas",
         subLabel: "40 passagens vendidas",
         deltaPercent: 7.2,
-        thumbUrl: "../img/trips/maldivas.jpeg",
+        thumbUrl: "img/trips/maldivas.jpeg",
       },
     ],
     flights: [
@@ -224,10 +224,10 @@ async function getDashboardData() {
   return mockData;
 }
 
-/**
- * @param {unknown} value
- * @returns {string}
- */
+
+
+
+
 function esc(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -237,10 +237,10 @@ function esc(value) {
     .replace(/'/g, "&#39;");
 }
 
-/**
- * @param {string} name
- * @returns {string}
- */
+
+
+
+
 function getInitials(name) {
   return String(name)
     .split(" ")
@@ -251,9 +251,9 @@ function getInitials(name) {
     .toUpperCase();
 }
 
-/**
- * @param {KpiData[]} kpis
- */
+
+
+
 function renderKpis(kpis) {
   const container = document.getElementById("kpiGrid");
   if (!container) return;
@@ -288,10 +288,10 @@ function renderKpis(kpis) {
     .join("");
 }
 
-/**
- * @param {{ labels: string[], values: number[] }} revenue
- * @returns {string}
- */
+
+
+
+
 function buildRevenueChartSVG(revenue) {
   const width = 800;
   const height = 320;
@@ -369,19 +369,19 @@ function buildRevenueChartSVG(revenue) {
   `;
 }
 
-/**
- * @param {{ labels: string[], values: number[] }} revenue
- */
+
+
+
 function renderRevenueChart(revenue) {
   const wrap = document.getElementById("revenueChartWrap");
   if (!wrap) return;
   wrap.innerHTML = buildRevenueChartSVG(revenue);
 }
 
-/**
- * @param {{ labels: string[], values: number[] }} complaints
- * @returns {string}
- */
+
+
+
+
 function buildComplaintsChartSVG(complaints) {
   const width = 800;
   const height = 320;
@@ -451,18 +451,18 @@ function buildComplaintsChartSVG(complaints) {
   `;
 }
 
-/**
- * @param {{ labels: string[], values: number[] }} complaints
- */
+
+
+
 function renderComplaintsChart(complaints) {
   const wrap = document.getElementById("complaintsChartWrap");
   if (!wrap) return;
   wrap.innerHTML = buildComplaintsChartSVG(complaints);
 }
 
-/**
- * @param {DestinationData[]} destinations
- */
+
+
+
 function renderDestinations(destinations) {
   const list = document.getElementById("destinationsList");
   if (!list) return;
@@ -473,7 +473,7 @@ function renderDestinations(destinations) {
         <li class="destination-item">
           <img
             class="destination-thumb"
-            src="${esc(dest.thumbUrl)}"
+            src="${esc(dashboardAssetPath(dest.thumbUrl))}"
             alt="${esc(dest.name)}"
             loading="lazy"
           />
@@ -491,9 +491,14 @@ function renderDestinations(destinations) {
     .join("");
 }
 
-/**
- * @param {FlightData[]} flights
- */
+function dashboardAssetPath(path) {
+  const base = typeof caminhoBase === "function" ? caminhoBase() : "";
+  return `${base}/${String(path).replace(/^\/+/, "")}`;
+}
+
+
+
+
 function renderFlights(flights) {
   const list = document.getElementById("flightsList");
   if (!list) return;
@@ -528,9 +533,9 @@ function renderFlights(flights) {
     .join("");
 }
 
-/**
- * @param {SacData[]} sac
- */
+
+
+
 function renderSac(sac) {
   const list = document.getElementById("sacList");
   if (!list) return;
@@ -562,9 +567,9 @@ function renderSac(sac) {
     .join("");
 }
 
-/**
- * @param {SystemMetricData[]} metrics
- */
+
+
+
 function renderSystem(metrics) {
   const list = document.getElementById("systemList");
   if (!list) return;
