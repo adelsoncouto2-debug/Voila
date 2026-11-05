@@ -144,7 +144,7 @@ async function getDashboardData() {
         name: "Maldivas",
         subLabel: "40 passagens vendidas",
         deltaPercent: 7.2,
-        thumbUrl: "../img/trips/maldivas.jpeg",
+        thumbUrl: ".../img/trips/maldivas.jpeg",
       },
     ],
     flights: [
