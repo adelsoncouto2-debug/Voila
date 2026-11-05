@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voos - Voilà</title>
+    <script>
+      if (!sessionStorage.getItem("usuarioLogado")) {
+        window.location.replace("../../index.html");
+      }
+    </script>
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/operacao.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="operation-main">
+      <div class="operation-heading">
+        <div>
+          <h1>Voos</h1>
+          <p>Gerencie horários, ocupação e disponibilidade de assentos</p>
+        </div>
+        <button type="button" class="operation-primary" id="addFlightButton">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+          Cadastrar voo
+        </button>
+      </div>
+
+      <section class="operation-metrics" id="flightMetrics" aria-label="Resumo dos voos"></section>
+
+      <section class="operation-filters" aria-label="Filtros dos voos">
+        <div class="operation-field search-field">
+          <label for="flightSearch">Buscar</label>
+          <input id="flightSearch" type="search" placeholder="Número do voo, origem ou destino" />
+        </div>
+        <div class="operation-field">
+          <label for="flightCompany">Companhia</label>
+          <select id="flightCompany"><option value="all">Todas</option></select>
+        </div>
+        <div class="operation-field">
+          <label for="flightStatus">Situação</label>
+          <select id="flightStatus">
+            <option value="all">Todas</option>
+            <option value="Programado">Programado</option>
+            <option value="Em breve">Em breve</option>
+            <option value="Quase lotado">Quase lotado</option>
+            <option value="Cancelado">Cancelado</option>
+          </select>
+        </div>
+        <button type="button" class="operation-clear" id="clearFlightFilters">Limpar</button>
+      </section>
+
+      <section class="operation-panel">
+        <div class="operation-panel-heading">
+          <div>
+            <h2>Agenda de voos</h2>
+            <p id="flightCount">Voos cadastrados no sistema</p>
+          </div>
+          <span class="operation-caption">Horários locais</span>
+        </div>
+        <div class="operation-table-wrap">
+          <table class="operation-table flight-table">
+            <thead>
+              <tr>
+                <th scope="col">Voo / Rota</th>
+                <th scope="col">Companhia</th>
+                <th scope="col">Data e horário</th>
+                <th scope="col">Assentos</th>
+                <th scope="col">Tarifa</th>
+                <th scope="col">Situação</th>
+                <th scope="col"><span class="visually-hidden">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="flightRows"></tbody>
+          </table>
+          <p class="operation-empty" id="flightEmpty" hidden>Nenhum voo encontrado com esses filtros.</p>
+        </div>
+      </section>
+      <p class="operation-storage-note">Alterações feitas nesta tela ficam salvas neste navegador.</p>
+    </main>
+    <dialog class="operation-dialog" id="flightDialog">
+      <form id="flightForm">
+        <div class="dialog-heading">
+          <div><h2 id="flightDialogTitle">Cadastrar voo</h2><p>Preencha os dados operacionais do voo.</p></div>
+          <button type="button" class="dialog-close" data-close-dialog aria-label="Fechar">×</button>
+        </div>
+        <input type="hidden" id="flightId" />
+        <div class="dialog-grid">
+          <label>Número do voo<input id="flightNumberInput" required maxlength="12" placeholder="Ex.: LA3619" /></label>
+          <label>Companhia<input id="flightCompanyInput" required maxlength="40" placeholder="Ex.: LATAM" /></label>
+          <label>Origem<input id="flightOriginInput" required maxlength="60" placeholder="Cidade ou aeroporto" /></label>
+          <label>Destino<input id="flightDestinationInput" required maxlength="60" placeholder="Cidade ou aeroporto" /></label>
+          <label>Data<input id="flightDateInput" type="date" required /></label>
+          <label>Aeronave<input id="flightAircraftInput" maxlength="60" placeholder="Ex.: Airbus A320" /></label>
+          <label>Partida<input id="flightDepartureInput" type="time" required /></label>
+          <label>Chegada<input id="flightArrivalInput" type="time" required /></label>
+          <label>Assentos totais<input id="flightCapacityInput" type="number" min="1" max="1000" required /></label>
+          <label>Assentos vendidos<input id="flightSoldInput" type="number" min="0" max="1000" required /></label>
+          <label>Preço por passagem (R$)<input id="flightPriceInput" type="number" min="0" step="0.01" required /></label>
+          <label>Situação<select id="flightStatusInput"><option>Programado</option><option>Em breve</option><option>Quase lotado</option><option>Cancelado</option></select></label>
+        </div>
+        <p class="dialog-error" id="flightFormError" role="alert" hidden></p>
+        <div class="dialog-actions"><button type="button" class="operation-secondary" data-close-dialog>Cancelar</button><button type="submit" class="operation-primary">Salvar voo</button></div>
+      </form>
+    </dialog>
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/voos.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
+</html>

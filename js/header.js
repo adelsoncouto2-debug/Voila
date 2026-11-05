@@ -182,6 +182,10 @@ fetch(basePath("/components/header.html"))
         sessionStorage.setItem("usuarioLogado", usuario);
         entrar("Ricardo", usuario);
         sessionStorage.setItem("usuarioLogado", usuario);
+      } else if (usuario === "ceo@voila.com" && senha === "1234") {
+        alert("Login realizado com sucesso!");
+        sessionStorage.setItem("usuarioLogado", usuario);
+        window.location.href = basePath("/intranet/ceo/index.html");
       } else {
         alert("Usuário ou senha incorretos.");
       }

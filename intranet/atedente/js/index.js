@@ -18,65 +18,81 @@ const dashboardSiteRootUrl = new URL("../../../", document.currentScript.src);
 const dashboardAssetUrl = (path) =>
   new URL(`img/${path}`, dashboardSiteRootUrl).href;
 
-/**
- * @typedef {Object} DashboardData
- * @property {string} userName
- * @property {KpiData[]} kpis
- * @property {{ labels: string[], values: number[] }} revenue
- * @property {DestinationData[]} destinations
- * @property {BookingData[]} recentBookings
- * @property {ActivityData[]} customerActivity
- */
 
-/**
- * @typedef {Object} BookingData
- * @property {string} clientName
- * @property {string} description
- * @property {string} value
- * @property {"confirmed"|"pending"} status
- */
 
-/**
- * @typedef {Object} ActivityData
- * @property {string} clientName
- * @property {string} action
- * @property {string} time
- */
 
-/**
- * @typedef {Object} KpiData
- * @property {string} id
- * @property {string} label
- * @property {string} value
- * @property {string} icon
- * @property {number} deltaPercent
- * @property {string} deltaLabel
- */
 
-/**
- * @typedef {Object} DestinationData
- * @property {string} name
- * @property {string} subLabel
- * @property {number} deltaPercent
- * @property {string} thumbUrl
- */
 
-/**
- * Busca os dados do dashboard.
- *
- * TODO(backend): quando a API estiver pronta, substituir o corpo por:
- *
- *   const res = await fetch("/api/dashboard");
- *   if (!res.ok) throw new Error("Falha ao carregar dashboard");
- *   return await res.json();
- *
- * O endpoint deve devolver um objeto no formato descrito em
- * DashboardData acima.
- *
- * @returns {Promise<DashboardData>}
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 async function getDashboardData() {
-  // ----- MOCK: remover quando o backend existir -----
+
   const mockData = {
     userName: "Maria",
     kpis: [
@@ -210,12 +226,12 @@ async function getDashboardData() {
   };
 
   return mockData;
-  // ----- FIM DO MOCK -----
+
 }
 
-/**
- * @param {KpiData[]} kpis
- */
+
+
+
 function renderKpis(kpis) {
   const container = document.getElementById("kpiGrid");
   if (!container) return;
@@ -249,11 +265,11 @@ function renderKpis(kpis) {
     .join("");
 }
 
-/**
- *
- * @param {{ labels: string[], values: number[] }} revenue
- * @returns {string}
- */
+
+
+
+
+
 function buildRevenueChartSVG(revenue) {
   const width = 800;
   const height = 320;
@@ -331,18 +347,18 @@ function buildRevenueChartSVG(revenue) {
   `;
 }
 
-/**
- * @param {{ labels: string[], values: number[] }} revenue
- */
+
+
+
 function renderRevenueChart(revenue) {
   const wrap = document.getElementById("revenueChartWrap");
   if (!wrap) return;
   wrap.innerHTML = buildRevenueChartSVG(revenue);
 }
 
-/**
- * @param {DestinationData[]} destinations
- */
+
+
+
 function renderDestinations(destinations) {
   const list = document.getElementById("destinationsList");
   if (!list) return;
@@ -371,9 +387,9 @@ function renderDestinations(destinations) {
     .join("");
 }
 
-/**
- * @param {{clientName:string, description:string, value:string, status:"confirmed"|"pending"}[]} bookings
- */
+
+
+
 function renderRecentBookings(bookings) {
   const list = document.getElementById("recentBookingsList");
   if (!list) return;
@@ -411,9 +427,9 @@ function renderRecentBookings(bookings) {
     .join("");
 }
 
-/**
- * @param {{clientName:string, action:string, time:string}[]} activity
- */
+
+
+
 function renderCustomerActivity(activity) {
   const list = document.getElementById("customerActivityList");
   if (!list) return;

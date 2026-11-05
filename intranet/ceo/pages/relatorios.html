@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatórios - Voilà</title>
+    <script>
+      if (!sessionStorage.getItem("usuarioLogado")) {
+        window.location.replace("../../index.html");
+      }
+    </script>
+
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/relatorios.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="rel-main">
+      <div class="rel-title-row">
+        <div class="rel-title">
+          <h1>Relatórios</h1>
+          <p>Acompanhe vendas, voos e reclamações da agência por período</p>
+        </div>
+        <div class="rel-actions">
+          <button
+            type="button"
+            class="rel-btn"
+            id="btnExportCsv"
+            title="Disponível em breve"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 3v10M6 9l4 4 4-4M4 16h12" />
+            </svg>
+            Exportar CSV
+          </button>
+          <button
+            type="button"
+            class="rel-btn rel-btn-primary"
+            id="btnExportPdf"
+            title="Disponível em breve"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 3v10M6 9l4 4 4-4M4 16h12" />
+            </svg>
+            Exportar PDF
+          </button>
+        </div>
+      </div>
+      <section class="rel-card rel-filters" aria-label="Filtros do relatório">
+        <div class="rel-field">
+          <span class="rel-label" id="lblPeriodo">Período</span>
+          <div class="rel-chips" role="group" aria-labelledby="lblPeriodo">
+            <button type="button" class="rel-chip" data-preset="7">7 dias</button>
+            <button type="button" class="rel-chip" data-preset="30">30 dias</button>
+            <button type="button" class="rel-chip" data-preset="90">3 meses</button>
+            <button type="button" class="rel-chip" data-preset="365">12 meses</button>
+            <button type="button" class="rel-chip" data-preset="custom">
+              Personalizado
+            </button>
+          </div>
+        </div>
+
+        <div class="rel-field">
+          <label class="rel-label" for="dateStart">De</label>
+          <input type="date" id="dateStart" class="rel-input" />
+        </div>
+        <div class="rel-field">
+          <label class="rel-label" for="dateEnd">Até</label>
+          <input type="date" id="dateEnd" class="rel-input" />
+        </div>
+        <div class="rel-field">
+          <label class="rel-label" for="filterDestination">Destino</label>
+          <select id="filterDestination" class="rel-input rel-select">
+            <option value="all">Todos</option>
+          </select>
+        </div>
+        <div class="rel-field">
+          <label class="rel-label" for="filterCompany">Companhia</label>
+          <select id="filterCompany" class="rel-input rel-select">
+            <option value="all">Todas</option>
+          </select>
+        </div>
+
+        <button type="button" class="rel-clear" id="btnClear">
+          Limpar filtros
+        </button>
+        <p class="rel-error" id="dateError" role="alert" hidden></p>
+      </section>
+      <section class="rel-kpis" id="relKpiGrid" aria-label="Indicadores do período"></section>
+      <section class="rel-grid2">
+        <div class="rel-card">
+          <h3>Vendas por destino</h3>
+          <p class="rel-sub">Valor vendido no período</p>
+          <div id="relDestChart"></div>
+        </div>
+
+        <div class="rel-card">
+          <h3>Vendas por companhia</h3>
+          <p class="rel-sub">Valor vendido no período</p>
+          <div id="relCompanyChart"></div>
+          <p class="rel-note" id="relCompanyNote"></p>
+        </div>
+      </section>
+      <section class="rel-grid2">
+        <div class="rel-card">
+          <h3>Passagens por horário de voo</h3>
+          <p class="rel-sub">
+            Quantidade de passagens vendidas por faixa de horário
+          </p>
+          <div id="relTimeChart"></div>
+          <p class="rel-note" id="relTimeNote"></p>
+        </div>
+
+        <div class="rel-card">
+          <h3>Reclamações por assunto</h3>
+          <p class="rel-sub">Chamados abertos no SAC no período</p>
+          <div id="relComplaintChart"></div>
+          <p class="rel-note" id="relComplaintStatus"></p>
+          <p class="rel-hint">
+            As reclamações não são filtradas por destino ou companhia.
+          </p>
+        </div>
+      </section>
+      <section class="rel-card">
+        <h3>Detalhamento de vendas</h3>
+        <p class="rel-sub">Vendas dentro dos filtros selecionados</p>
+
+        <div class="rel-table-wrap">
+          <table class="rel-table">
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Companhia</th>
+                <th scope="col">Voo · Horário</th>
+                <th scope="col" class="r">Passagens</th>
+                <th scope="col" class="r">Valor</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="relTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="rel-pag">
+          <span id="relTableInfo"></span>
+          <nav class="rel-pages" id="relPagination" aria-label="Paginação"></nav>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/relatorios.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
+</html>

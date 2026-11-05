@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviços e preços - Voilà</title>
+    <script>
+      if (!sessionStorage.getItem("usuarioLogado")) {
+        window.location.replace("../../index.html");
+      }
+    </script>
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/operacao.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="operation-main">
+      <div class="operation-heading">
+        <div>
+          <h1>Serviços</h1>
+          <p>Cadastre os pacotes oferecidos pela agência e gerencie seus preços</p>
+        </div>
+        <button type="button" class="operation-primary" id="addServiceButton">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+          Novo serviço
+        </button>
+      </div>
+
+      <section class="operation-metrics" id="serviceMetrics" aria-label="Resumo do catálogo"></section>
+
+      <section class="operation-filters" aria-label="Filtros dos serviços">
+        <div class="operation-field search-field">
+          <label for="serviceSearch">Buscar</label>
+          <input id="serviceSearch" type="search" placeholder="Nome do serviço ou destino" />
+        </div>
+        <div class="operation-field">
+          <label for="serviceCategory">Categoria</label>
+          <select id="serviceCategory"><option value="all">Todas</option></select>
+        </div>
+        <div class="operation-field">
+          <label for="serviceStatus">Situação</label>
+          <select id="serviceStatus"><option value="all">Todas</option><option value="Ativo">Ativo</option><option value="Inativo">Inativo</option></select>
+        </div>
+        <button type="button" class="operation-clear" id="clearServiceFilters">Limpar</button>
+      </section>
+
+      <section class="operation-panel">
+        <div class="operation-panel-heading">
+          <div>
+            <h2>Catálogo de serviços</h2>
+            <p id="serviceCount">Pacotes e serviços oferecidos pela agência</p>
+          </div>
+          <span class="operation-caption">Preços em reais</span>
+        </div>
+        <div class="operation-table-wrap">
+          <table class="operation-table service-table">
+            <thead>
+              <tr>
+                <th scope="col">Serviço</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">O que inclui</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Situação</th>
+                <th scope="col"><span class="visually-hidden">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody id="serviceRows"></tbody>
+          </table>
+          <p class="operation-empty" id="serviceEmpty" hidden>Nenhum serviço encontrado com esses filtros.</p>
+        </div>
+      </section>
+      <p class="operation-storage-note">Alterações feitas nesta tela ficam salvas neste navegador.</p>
+    </main>
+    <dialog class="operation-dialog" id="serviceDialog">
+      <form id="serviceForm">
+        <div class="dialog-heading">
+          <div><h2 id="serviceDialogTitle">Novo serviço</h2><p>Informe a categoria e o preço de venda.</p></div>
+          <button type="button" class="dialog-close" data-close-dialog aria-label="Fechar">×</button>
+        </div>
+        <input type="hidden" id="serviceId" />
+        <div class="dialog-grid service-dialog-grid">
+          <label class="full-field">Nome do serviço<input id="serviceNameInput" required maxlength="100" placeholder="Ex.: Pacote para Lisboa" /></label>
+          <label>Categoria<select id="serviceCategoryInput"><option>Pacote de viagem</option><option>Hospedagem</option><option>Traslado</option><option>Seguro viagem</option><option>Passeio</option><option>Outro</option></select></label>
+          <label>Preço (R$)<input id="servicePriceInput" type="number" min="0" step="0.01" required /></label>
+          <label>Situação<select id="serviceStatusInput"><option>Ativo</option><option>Inativo</option></select></label>
+          <label class="full-field">Itens inclusos<textarea id="serviceIncludesInput" rows="3" maxlength="300" placeholder="Separe os itens por vírgula"></textarea></label>
+        </div>
+        <div class="dialog-actions"><button type="button" class="operation-secondary" data-close-dialog>Cancelar</button><button type="submit" class="operation-primary">Salvar serviço</button></div>
+      </form>
+    </dialog>
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/servicos.js"></script>
+    <script src="../js/footer.js"></script>
+  </body>
+</html>
