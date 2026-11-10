@@ -195,6 +195,8 @@ fetch(basePath("/components/header.html"))
     if (usuarioSalvo) {
       if (usuarioSalvo === "Voila@gmail.com") {
         entrar("Admin", usuarioSalvo);
+      } else if (usuarioSalvo === "ceo@voila.com") {
+        entrar("CEO", usuarioSalvo);
       } else {
         entrar("Ricardo", usuarioSalvo);
       }

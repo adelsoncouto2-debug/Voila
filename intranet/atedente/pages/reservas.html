@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas | Voilà</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/reservas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../js/auth.js"></script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="reservations-main">
+      <header class="reservations-heading">
+        <div>
+          <h1>Reservas</h1>
+          <p>Encontre rapidamente uma reserva pelo nome do cliente ou destino.</p>
+        </div>
+        <form class="reservation-search" id="reservation-search">
+          <label class="visually-hidden" for="reservation-query">
+            Nome do cliente ou destino
+          </label>
+          <input
+            id="reservation-query"
+            name="query"
+            type="search"
+            placeholder="Nome do cliente ou destino"
+            autocomplete="off"
+          />
+          <button class="search-button" type="submit">Buscar</button>
+          <button class="clear-button" type="reset">Limpar</button>
+        </form>
+      </header>
+
+      <p class="search-hint">
+        A busca considera o nome completo ou o destino exato.
+      </p>
+
+      <div
+        class="reservation-tabs"
+        role="tablist"
+        aria-label="Status das viagens"
+      >
+        <button
+          class="reservation-tab is-active"
+          id="reserved-tab"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="reservations-panel"
+          tabindex="0"
+        >
+          Reservas <span class="tab-count" data-count="reservada">0</span>
+        </button>
+        <button
+          class="reservation-tab"
+          id="scheduled-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="reservations-panel"
+          tabindex="-1"
+        >
+          Viagens marcadas
+          <span class="tab-count" data-count="marcada">0</span>
+        </button>
+        <button
+          class="reservation-tab"
+          id="cancelled-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="reservations-panel"
+          tabindex="-1"
+        >
+          Canceladas <span class="tab-count" data-count="cancelada">0</span>
+        </button>
+      </div>
+
+      <section
+        class="reservations-panel"
+        id="reservations-panel"
+        role="tabpanel"
+        aria-labelledby="reserved-tab"
+        aria-live="polite"
+      >
+        <p class="reservations-message" id="reservations-message">
+          Carregando reservas...
+        </p>
+        <div class="reservations-list" id="reservations-list"></div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script defer src="../js/reservas.js"></script>
+  </body>
+</html>

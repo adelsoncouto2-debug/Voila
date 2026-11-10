@@ -6,7 +6,9 @@ function caminhoBase() {
   return "";
 }
 
-fetch(caminhoBase() + "/intranet/ceo/components/header.html")
+fetch(caminhoBase() + "/intranet/ceo/components/header.html", {
+  cache: "no-cache",
+})
   .then((r) => r.text())
   .then((html) => {
     document.getElementById("header").innerHTML = html;
@@ -41,7 +43,9 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
     const dropdownEmail = document.querySelector(".user-dropdown-email");
     const btnLogout = document.getElementById("btn-logout");
     const notificationButton = document.querySelector(".notification-button");
-    const notificationDropdown = document.querySelector(".notification-dropdown");
+    const notificationDropdown = document.querySelector(
+      ".notification-dropdown",
+    );
     const notificationBadge = document.querySelector(".notification-badge");
     const btnMarcarLidas = document.getElementById("btn-marcar-lidas");
 
@@ -49,7 +53,8 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
       userButton.addEventListener("click", function (e) {
         e.stopPropagation();
         if (notificationDropdown) notificationDropdown.classList.remove("open");
-        userDropdown.classList.toggle("open");
+        const isOpen = userDropdown.classList.toggle("open");
+        userButton.setAttribute("aria-expanded", String(isOpen));
       });
       userDropdown.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -60,7 +65,9 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
       notificationButton.addEventListener("click", function (e) {
         e.stopPropagation();
         if (userDropdown) userDropdown.classList.remove("open");
-        notificationDropdown.classList.toggle("open");
+        if (userButton) userButton.setAttribute("aria-expanded", "false");
+        const isOpen = notificationDropdown.classList.toggle("open");
+        notificationButton.setAttribute("aria-expanded", String(isOpen));
       });
       notificationDropdown.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -79,6 +86,10 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
     document.addEventListener("click", function () {
       if (userDropdown) userDropdown.classList.remove("open");
       if (notificationDropdown) notificationDropdown.classList.remove("open");
+      if (userButton) userButton.setAttribute("aria-expanded", "false");
+      if (notificationButton) {
+        notificationButton.setAttribute("aria-expanded", "false");
+      }
     });
 
     function entrar(nome, email) {
@@ -99,7 +110,10 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
 
     const usuarioSalvo = sessionStorage.getItem("usuarioLogado");
     if (usuarioSalvo) {
-      entrar("Gerente", usuarioSalvo);
+      entrar(
+        usuarioSalvo.toLowerCase() === "ceo@voila.com" ? "CEO" : "Gerente",
+        usuarioSalvo,
+      );
     }
   })
   .catch((err) => console.error("Erro ao carregar o header do gerente:", err));

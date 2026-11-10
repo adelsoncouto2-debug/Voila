@@ -29,18 +29,6 @@ body { margin: 0; background: #f5f7fa; }
 
 .header .logged-container { margin-right: 0; }
 
-@media (max-width: 1400px) {
-  .operation-main { width: calc(100% - 80px); }
-}
-
-@media (max-width: 1100px) {
-  .operation-main { width: calc(100% - 40px); }
-}
-
-@media (max-width: 850px) {
-  .operation-main { width: calc(100% - 30px); }
-}
-
 .operation-heading,
 .operation-panel-heading {
   display: flex;

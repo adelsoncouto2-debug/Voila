@@ -34,19 +34,6 @@
 
   .header .logged-container { margin-right: 0; }
 
-  @media (max-width: 1400px) {
-    .rel-main { width: calc(100% - 80px); }
-  }
-
-  @media (max-width: 1100px) {
-    .rel-main { width: calc(100% - 40px); }
-  }
-
-  @media (max-width: 850px) {
-    .rel-main { width: calc(100% - 30px); }
-  }
-
-
   .rel-title-row {
     display: flex;
     justify-content: space-between;

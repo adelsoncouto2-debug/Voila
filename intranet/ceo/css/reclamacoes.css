@@ -29,18 +29,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-@media (max-width: 1400px) {
-  .complaints-main { width: calc(100% - 80px); }
-}
-
-@media (max-width: 1100px) {
-  .complaints-main { width: calc(100% - 40px); }
-}
-
-@media (max-width: 850px) {
-  .complaints-main { width: calc(100% - 30px); }
-}
-
 .complaints-heading,
 .complaint-card-heading {
   display: flex;
