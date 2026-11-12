@@ -1,30 +1,23 @@
-function caminhoBase() {
-  if (window.location.hostname.endsWith("github.io")) {
-    const partes = window.location.pathname.split("/").filter(Boolean);
-    return partes.length ? "/" + partes[0] : "";
-  }
-  return "";
-}
+const headerScriptUrl = document.currentScript.src;
+const intranetHeaderRootUrl = new URL("../", headerScriptUrl);
+const siteHeaderRootUrl = new URL("../../../", headerScriptUrl);
+const adminSwitchScript = document.createElement("script");
+adminSwitchScript.src = new URL("js/admin-switch.js", siteHeaderRootUrl).href;
+document.head.appendChild(adminSwitchScript);
 
-fetch(caminhoBase() + "/intranet/ceo/components/header.html", {
+fetch(new URL("components/header.html", intranetHeaderRootUrl), {
   cache: "no-cache",
 })
-  .then((r) => r.text())
-  .then((html) => {
-    document.getElementById("header").innerHTML = html;
-    const base = caminhoBase();
-    if (base) {
-      document
-        .querySelectorAll('#header [src^="/"], #header [href^="/"]')
-        .forEach((el) => {
-          ["src", "href"].forEach((attr) => {
-            const valor = el.getAttribute(attr);
-            if (valor && valor.startsWith("/") && !valor.startsWith("//")) {
-              el.setAttribute(attr, base + valor);
-            }
-          });
-        });
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Falha ao carregar o cabeçalho: HTTP ${response.status}`);
     }
+    return response.text();
+  })
+  .then((html) => {
+    document.getElementById("header").innerHTML = html
+      .replaceAll("{{SITE_ROOT}}", siteHeaderRootUrl.href)
+      .replaceAll("{{INTRANET_ROOT}}", intranetHeaderRootUrl.href);
 
     const pagina = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".header-text a.text").forEach((link) => {
@@ -104,7 +97,7 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html", {
       btnLogout.addEventListener("click", function (e) {
         e.stopPropagation();
         sessionStorage.removeItem("usuarioLogado");
-        window.location.href = caminhoBase() + "/index.html";
+        window.location.href = new URL("index.html", siteHeaderRootUrl).href;
       });
     }
 

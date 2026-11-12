@@ -11,6 +11,12 @@ function basePath(caminho) {
   return getBasePath() + caminho;
 }
 
+if (!window.adminSwitchInitialized) {
+  const adminSwitchScript = document.createElement("script");
+  adminSwitchScript.src = basePath("/js/admin-switch.js");
+  document.head.appendChild(adminSwitchScript);
+}
+
 fetch(basePath("/components/header.html"))
   .then((r) => r.text())
   .then((html) => {

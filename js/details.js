@@ -77,6 +77,8 @@ async function carregarDetalhes() {
 }
 
 function preencherPagina(item) {
+  const { id, tipo } = getParametrosDaUrl();
+
   document.getElementById("imagem-principal").style.backgroundImage =
     `url("${item.imagemPrincipal}")`;
   document.getElementById("desconto").textContent = item.desconto;
@@ -94,6 +96,22 @@ function preencherPagina(item) {
   document.getElementById("data-volta").value = item.dataVolta;
   document.getElementById("sobre-destino").textContent = item.sobre;
   document.title = `${item.nome} - Voilà`;
+
+  const paymentOptionsButton = document.querySelector(".cta-button");
+  paymentOptionsButton.addEventListener("click", () => {
+    sessionStorage.setItem(
+      "voila_selected_combo",
+      JSON.stringify({
+        id,
+        name: item.nome,
+        price: item.precoNovo,
+        type: tipo,
+      }),
+    );
+    window.location.assign(
+      `../pages/passagens.html?comboId=${encodeURIComponent(id)}`,
+    );
+  });
 
   preencherLista(document.getElementById("lista-inclui"), item.inclui);
   preencherLista(

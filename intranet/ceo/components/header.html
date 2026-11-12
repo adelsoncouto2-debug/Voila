@@ -1,32 +1,42 @@
 <header class="header">
   <div class="header-left">
-    <img class="header-logo" src="/img/header-logo.webp" alt="logo" />
+    <img
+      class="header-logo"
+      src="{{SITE_ROOT}}img/header-logo.webp"
+      alt="logo"
+    />
     <nav class="header-text" aria-label="Navegação do CEO">
-      <h3><a class="text" href="/intranet/ceo/index.html">Dashboard</a></h3>
+      <h3>
+        <a class="text" href="{{INTRANET_ROOT}}index.html">Dashboard</a>
+      </h3>
 
       <h3>
-        <a class="text" href="/intranet/ceo/pages/relatorios.html"
+        <a class="text" href="{{INTRANET_ROOT}}pages/relatorios.html"
           >Relatórios</a
         >
       </h3>
 
       <h3>
-        <a class="text" href="/intranet/ceo/pages/reclamacoes.html"
+        <a class="text" href="{{INTRANET_ROOT}}pages/reclamacoes.html"
           >Reclamações</a
         >
       </h3>
 
       <h3>
-        <a class="text" href="/intranet/ceo/pages/voos.html">Voos</a>
+        <a class="text" href="{{INTRANET_ROOT}}pages/voos.html">Voos</a>
       </h3>
 
       <h3>
-        <a class="text" href="/intranet/ceo/pages/servicos.html">Serviços</a>
+        <a class="text" href="{{INTRANET_ROOT}}pages/servicos.html">Serviços</a>
       </h3>
 
-      <!--<a class="vai-container" href="/pages/vai.html">
-            <img class="vai-logo" src="/img/vai.webp" alt="VAI" />
-            <img class="vai-selected" src="/img/vai-selected.webp" alt="VAI" />
+      <!--<a class="vai-container" href="{{INTRANET_ROOT}}pages/vai.html">
+            <img class="vai-logo" src="{{SITE_ROOT}}img/vai.webp" alt="VAI" />
+            <img
+              class="vai-selected"
+              src="{{SITE_ROOT}}img/vai-selected.webp"
+              alt="VAI"
+            />
           </a>!-->
     </nav>
   </div>
@@ -129,15 +139,23 @@
       aria-expanded="false"
       aria-controls="ceo-user-menu"
     >
-      <img class="profile-icon" src="/img/profile.png" alt="Profile Icon" />
+      <img
+        class="profile-icon"
+        src="{{SITE_ROOT}}img/profile.png"
+        alt="Profile Icon"
+      />
       <span class="user-name">Olá, Gerente</span>
-      <img class="arrow-down" src="/img/arrow-down.svg" alt="Arrow Down" />
+      <img
+        class="arrow-down"
+        src="{{SITE_ROOT}}img/arrow-down.svg"
+        alt="Arrow Down"
+      />
     </button>
     <div class="user-dropdown-logged" id="ceo-user-menu">
       <div class="user-dropdown-header">
         <img
           class="profile-icon-large"
-          src="/img/profile.png"
+          src="{{SITE_ROOT}}img/profile.png"
           alt="Profile Icon"
         />
         <div class="user-dropdown-info">
@@ -146,7 +164,10 @@
         </div>
       </div>
 
-      <a href="/intranet/ceo/pages/relatorios.html" class="miles-box">
+      <a
+        href="{{INTRANET_ROOT}}pages/relatorios.html"
+        class="miles-box"
+      >
         <span class="miles-icon">📈</span>
         <span class="miles-text">
           <span class="miles-label">Vendas do mês</span>
@@ -156,7 +177,7 @@
       </a>
 
       <div class="dropdown-section">
-        <a href="/intranet/ceo/index.html" class="dropdown-item">
+        <a href="{{INTRANET_ROOT}}index.html" class="dropdown-item">
           <svg
             viewBox="0 0 20 20"
             fill="none"
@@ -172,7 +193,7 @@
           </svg>
           Dashboard
         </a>
-        <a href="/intranet/ceo/pages/relatorios.html" class="dropdown-item">
+        <a href="{{INTRANET_ROOT}}pages/relatorios.html" class="dropdown-item">
           <svg
             viewBox="0 0 20 20"
             fill="none"
@@ -186,7 +207,7 @@
           </svg>
           Relatórios
         </a>
-        <a href="/intranet/ceo/pages/reclamacoes.html" class="dropdown-item">
+        <a href="{{INTRANET_ROOT}}pages/reclamacoes.html" class="dropdown-item">
           <svg
             viewBox="0 0 20 20"
             fill="none"
@@ -200,7 +221,7 @@
           </svg>
           Reclamações
         </a>
-        <a href="/intranet/ceo/pages/voos.html" class="dropdown-item">
+        <a href="{{INTRANET_ROOT}}pages/voos.html" class="dropdown-item">
           <svg
             viewBox="0 0 20 20"
             fill="none"
@@ -217,7 +238,7 @@
           </svg>
           Voos
         </a>
-        <a href="/intranet/ceo/pages/servicos.html" class="dropdown-item">
+        <a href="{{INTRANET_ROOT}}pages/servicos.html" class="dropdown-item">
           <svg
             viewBox="0 0 20 20"
             fill="none"

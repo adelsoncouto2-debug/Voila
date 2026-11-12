@@ -1,18 +1,34 @@
-/* /js/admin-switch.js */
 (function () {
-  const init = () => {
-    const usuario = (
-      sessionStorage.getItem("usuarioLogado") || ""
-    ).toLowerCase();
-    if (usuario !== "voila@gmail.com") return;
+  if (window.adminSwitchInitialized) return;
+  window.adminSwitchInitialized = true;
 
-    const naIntranet = location.pathname.startsWith("/intranet");
-    const destino = naIntranet
-      ? "/index.html"
-      : "/intranet/atedente/index.html";
-    const rotulo = naIntranet
-      ? "Ver site do cliente"
-      : "Voltar para a intranet";
+  const scriptUrl = document.currentScript.src;
+  const siteRootUrl = new URL("../", scriptUrl);
+  const profiles = [
+    {
+      id: "atedente",
+      label: "Atendente",
+      email: "Voila@gmail.com",
+      path: "intranet/atedente/index.html",
+    },
+    {
+      id: "ceo",
+      label: "CEO",
+      email: "ceo@voila.com",
+      path: "intranet/ceo/index.html",
+    },
+    {
+      id: "funcionario",
+      label: "Funcionário",
+      email: "ricardo@iftm.edu.br",
+      path: "intranet/funcionario/index.html",
+    },
+  ];
+
+  const init = () => {
+    const activeProfile = profiles.find((profile) =>
+      window.location.pathname.includes(`/intranet/${profile.id}/`),
+    );
 
     const style = document.createElement("style");
     style.textContent = `
@@ -21,55 +37,129 @@
         right: 16px;
         bottom: 24px;
         z-index: 9000;
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-        height: 52px;
-        min-width: 52px;
-        padding: 0 14px;
+        font: 600 14px "Open Sans", sans-serif;
+      }
+      .admin-switch-toggle {
+        min-height: 48px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: 24px;
         background: #1e2d5b;
         color: #fff;
-        border-radius: 26px;
         box-shadow: 0 6px 20px rgba(13, 42, 77, 0.3);
-        font: 600 14px "Open Sans", sans-serif;
+        cursor: pointer;
+        font: inherit;
         white-space: nowrap;
-        overflow: hidden;
-        text-decoration: none;
-        transition: background 0.2s;
       }
-      .admin-switch svg { width: 24px; height: 24px; flex-shrink: 0; }
-      .admin-switch span {
-        max-width: 0;
-        opacity: 0;
-        transition: max-width 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+      .admin-switch-toggle:hover,
+      .admin-switch-toggle:focus-visible,
+      .admin-switch.open .admin-switch-toggle {
+        background: #ff6200;
       }
-      .admin-switch:hover,
-      .admin-switch:focus-visible { background: #ff6200; }
-      .admin-switch:hover span,
-      .admin-switch:focus-visible span {
-        max-width: 200px;
-        opacity: 1;
-        margin-right: 10px;
+      .admin-switch-menu {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 10px);
+        display: none;
+        width: 220px;
+        padding: 8px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(13, 42, 77, 0.18);
+      }
+      .admin-switch.open .admin-switch-menu {
+        display: grid;
+        gap: 4px;
+      }
+      .admin-switch-option {
+        width: 100%;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: #1e2d5b;
+        cursor: pointer;
+        font: inherit;
+        text-align: left;
+      }
+      .admin-switch-option:hover,
+      .admin-switch-option:focus-visible,
+      .admin-switch-option[aria-current="page"] {
+        background: #f5f7fa;
+        color: #ff6200;
       }
     `;
     document.head.appendChild(style);
 
-    const btn = document.createElement("a");
-    btn.className = "admin-switch";
-    btn.href = destino;
-    btn.setAttribute("aria-label", rotulo);
-    btn.innerHTML = `
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-        <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-      </svg>
-      <span>${rotulo}</span>`;
-    document.body.appendChild(btn);
+    const container = document.createElement("div");
+    container.className = "admin-switch";
+    container.innerHTML = `
+      <div class="admin-switch-menu" role="menu" aria-label="Selecionar perfil">
+        ${profiles
+          .map(
+            (profile) => `
+              <button
+                class="admin-switch-option"
+                type="button"
+                role="menuitem"
+                data-profile="${profile.id}"
+                ${activeProfile?.id === profile.id ? 'aria-current="page"' : ""}
+              >${profile.label}</button>
+            `,
+          )
+          .join("")}
+        <button
+          class="admin-switch-option"
+          type="button"
+          role="menuitem"
+          data-profile="cliente"
+          ${activeProfile ? "" : 'aria-current="page"'}
+        >Site do cliente</button>
+      </div>
+      <button
+        class="admin-switch-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-haspopup="menu"
+      >${activeProfile ? `Perfil: ${activeProfile.label}` : "Trocar perfil"}</button>
+    `;
+    document.body.appendChild(container);
+
+    const toggle = container.querySelector(".admin-switch-toggle");
+    toggle.addEventListener("click", () => {
+      const isOpen = container.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    container.querySelectorAll("[data-profile]").forEach((option) => {
+      option.addEventListener("click", () => {
+        const selectedProfile = profiles.find(
+          (profile) => profile.id === option.dataset.profile,
+        );
+        if (selectedProfile) {
+          sessionStorage.setItem("usuarioLogado", selectedProfile.email);
+          window.location.assign(
+            new URL(selectedProfile.path, siteRootUrl).href,
+          );
+          return;
+        }
+
+        sessionStorage.removeItem("usuarioLogado");
+        window.location.assign(new URL("index.html", siteRootUrl).href);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!container.contains(event.target)) {
+        container.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
   };
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", init, { once: true });
   } else {
     init();
   }

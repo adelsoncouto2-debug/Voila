@@ -1,7 +1,6 @@
 :root {
-  --ceo-container-width: 90%;
-  --ceo-container-max: 1400px;
-  --ceo-container-padding: 40px;
+  --container-width: 90%;
+  --container-max: 1200px;
 }
 
 /* Main das páginas */
@@ -10,55 +9,23 @@
 .complaints-main,
 .rel-main {
   box-sizing: border-box;
-  width: min(var(--ceo-container-width), var(--ceo-container-max));
+  width: min(var(--container-width), var(--container-max));
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--ceo-container-padding);
-  padding-right: var(--ceo-container-padding);
-}
-
-/* Header: a barra fica 100% de largura */
-.header {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-}
-
-/* Container INTERNO do header (é ele que deve ter a mesma largura do main) */
-.header .header-container,
-.header .nav-container,
-.header .header-inner,
-.header .container,
-#header .header-container,
-#header .nav-container,
-#header .header-inner,
-#header .container {
-  box-sizing: border-box;
-  width: min(var(--ceo-container-width), var(--ceo-container-max));
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--ceo-container-padding);
-  padding-right: var(--ceo-container-padding);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 /* Mobile */
 @media (max-width: 640px) {
   :root {
-    --ceo-container-padding: 16px;
+    --container-padding: 16px;
   }
 
   .dashboard-main,
   .operation-main,
   .complaints-main,
-  .rel-main,
-  .header .header-container,
-  .header .nav-container,
-  .header .header-inner,
-  .header .container,
-  #header .header-container,
-  #header .nav-container,
-  #header .header-inner,
-  #header .container {
+  .rel-main {
     width: 100%;
   }
 }

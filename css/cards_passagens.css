@@ -160,7 +160,41 @@
 }
 
 .flight-card.is-expanded .flight-card__details {
-  max-height: 240px;
+  max-height: 320px;
+}
+
+.flight-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 16px;
+}
+
+.flight-card__pay {
+  padding: 9px 14px;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+  background: #fff;
+  color: #172e4d;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.flight-card__pay:hover,
+.flight-card__pay:focus-visible {
+  border-color: #fc811c;
+  background: #fff8f1;
+  color: #b94d00;
+}
+
+.flight-card__pay:focus-visible {
+  outline: 2px solid #fc811c;
+  outline-offset: 2px;
 }
 
 .details-top {

@@ -2,6 +2,9 @@ const headerScriptUrl = document.currentScript.src;
 const intranetHeaderRootUrl = new URL("../", headerScriptUrl);
 const siteHeaderRootUrl = new URL("../../../", headerScriptUrl);
 const headerContainer = document.getElementById("header");
+const adminSwitchScript = document.createElement("script");
+adminSwitchScript.src = new URL("js/admin-switch.js", siteHeaderRootUrl).href;
+document.head.appendChild(adminSwitchScript);
 
 if (!headerContainer) {
   console.error("Não foi encontrado o contêiner do cabeçalho da intranet.");
