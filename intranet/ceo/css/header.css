@@ -1,0 +1,29 @@
+@import url("../../atedente/css/header.css");
+
+.header {
+  width: min(90%, 1400px);
+  max-width: 1400px;
+  min-width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.logged-container {
+  margin-right: 0;
+  z-index: 1200;
+}
+
+.user-dropdown-logged,
+.notification-dropdown {
+  z-index: 1300;
+}
+
+@media (max-width: 640px) {
+  .header {
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

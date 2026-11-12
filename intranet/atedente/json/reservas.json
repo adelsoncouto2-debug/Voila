@@ -1,0 +1,47 @@
+[
+  {
+    "id": "VO-2026-1042",
+    "cliente": "Mariana Alves",
+    "destino": "Paris",
+    "status": "reservada",
+    "dataPartida": "2026-12-10",
+    "dataRetorno": "2026-12-17",
+    "valor": 8450
+  },
+  {
+    "id": "VO-2026-1043",
+    "cliente": "Pedro Henrique",
+    "destino": "Tóquio",
+    "status": "marcada",
+    "dataPartida": "2027-01-15",
+    "dataRetorno": "2027-01-25",
+    "valor": 12300
+  },
+  {
+    "id": "VO-2026-1044",
+    "cliente": "Juliana Santos",
+    "destino": "Maldivas",
+    "status": "cancelada",
+    "dataPartida": "2026-11-20",
+    "dataRetorno": "2026-11-28",
+    "valor": 15900
+  },
+  {
+    "id": "VO-2026-1045",
+    "cliente": "Rafael Souza",
+    "destino": "Rio de Janeiro",
+    "status": "marcada",
+    "dataPartida": "2026-12-03",
+    "dataRetorno": "2026-12-08",
+    "valor": 3200
+  },
+  {
+    "id": "VO-2026-1046",
+    "cliente": "Ana Beatriz Costa",
+    "destino": "Lisboa",
+    "status": "reservada",
+    "dataPartida": "2027-02-05",
+    "dataRetorno": "2027-02-14",
+    "valor": 9670
+  }
+]

@@ -10,6 +10,60 @@ document.addEventListener("DOMContentLoaded", async () => {
   let todosVoos = [];
   let voosFiltrados = [];
   let templateCard;
+  let selectedCombo = null;
+  const comboSummary = document.getElementById("combo-selection-summary");
+
+  try {
+    const savedCombo = sessionStorage.getItem("voila_selected_combo");
+    selectedCombo = savedCombo ? JSON.parse(savedCombo) : null;
+  } catch (error) {
+    console.error("Não foi possível carregar o combo selecionado:", error);
+    sessionStorage.removeItem("voila_selected_combo");
+  }
+
+  if (selectedCombo && comboSummary) {
+    document.getElementById("combo-selection-name").textContent =
+      selectedCombo.name;
+    document.getElementById("combo-selection-price").textContent =
+      selectedCombo.price;
+    comboSummary.hidden = false;
+  }
+
+  cardsContainer.addEventListener("click", (evento) => {
+    const button = evento.target.closest(".flight-card__pay");
+    if (!button) return;
+
+    const card = button.closest(".flight-card");
+    const voo = todosVoos.find(
+      (item) => String(item.id) === card?.dataset.id,
+    );
+    if (!voo) {
+      console.error("Não foi possível identificar a passagem selecionada.");
+      return;
+    }
+
+    sessionStorage.setItem(
+      "voila_checkout_booking",
+      JSON.stringify({
+        combo: selectedCombo,
+        flight: {
+          id: voo.id,
+          airline: voo.cia,
+          flightNumber: voo.numeroVoo,
+          origin: voo.origemCidade,
+          destination: voo.destinoCidade,
+          departure: voo.horarioIda,
+          arrival: voo.horarioChegada,
+          price: voo.preco,
+        },
+      }),
+    );
+    sessionStorage.removeItem("voila_selected_combo");
+    sessionStorage.removeItem("voila_payment_status");
+    window.location.assign(
+      new URL("user/pagamento.html?checkout=1", window.location.href).href,
+    );
+  });
 
   try {
     const [voosResponse, templateResponse] = await Promise.all([

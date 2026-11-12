@@ -7,6 +7,10 @@ var maxStep = 1;
 var panels = document.querySelectorAll(".step_panel");
 var stepButtons = document.querySelectorAll(".step");
 
+if (new URLSearchParams(window.location.search).get("pagamento") === "sucesso") {
+  document.getElementById("payment-success").hidden = false;
+}
+
 function esc(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -323,15 +327,18 @@ function buildPass(data) {
 }
 
 /* Prévia fixa da coluna da direita */
-document.getElementById("preview_pass").innerHTML = buildPass({
-  code: "VLA123456",
-  flight: "3256",
-  from: "GRU",
-  fromCity: "São Paulo",
-  to: "SDU",
-  toCity: "Rio de Janeiro",
-  seat: "12A",
-  boarding: "10:45",
-});
+const previewPass = document.getElementById("preview_pass");
+if (previewPass) {
+  previewPass.innerHTML = buildPass({
+    code: "VLA123456",
+    flight: "3256",
+    from: "GRU",
+    fromCity: "São Paulo",
+    to: "SDU",
+    toCity: "Rio de Janeiro",
+    seat: "12A",
+    boarding: "10:45",
+  });
+}
 
 goToStep(1);

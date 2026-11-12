@@ -1,4 +1,11 @@
 main {
+  --dash-navy: #0d2a4d;
+  --dash-orange: #f5793a;
+  --dash-orange-light: #fbd9b8;
+  --dash-green: #2e9e5b;
+  --dash-gray-text: #6b7280;
+  --dash-border: #e5e7eb;
+
   font-family: "Open Sans", sans-serif;
   width: 90%;
   max-width: 1200px;
@@ -6,14 +13,6 @@ main {
   padding: 40px 40px 60px;
   position: relative;
 }
-
-
-
-
-
-
-
-
 .dashboard-grid > * {
   min-width: 0;
 }

@@ -1,0 +1,243 @@
+<header class="header">
+  <div class="header-left">
+    <img
+      class="header-logo"
+      src="{{SITE_ROOT}}img/header-logo.webp"
+      alt="Voilà"
+    />
+    <nav class="header-text" aria-label="Navegação principal">
+      <h3>
+        <a class="text" href="{{INTRANET_ROOT}}index.html">Dashboard</a>
+      </h3>
+      <h3>
+        <a class="text" href="{{INTRANET_ROOT}}pages/reservas.html">Reservas</a>
+      </h3>
+      <h3>
+        <a class="text" href="{{INTRANET_ROOT}}pages/relatorio.html"
+          >Relatórios</a
+        >
+      </h3>
+      <h3>
+        <a class="text" href="{{INTRANET_ROOT}}pages/viagens.html">Viagens</a>
+      </h3>
+      <a class="vai-container" href="{{INTRANET_ROOT}}pages/vai.html">
+        <img class="vai-logo" src="{{SITE_ROOT}}img/vai.webp" alt="VAI" />
+        <img
+          class="vai-selected"
+          src="{{SITE_ROOT}}img/vai-selected.webp"
+          alt="VAI"
+        />
+      </a>
+    </nav>
+  </div>
+
+  <div class="logged-container">
+    <div class="notification-wrapper">
+      <button
+        class="notification-button"
+        type="button"
+        aria-label="Notificações"
+        aria-expanded="false"
+      >
+        <svg
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M10 2.5a4 4 0 00-4 4v2.3c0 .9-.3 1.7-.8 2.4L4 13.5h12l-1.2-2.3c-.5-.7-.8-1.5-.8-2.4V6.5a4 4 0 00-4-4z"
+          />
+          <path d="M8.3 16.2a1.7 1.7 0 003.4 0" />
+        </svg>
+        <span class="notification-badge">2</span>
+      </button>
+      <div class="notification-dropdown">
+        <div class="notification-dropdown-header">
+          <h3>Notificações</h3>
+          <button class="mark-read-btn" id="btn-marcar-lidas" type="button">
+            Marcar como lidas
+          </button>
+        </div>
+        <div class="notification-list">
+          <div class="notification-item unread">
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="14" height="12" rx="2" />
+              <path d="M3 7l7 5 7-5" />
+            </svg>
+            <div>
+              <p class="notification-title">Nova reserva</p>
+              <p class="notification-desc">
+                Uma nova reserva precisa de acompanhamento.
+              </p>
+              <span class="notification-time">Há 2 horas</span>
+            </div>
+          </div>
+          <div class="notification-item unread">
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="10" cy="7" r="3" />
+              <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+            </svg>
+            <div>
+              <p class="notification-title">Cliente aguardando atendimento</p>
+              <p class="notification-desc">
+                Há um novo cliente na fila de atendimento.
+              </p>
+              <span class="notification-time">Há 1 dia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="user-button"
+      type="button"
+      aria-label="Abrir menu do funcionário"
+      aria-expanded="false"
+    >
+      <img
+        class="profile-icon"
+        src="{{SITE_ROOT}}img/profile.png"
+        alt=""
+      />
+      <span class="user-name">Olá, Funcionário</span>
+      <img
+        class="arrow-down"
+        src="{{SITE_ROOT}}img/arrow-down.svg"
+        alt=""
+      />
+    </button>
+    <div class="user-dropdown-logged">
+      <div class="user-dropdown-header">
+        <img
+          class="profile-icon-large"
+          src="{{SITE_ROOT}}img/profile.png"
+          alt=""
+        />
+        <div class="user-dropdown-info">
+          <p class="user-dropdown-name">Funcionário</p>
+          <p class="user-dropdown-email"></p>
+        </div>
+      </div>
+
+      <div class="dropdown-section">
+        <a class="dropdown-item" href="{{INTRANET_ROOT}}index.html">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3" y="3" width="5" height="5" rx="1" />
+            <rect x="12" y="3" width="5" height="5" rx="1" />
+            <rect x="3" y="12" width="5" height="5" rx="1" />
+            <rect x="12" y="12" width="5" height="5" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+        <a class="dropdown-item" href="{{INTRANET_ROOT}}pages/reservas.html">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3" y="4" width="14" height="13" rx="2" />
+            <path d="M6 2.5v3M14 2.5v3M3 8h14" />
+          </svg>
+          Reservas
+        </a>
+        <a class="dropdown-item" href="{{INTRANET_ROOT}}pages/viagens.html">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2 11.5l16-7-7 16-2.2-6.8L2 11.5z" />
+            <path d="M8.8 13.7L13 9.5" />
+          </svg>
+          Viagens
+        </a>
+        <a class="dropdown-item" href="{{INTRANET_ROOT}}pages/relatorio.html">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 17V9M8 17V4M13 17v-6M18 17V7" />
+          </svg>
+          Relatórios
+        </a>
+        <a class="dropdown-item" href="{{INTRANET_ROOT}}pages/vai.html">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2 10h16M10 2v16M4.3 4.3l11.4 11.4M15.7 4.3L4.3 15.7" />
+          </svg>
+          Painel VAI
+        </a>
+      </div>
+
+      <button
+        class="dropdown-item dropdown-logout"
+        id="btn-logout"
+        type="button"
+      >
+        <svg
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M8 4H4v12h4" />
+          <line x1="17" y1="10" x2="7" y2="10" />
+          <polyline points="13,6 17,10 13,14" />
+        </svg>
+        Sair
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,8 +1,8 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/footer.css" />
 
     <link rel="stylesheet" href="../../css/user/pagamentos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -135,6 +135,19 @@
       </div>
 
       <div class="text_bellow_main">
+        <section
+          class="checkout-summary"
+          id="checkout-summary"
+          aria-labelledby="checkout-title"
+          hidden
+        >
+          <div>
+            <h2 id="checkout-title">Resumo da viagem</h2>
+            <p id="checkout-description"></p>
+          </div>
+          <strong id="checkout-total"></strong>
+        </section>
+
         <!-- Métodos disponíveis -->
         <section class="pay_section" aria-labelledby="titulo_metodos">
           <div class="section_head">
@@ -211,6 +224,15 @@
           </div>
 
           <ul class="saved_list" id="saved_list"></ul>
+          <div class="empty_state" id="empty_state" hidden>
+            <span class="method_icon"
+              ><svg class="icon"><use href="#i-wallet"></use></svg
+            ></span>
+            <p class="empty_title">Nenhuma forma cadastrada</p>
+            <p class="empty_text">
+              Escolha um método acima para continuar com o pagamento.
+            </p>
+          </div>
         </section>
       </div>
 

@@ -118,6 +118,63 @@ const savedCount = document.getElementById("saved_count");
 const emptyState = document.getElementById("empty_state");
 const toastEl = document.getElementById("toast");
 const toastText = document.getElementById("toast_text");
+const checkoutMode =
+  new URLSearchParams(window.location.search).get("checkout") === "1";
+const checkoutSummary = document.getElementById("checkout-summary");
+
+function getCheckoutBooking() {
+  const savedBooking = sessionStorage.getItem("voila_checkout_booking");
+  if (!savedBooking) return null;
+
+  try {
+    return JSON.parse(savedBooking);
+  } catch (error) {
+    console.error("Não foi possível ler o resumo da viagem selecionada:", error);
+    return null;
+  }
+}
+
+function formatCurrency(value) {
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+}
+
+function completePayment(methodName) {
+  const booking = getCheckoutBooking();
+  sessionStorage.setItem(
+    "voila_payment_status",
+    JSON.stringify({ method: methodName, booking, completedAt: Date.now() }),
+  );
+  sessionStorage.removeItem("voila_checkout_booking");
+  window.location.assign("check-in.html?pagamento=sucesso");
+}
+
+if (checkoutMode) {
+  const booking = getCheckoutBooking();
+  const summaryDescription = document.getElementById("checkout-description");
+  const summaryTotal = document.getElementById("checkout-total");
+
+  checkoutSummary.hidden = false;
+  if (booking?.flight) {
+    const flight = booking.flight;
+    const comboName = booking.combo ? `${booking.combo.name} + ` : "";
+    summaryDescription.textContent =
+      `${comboName}${flight.airline} ${flight.flightNumber} · ` +
+      `${flight.origin} → ${flight.destination}`;
+    summaryTotal.textContent = formatCurrency(flight.price);
+  } else if (booking?.combo) {
+    summaryDescription.textContent = booking.combo.name;
+    summaryTotal.textContent = booking.combo.price;
+  } else {
+    summaryDescription.textContent = "Selecione uma forma para continuar.";
+    summaryTotal.hidden = true;
+  }
+
+  document.getElementById("titulo_metodos").textContent =
+    "Escolha a forma de pagamento";
+}
 
 /* ---------- Validação e montagem de cada forma de pagamento ---------- */
 // Cada função devolve { item } em caso de sucesso ou { error } quando algo está errado.
@@ -278,13 +335,22 @@ function render() {
     const actions = document.createElement("div");
     actions.className = "saved_actions";
 
-    const btnRemove = document.createElement("button");
-    btnRemove.type = "button";
-    btnRemove.className = "btn_ghost btn_danger";
-    btnRemove.innerHTML = icon("trash", "icon_small") + "Remover";
-    btnRemove.setAttribute("aria-label", `Remover ${item.title}`);
-    btnRemove.addEventListener("click", () => removeItem(item.id));
-    actions.append(btnRemove);
+    if (checkoutMode) {
+      const btnPay = document.createElement("button");
+      btnPay.type = "button";
+      btnPay.className = "btn_primary";
+      btnPay.textContent = "Usar para pagar";
+      btnPay.addEventListener("click", () => completePayment(item.title));
+      actions.append(btnPay);
+    } else {
+      const btnRemove = document.createElement("button");
+      btnRemove.type = "button";
+      btnRemove.className = "btn_ghost btn_danger";
+      btnRemove.innerHTML = icon("trash", "icon_small") + "Remover";
+      btnRemove.setAttribute("aria-label", `Remover ${item.title}`);
+      btnRemove.addEventListener("click", () => removeItem(item.id));
+      actions.append(btnRemove);
+    }
 
     li.append(ic, info, actions);
     savedList.append(li);
@@ -404,7 +470,18 @@ modal.addEventListener("click", (e) => {
 });
 
 document.querySelectorAll(".method_card").forEach((card) => {
-  card.addEventListener("click", () => openModal(card.dataset.method));
+  if (checkoutMode) {
+    const methodName = {
+      pix: "PIX",
+      cartao: "Cartão",
+      boleto: "Boleto",
+      carteira: "Carteira",
+    }[card.dataset.method];
+    card.querySelector(".method_cta").textContent = `Selecionar ${methodName}`;
+    card.addEventListener("click", () => completePayment(methodName));
+  } else {
+    card.addEventListener("click", () => openModal(card.dataset.method));
+  }
 });
 
 /* ---------- Aviso (toast) ---------- */

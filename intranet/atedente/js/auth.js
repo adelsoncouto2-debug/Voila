@@ -1,3 +1,4 @@
+/*
 (function verificarSeguranca(){
   const estaLogado = sessionStorage.getItem("usuarioLogado");
   if (estaLogado != "Voila@gmail.com"){
@@ -5,3 +6,4 @@
     window.location.href = "/index.html";
   }
 })();
+*/

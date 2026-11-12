@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viagens | Voilà</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/viagens.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main class="trips-main">
+      <section
+        class="trips-page"
+        id="trips-list-page"
+        aria-labelledby="trips-title"
+      >
+        <header class="trips-heading">
+          <div>
+            <h1 id="trips-title">Viagens</h1>
+            <p>Consulte e gerencie os destinos cadastrados pela agência.</p>
+          </div>
+          <button class="primary-button" id="add-trip-button" type="button">
+            Adicionar nova viagem
+          </button>
+        </header>
+
+        <form class="trip-search" id="trip-search-form">
+          <label class="visually-hidden" for="trip-search">
+            Buscar viagem por destino ou descrição
+          </label>
+          <input
+            id="trip-search"
+            name="query"
+            type="search"
+            placeholder="Buscar destino ou descrição"
+            autocomplete="off"
+          />
+          <button class="search-button" type="submit">Buscar</button>
+          <button class="clear-button" type="reset">Limpar</button>
+        </form>
+
+        <p class="trips-count" id="trips-count" aria-live="polite">
+          Carregando viagens...
+        </p>
+
+        <section
+          class="trips-list"
+          id="trips-list"
+          aria-label="Viagens cadastradas"
+          aria-live="polite"
+        ></section>
+        <p class="trips-message" id="trips-message" hidden></p>
+        <p class="trips-error" id="trips-error" role="alert" hidden>
+          Não foi possível carregar as viagens. Tente novamente mais tarde.
+        </p>
+      </section>
+
+      <section
+        class="trip-editor-page"
+        id="trip-editor-page"
+        aria-labelledby="trip-editor-title"
+        hidden
+      >
+        <button class="back-button" id="back-to-trips" type="button">
+          ← Voltar para viagens
+        </button>
+        <header class="trips-heading editor-heading">
+          <div>
+            <h1 id="trip-editor-title">Editar viagem</h1>
+            <p>Confira os dados abaixo e veja como seria a edição da viagem.</p>
+          </div>
+        </header>
+
+        <div class="demo-notice" role="status">
+          Esta é uma demonstração. As alterações não serão salvas no cadastro
+          real.
+        </div>
+
+        <form class="trip-form" id="trip-form">
+          <div class="form-grid">
+            <label class="form-field full-field" for="trip-name">
+              Nome
+              <input
+                id="trip-name"
+                name="name"
+                type="text"
+                maxlength="100"
+                required
+              />
+            </label>
+
+            <label class="form-field full-field" for="trip-description">
+              Descrição
+              <textarea
+                id="trip-description"
+                name="description"
+                rows="5"
+                maxlength="2000"
+                placeholder="Descreva o destino e a experiência da viagem"
+              ></textarea>
+            </label>
+
+            <label class="form-field" for="trip-main-image">
+              Foto principal (URL)
+              <input
+                id="trip-main-image"
+                name="mainImage"
+                type="text"
+                placeholder="https://exemplo.com/foto.jpg"
+              />
+            </label>
+
+            <label class="form-field" for="trip-price">
+              Preço exibido
+              <input
+                id="trip-price"
+                name="price"
+                type="text"
+                maxlength="40"
+                placeholder="Ex.: R$ 7.990"
+              />
+            </label>
+
+            <fieldset class="gallery-field full-field">
+              <legend>Galeria de fotos</legend>
+              <p class="field-help">
+                Adicione ou remova endereços de fotos para pré-visualizar a
+                galeria.
+              </p>
+              <div class="gallery-inputs" id="gallery-inputs"></div>
+              <button
+                class="secondary-button"
+                id="add-gallery-photo"
+                type="button"
+              >
+                Adicionar foto à galeria
+              </button>
+              <div
+                class="gallery-preview"
+                id="gallery-preview"
+                aria-label="Pré-visualização da galeria"
+              ></div>
+            </fieldset>
+          </div>
+
+          <div class="form-actions">
+            <button class="clear-button" id="cancel-trip-edit" type="button">
+              Cancelar
+            </button>
+            <button class="primary-button" id="save-trip-button" type="submit">
+              Salvar alterações
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <script src="../js/footer.js"></script>
+    <script src="../js/header.js"></script>
+    <script defer src="../js/viagens.js"></script>
+  </body>
+</html>

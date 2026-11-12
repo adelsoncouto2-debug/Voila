@@ -1,7 +1,6 @@
 "use strict";
 const reportScriptUrl = document.currentScript.src;
 
-
 /*
  * Organização do arquivo:
  *   1. CONFIG ............ único lugar para trocar JSON local por backend
@@ -11,47 +10,7 @@ const reportScriptUrl = document.currentScript.src;
  *   5. Tela .............. renderização e eventos
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const CONFIG = {
-
-
   API_BASE_URL: "",
   REPORTS_ENDPOINT: "/reports/me",
 
@@ -61,15 +20,11 @@ const CONFIG = {
   LOCALE: "pt-BR",
   CURRENCY: "BRL",
 
-
   getAuthHeaders() {
     const token = localStorage.getItem("token");
     return token ? { Authorization: `Bearer ${token}` } : {};
   },
 };
-
-
-
 
 const $ = (selector, root = document) => root.querySelector(selector);
 
@@ -144,9 +99,6 @@ function niceScale(maxValue, targetTicks = 4) {
   return { max: step * count, step, count };
 }
 
-
-
-
 async function fetchReport() {
   const usingBackend = Boolean(CONFIG.API_BASE_URL);
   const url = usingBackend
@@ -166,7 +118,6 @@ async function fetchReport() {
 
   return normalizeReport(await response.json());
 }
-
 
 function normalizeReport(raw) {
   const user = {
@@ -286,14 +237,12 @@ const SUMMARY_KEYS = [
   "ratingsCount",
 ];
 
-
 METRICS.ratingsCount = {
   label: "Avaliações recebidas",
   better: null,
   get: (m) => m.ratingsCount,
   format: (m) => nf0.format(m.ratingsCount),
 };
-
 
 function metricDelta(metric, current, previous) {
   if (!previous || !metric.better) return null;
@@ -311,11 +260,6 @@ function metricDelta(metric, current, previous) {
   };
 }
 
-
-
-
-
-
 const svgWrap = (width, height, inner, label) =>
   `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${esc(label)}">${inner}</svg>`;
 
@@ -328,7 +272,6 @@ function gridLines({ left, right, ticks, y, format }) {
     )
     .join("");
 }
-
 
 function barChart(months, selectedId, width, height) {
   const L = 44,
@@ -387,7 +330,6 @@ function barChart(months, selectedId, width, height) {
     "Clientes atendidos e não atendidos por mês",
   );
 }
-
 
 function lineChart({
   months,
@@ -493,7 +435,6 @@ function revenueChart(months, selectedId, width, height) {
   });
 }
 
-
 function donutChart(rate) {
   const size = 168,
     r = 64,
@@ -509,7 +450,6 @@ function donutChart(rate) {
     `</svg>`
   );
 }
-
 
 function starsChart(month, width) {
   const rowH = 44;
@@ -541,9 +481,6 @@ function starsChart(month, width) {
     `Distribuição das avaliações de ${monthLong(month.id)}`,
   );
 }
-
-
-
 
 const state = { report: null, selectedId: null };
 
@@ -633,7 +570,6 @@ function renderDestinations(current) {
     )
     .join("");
 }
-
 
 function drawInto(selector, height, build) {
   const el = $(selector);
@@ -770,7 +706,6 @@ function bindEvents() {
     if (e.target.id === "btn-retry") init();
   });
 
-
   let lastWidth = 0;
   let frame;
   new ResizeObserver(() => {
@@ -792,7 +727,6 @@ const PDF_COLORS = {
   red: [217, 83, 79],
   white: [255, 255, 255],
 };
-
 
 const clean = (text) => String(text).replace(/[\u00a0\u202f]/g, " ");
 
@@ -838,7 +772,6 @@ function buildPdf(report, current, previous) {
   const months = report.months;
   let y = 0;
 
-
   const fill = (c) => doc.setFillColor(...c);
   const stroke = (c) => doc.setDrawColor(...c);
   const text = (
@@ -864,7 +797,6 @@ function buildPdf(report, current, previous) {
     text(title, x + 3.2, yy, { size: 11, bold: true });
   };
 
-
   fill(C.orange);
   doc.rect(0, 0, PW, 36, "F");
   text("VOILÀ", M, 17, { size: 22, bold: true, color: C.white });
@@ -881,7 +813,6 @@ function buildPdf(report, current, previous) {
     align: "right",
   });
 
-
   const generated = new Intl.DateTimeFormat(CONFIG.LOCALE, {
     dateStyle: "short",
     timeStyle: "short",
@@ -893,7 +824,6 @@ function buildPdf(report, current, previous) {
     53,
     { size: 9, color: C.gray },
   );
-
 
   const pdfDelta = (key) => {
     const metric = METRICS[key];
@@ -933,7 +863,6 @@ function buildPdf(report, current, previous) {
   );
   y += 66;
 
-
   sectionTitle("Atendimentos por mês", M, y);
 
   fill(C.orange);
@@ -954,7 +883,6 @@ function buildPdf(report, current, previous) {
     stroke,
   );
   y += 50 + 12;
-
 
   const half = (CW - 8) / 2;
   sectionTitle("Avaliação média por mês", M, y);
@@ -1004,7 +932,6 @@ function buildPdf(report, current, previous) {
     stroke,
   );
   y += 40 + 14;
-
 
   ensureSpace(14 + (months.length + 1) * 7);
   sectionTitle("Comparativo mensal", M, y);
@@ -1079,7 +1006,6 @@ function buildPdf(report, current, previous) {
   });
   y += 12;
 
-
   ensureSpace(58);
   sectionTitle(`Avaliações de ${monthName(current.id)}`, M, y);
   sectionTitle(`Destinos mais vendidos`, M + half + 8, y);
@@ -1142,7 +1068,6 @@ function buildPdf(report, current, previous) {
       },
     );
   });
-
 
   const pages = doc.getNumberOfPages();
   for (let p = 1; p <= pages; p++) {
@@ -1333,7 +1258,6 @@ function pdfLineChart(
     });
   });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   bindEvents();

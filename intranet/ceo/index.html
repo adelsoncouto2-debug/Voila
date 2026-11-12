@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard do Gerente - Voilà</title>
+    <!-- Autenticação temporariamente desativada durante o desenvolvimento.
     <script>
       if (!sessionStorage.getItem("usuarioLogado")) {
-        window.location.replace("../index.html");
+        window.location.replace("../../index.html");
       }
     </script>
+    -->
 
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/cards.css" />
+    <link rel="stylesheet" href="../../css/cards.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,14 +36,16 @@
           desempenho da agência hoje
         </p>
       </div>
-      <section class="kpi-grid" id="kpiGrid" aria-label="Indicadores do mês">
-      </section>
+      <section
+        class="kpi-grid"
+        id="kpiGrid"
+        aria-label="Indicadores do mês"
+      ></section>
 
       <section class="dashboard-grid">
         <div class="dash-card chart-card">
           <h3 class="dash-card-title">Vendas Mensais</h3>
-          <div class="chart-wrap" id="revenueChartWrap">
-          </div>
+          <div class="chart-wrap" id="revenueChartWrap"></div>
         </div>
 
         <div class="dash-card destinations-card">
@@ -52,8 +57,10 @@
       <section class="dashboard-grid">
         <div class="dash-card chart-card">
           <h3 class="dash-card-title">Volume de reclamações</h3>
-          <div class="chart-wrap chart-wrap-bars" id="complaintsChartWrap">
-          </div>
+          <div
+            class="chart-wrap chart-wrap-bars"
+            id="complaintsChartWrap"
+          ></div>
         </div>
 
         <div class="dash-card">

@@ -1,28 +1,23 @@
-function caminhoBase() {
-  if (window.location.hostname.endsWith("github.io")) {
-    const partes = window.location.pathname.split("/").filter(Boolean);
-    return partes.length ? "/" + partes[0] : "";
-  }
-  return "";
-}
+const headerScriptUrl = document.currentScript.src;
+const intranetHeaderRootUrl = new URL("../", headerScriptUrl);
+const siteHeaderRootUrl = new URL("../../../", headerScriptUrl);
+const adminSwitchScript = document.createElement("script");
+adminSwitchScript.src = new URL("js/admin-switch.js", siteHeaderRootUrl).href;
+document.head.appendChild(adminSwitchScript);
 
-fetch(caminhoBase() + "/intranet/ceo/components/header.html")
-  .then((r) => r.text())
-  .then((html) => {
-    document.getElementById("header").innerHTML = html;
-    const base = caminhoBase();
-    if (base) {
-      document
-        .querySelectorAll('#header [src^="/"], #header [href^="/"]')
-        .forEach((el) => {
-          ["src", "href"].forEach((attr) => {
-            const valor = el.getAttribute(attr);
-            if (valor && valor.startsWith("/") && !valor.startsWith("//")) {
-              el.setAttribute(attr, base + valor);
-            }
-          });
-        });
+fetch(new URL("components/header.html", intranetHeaderRootUrl), {
+  cache: "no-cache",
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Falha ao carregar o cabeçalho: HTTP ${response.status}`);
     }
+    return response.text();
+  })
+  .then((html) => {
+    document.getElementById("header").innerHTML = html
+      .replaceAll("{{SITE_ROOT}}", siteHeaderRootUrl.href)
+      .replaceAll("{{INTRANET_ROOT}}", intranetHeaderRootUrl.href);
 
     const pagina = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".header-text a.text").forEach((link) => {
@@ -41,7 +36,9 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
     const dropdownEmail = document.querySelector(".user-dropdown-email");
     const btnLogout = document.getElementById("btn-logout");
     const notificationButton = document.querySelector(".notification-button");
-    const notificationDropdown = document.querySelector(".notification-dropdown");
+    const notificationDropdown = document.querySelector(
+      ".notification-dropdown",
+    );
     const notificationBadge = document.querySelector(".notification-badge");
     const btnMarcarLidas = document.getElementById("btn-marcar-lidas");
 
@@ -49,7 +46,8 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
       userButton.addEventListener("click", function (e) {
         e.stopPropagation();
         if (notificationDropdown) notificationDropdown.classList.remove("open");
-        userDropdown.classList.toggle("open");
+        const isOpen = userDropdown.classList.toggle("open");
+        userButton.setAttribute("aria-expanded", String(isOpen));
       });
       userDropdown.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -60,7 +58,9 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
       notificationButton.addEventListener("click", function (e) {
         e.stopPropagation();
         if (userDropdown) userDropdown.classList.remove("open");
-        notificationDropdown.classList.toggle("open");
+        if (userButton) userButton.setAttribute("aria-expanded", "false");
+        const isOpen = notificationDropdown.classList.toggle("open");
+        notificationButton.setAttribute("aria-expanded", String(isOpen));
       });
       notificationDropdown.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -79,6 +79,10 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
     document.addEventListener("click", function () {
       if (userDropdown) userDropdown.classList.remove("open");
       if (notificationDropdown) notificationDropdown.classList.remove("open");
+      if (userButton) userButton.setAttribute("aria-expanded", "false");
+      if (notificationButton) {
+        notificationButton.setAttribute("aria-expanded", "false");
+      }
     });
 
     function entrar(nome, email) {
@@ -93,13 +97,16 @@ fetch(caminhoBase() + "/intranet/ceo/components/header.html")
       btnLogout.addEventListener("click", function (e) {
         e.stopPropagation();
         sessionStorage.removeItem("usuarioLogado");
-        window.location.href = caminhoBase() + "/index.html";
+        window.location.href = new URL("index.html", siteHeaderRootUrl).href;
       });
     }
 
     const usuarioSalvo = sessionStorage.getItem("usuarioLogado");
     if (usuarioSalvo) {
-      entrar("Gerente", usuarioSalvo);
+      entrar(
+        usuarioSalvo.toLowerCase() === "ceo@voila.com" ? "CEO" : "Gerente",
+        usuarioSalvo,
+      );
     }
   })
   .catch((err) => console.error("Erro ao carregar o header do gerente:", err));

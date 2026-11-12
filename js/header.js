@@ -11,6 +11,12 @@ function basePath(caminho) {
   return getBasePath() + caminho;
 }
 
+if (!window.adminSwitchInitialized) {
+  const adminSwitchScript = document.createElement("script");
+  adminSwitchScript.src = basePath("/js/admin-switch.js");
+  document.head.appendChild(adminSwitchScript);
+}
+
 fetch(basePath("/components/header.html"))
   .then((r) => r.text())
   .then((html) => {
@@ -195,6 +201,8 @@ fetch(basePath("/components/header.html"))
     if (usuarioSalvo) {
       if (usuarioSalvo === "Voila@gmail.com") {
         entrar("Admin", usuarioSalvo);
+      } else if (usuarioSalvo === "ceo@voila.com") {
+        entrar("CEO", usuarioSalvo);
       } else {
         entrar("Ricardo", usuarioSalvo);
       }

@@ -7,6 +7,24 @@ body {
   background-color: #f5f7fa;
 }
 
+.payment-success-banner {
+  max-width: 1150px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  margin: 24px auto 0;
+  padding: 14px 18px;
+  border: 1px solid #b7dfc5;
+  border-radius: 12px;
+  background: #edf8f0;
+  color: #21643a;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.payment-success-banner[hidden] {
+  display: none;
+}
+
 main {
   flex: 1;
   max-width: 1200px;
